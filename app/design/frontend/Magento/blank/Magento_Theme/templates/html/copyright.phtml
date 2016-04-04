@@ -1,0 +1,51 @@
+<?php
+
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance(); //instance of\Magento\Framework\App\ObjectManager
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$currentStore = $storeManager->getStore();
+$baseUrl = $currentStore->getBaseUrl();
+$mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+?>
+
+<div id="footer">
+    <div id="ft_head">
+        <div id="ft_head_left">
+            <div class="ft_online_txt"><span>ONLINE SERVICE</span><span id="ft_minus">+</span></div>
+            <div class="ft_menu">
+                <a href="#"><div>Privacy Notice<span class="ft_hidden">/</span></div></a>
+                <a href="#"><div>Shipping & Returns<span class="ft_hidden">/</span></div></a>
+                <a href="#"><div>Contact Us</div></a>
+            </div>
+        </div>
+        <div id="ft_head_right">
+            <span class="name_company">DOWEL DENTAL PRODUCT</span>
+            <span>9287 Ninth Street Rancho Cucamonga, CA 91730</span>
+            <span class="ft_hidden">/</span>
+            <span><em>Tel: </em>(+877) 373-8904</span>
+            <span class="ft_fb"><img src="<?= $mediaUrl ?>images/fb.png" /></span>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div id="ft_cpr">
+        © 2016 DoWell Dental Products.<br class="clr" /> All rights reserved.
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    require([ 'jquery', 'jquery/ui'], function($){
+        $(document).ready(function($) {
+            $('#ft_head_left .ft_online_txt').click(function(){
+                var ft_menu =  $('#ft_head_left .ft_menu');
+                if (ft_menu.hasClass('activated')) {
+                    ft_menu.removeClass('activated');
+                    $('#ft_minus').text("+");
+                } else {
+                    ft_menu.addClass('activated');
+                    $('#ft_minus').text("-");
+                }
+            })
+        });
+    });
+</script>

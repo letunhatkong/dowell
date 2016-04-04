@@ -48,5 +48,11 @@
                 </block>
             </block>
         </referenceContainer>
+
+
+        <!-- Remove footer -->
+        <referenceContainer name="footer" remove="true" />
+        <!-- Move Copyright -->
+        <move element="copyright" destination="before.body.end"/>
     </body>
 </page>
