@@ -41,7 +41,7 @@ body {
 
 /* GRID */
 @media only screen and (max-width: 1239px) {
-	.col-1200 {
+	.col-1200, #maincontent {
 		width: 100%;
 		padding-left: 20px !important;
 		padding-right: 20px !important;
@@ -50,13 +50,13 @@ body {
 	}
 }
 @media only screen and (max-width: 767px) {
-	.col-1200 {
+	.col-1200, #maincontent {
 		padding-left: 10px !important;
 		padding-right: 10px !important;
 	}
 }
 @media only screen and (min-width: 1240px) {
-	.col-1200 {
+	.col-1200, #maincontent {
 		width: 1200px !important;
 		margin-left: auto !important;
 		margin-right: auto !important;
@@ -197,3 +197,84 @@ body {
 	}
 }
 /* # Footer */
+
+
+/* Header */
+.page-header .panel.wrapper {
+	background: #e1e1e1;
+}
+/* # Header */
+
+
+/* Contact page */
+#ggMapWrap {
+    height:500px;
+}
+#contact-wrapper {
+	padding-top: 30px;
+	color: #474747;
+}
+#cont_left_info p {
+	margin: 0 0 20px;
+	color: #474747;
+}
+.cont_head {
+	font-size: 18px;
+	font-weight: bold;
+}
+#cont_right_form {
+
+}
+#contact-form {
+	padding: 20px;
+	border: 1px solid #c2c2c2;
+}
+#contact-form .comment .control {
+	float: left;
+	clear: both;
+	width: 100%;
+    margin-top: 10px;
+}
+#contact-form .comment .label {
+    width: 100%;
+}
+#contact-form .fieldset { margin: 0 0 10px }
+#contact-form .fieldset > .field > .label {
+	padding: 6px 15px 0 0;
+	text-align: left;
+	font-weight: normal;
+}
+#contact-form .fieldset > .field {
+	margin: 0 0 15px;
+}
+#contact-form .fieldset > .field.name {
+    margin-top: 30px;
+}
+#contact-form .actions-toolbar {
+    margin: 0;
+    text-align: center;
+}
+#contact-form .actions-toolbar .primary {
+    float: none;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: #464646;
+    padding: 5px 15px;
+}
+
+@media only screen and (max-width: 767px) {
+    #ggMapWrap {
+        height: 300px;
+    }
+    #contact-form .actions-toolbar {
+        margin: 20px 0 0;
+    }
+    #contact-form .fieldset > .field.name {
+        margin-top: 15px;
+    }
+    #contact-form .comment .control {
+        margin-top: 0;
+    }
+}
+/* # Contact page */
