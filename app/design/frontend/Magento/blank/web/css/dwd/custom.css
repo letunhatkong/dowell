@@ -1,7 +1,7 @@
 
 
 body {
-	color: #000;
+	color: #464646;
 }
 
 /* image responsive */
@@ -26,7 +26,7 @@ body {
 	padding-bottom: 20px;
 }
 .pad30 {
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 }
 .pad40 {
 	padding-bottom: 40px;
@@ -206,6 +206,11 @@ body {
 /* # Header */
 
 
+.page-title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 /* Contact page */
 #ggMapWrap {
     height:500px;
@@ -278,3 +283,17 @@ body {
     }
 }
 /* # Contact page */
+
+/* About Us Page */
+#about_left img {
+    width: 100%;
+}
+#about_right p {
+    margin: 0 0 15px;
+}
+#about_right p:first-child {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+/* # About Us Page */
