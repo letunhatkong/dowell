@@ -11,8 +11,5 @@
         <move element="page.main.title" destination="product.info.main" before="-"/>
     </body>
 
-    <!-- Move breadcrumbs -->
-    <!--<move element="breadcrumbs" before="main" destination="columns" />-->
-    <!-- Move Page title  -->
-    <!--<move element="breadcrumbs" before="main" destination="columns" />-->
+
 </page>

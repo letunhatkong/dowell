@@ -1,0 +1,105 @@
+<?php
+$objectManagerr = \Magento\Framework\App\ObjectManager::getInstance();
+$categoryFactory = $objectManagerr->create('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
+$categoryy = $categoryFactory->create()
+    ->addAttributeToFilter('is_active','1')
+    ->addAttributeToSelect('name');
+
+$category_ar = []; $rootId = 0; $first = false;
+foreach ($categoryy as $cate){
+
+    $curId = intval($cate->getId());
+    $parentId = intval($cate->getParentID());
+
+    if ($parentId == 1 && !$first) { $rootId = $curId; $first = true; }
+
+    if (isset($parentId) && $rootId > 0 && $parentId == $rootId) {
+        $category_ar[$curId] = [
+            "id" => $curId,
+            "name" => $cate->getName(),
+            "url" => $cate->getURL(),
+            "parentId" => $parentId,
+            "isActive" => 1,
+            "subCategories" => []
+        ];
+    } else if ($parentId != $rootId && $first && $parentId != 1) {
+        if (isset($category_ar[$parentId])) {
+            $len = count($category_ar[$parentId]["subCategories"]);
+            $category_ar[$parentId]["subCategories"][$len] = [
+                "id" => $curId,
+                "name" => $cate->getName(),
+                "url" => $cate->getURL(),
+                "parentId" => $parentId,
+                "isActive" => 1
+            ];
+        }
+    }
+}
+?>
+<div class="categorySidebar">
+    <h4 class="title-sidaber">CATEGORY</h4>
+    <div id='cssmenu'>
+        <ul>
+            <?php
+            foreach ($category_ar as $key) {
+                $hasSub = (is_array($key["subCategories"]) && count($key["subCategories"]) > 0) ? true:false;
+                ?>
+                <li class='has-sub'>
+                    <a href="<?php echo ($hasSub) ? 'javascript:void(0);' : $key["url"] ?>" title="<?= $key['name'] ?>">
+                    <span>
+                        <?php
+                        echo ($hasSub) ? '<em class="txtDropCategory">(+)</em> ':"";
+                        echo $key['name'];
+                        ?>
+                    </span>
+                    </a>
+
+                    <?php if($hasSub){ ?>
+                        <ul>
+                            <?php foreach ($key["subCategories"] as $subCate) { ?>
+                                <li>
+                                    <a href="<?= $subCate['url']?>" title="<?= $subCate['name']?>">
+                                        <span><?= $subCate['name']?></span>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    <?php } ?>
+                </li>
+            <?php } ?>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    require([ 'jquery', 'jquery/ui'], function($){
+        $( document ).ready(function() {
+            $('#cssmenu > ul > li > a').click(function() {
+                $('#cssmenu li').removeClass('active');
+                $(this).closest('li').addClass('active');
+
+                var checkElement = $(this).next();
+                if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+                    $(this).closest('li').removeClass('active');
+                    checkElement.slideUp('normal');
+                    $(this).find("em.txtDropCategory").text("(+)");
+                }
+                if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+                    $('#cssmenu ul ul:visible').slideUp('normal');
+                    checkElement.slideDown('normal');
+                    $(this).find("em.txtDropCategory").text("(-)");
+                }
+                if($(this).closest('li').find('ul').children().length == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+        })
+    });
+</script>
+
+
+
+<div>
+
+</div>

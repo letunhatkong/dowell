@@ -102,6 +102,8 @@
 
         <!-- Remove sidebar additional -->
         <referenceContainer name="sidebar.additional" remove="true" />
+        <block class="Magento\Framework\View\Element\Template" name="category.menu" template="Magento_Theme::html/product-menu.phtml"/>
+        <move element="category.menu" before="-" destination="div.sidebar.main"/>
 
     </body>
 </page>
