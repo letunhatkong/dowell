@@ -28,7 +28,12 @@ $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_
     </div>
 
     <div id="ft_cpr">
-        © 2016 DoWell Dental Products.<br class="clr" /> All rights reserved.
+        <?php $cpr =  $block->getCopyright();
+            if (!(is_null($cpr) && $cpr != "")) {
+                $cpr = '© 2016 DoWell Dental Products.'.'<br class="clr" /> All rights reserved.';
+            }
+            echo $cpr;
+        ?>
     </div>
 
 </div>
