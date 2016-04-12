@@ -313,6 +313,9 @@ body {
 	margin: 5px 0 30px;
 	font-size: 30px;
 }
+.page-layout-2columns-left .column.main .product-items {
+	margin: 20px 0 !important;
+}
 .page-layout-2columns-left .sidebar-main {
 	float: left;
 	width: 300px;
@@ -376,6 +379,114 @@ body {
 .block.filter {
 	margin-bottom: 40px;
 	display: none;
+}
+	/* Button */
+.products-grid .product-item-actions {
+	margin: 0;
+}
+.products-grid .product-item-actions .actions-primary {
+	display: block;
+}
+.products-grid .product-item-actions .actions-secondary {
+	display: none;
+}
+.action.primary {
+	width: 125px;
+	float: right;
+	background: #474747 !important;
+	border: none !important;
+	border-radius: 0;
+	text-transform: uppercase;
+	padding: 12px 0;
+}
+	/* # button */
+
+	/* left Menu SideBar */
+.titleLeftSidebar {
+	margin: 0 0 20px;
+}
+.leftMenuDiv {
+	border: 1px solid #e1e1e1;
+	padding: 10px;
+}
+#leftMenuUl {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+#leftMenuUl ul {
+	padding: 5px 0 0 20px;
+	list-style: none;
+	clear: both;
+	display: none;
+}
+#leftMenuUl li {
+	list-style: none;
+	clear: both;
+	padding: 5px 0;
+	margin: 0;
+	overflow: hidden;
+}
+#leftMenuUl li.hasSub {
+	padding-bottom: 0;
+}
+.title-ct-leftMenu {
+	line-height: 1;
+}
+.title-ct-leftMenu > a {
+	max-width: calc(100% - 40px);
+	float: left;
+	text-transform: uppercase;
+	color: #474747;
+	text-decoration: none;
+}
+.title-ct-leftMenu > a:hover {
+	color: #ff5f2b;
+}
+.dropLeftMenu {
+	display: block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	border: 1px solid #999;
+	float: left;
+	text-align: center;
+	color: #999;
+	font-size: 20px;
+	line-height: 14px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+#leftMenuUl li.active > ul {
+	display: block;
+}
+
+	/* # left Menu SideBar */
+
+
+@media only screen and (max-width: 980px) {
+	.page-products .products-grid .product-item {
+		padding: 5px;
+		border: 1px solid #e1e1e1;
+		width: calc((100% - 20px) / 2) !important;
+		margin-left: 20px !important;
+		margin-bottom: 20px !important;
+	}
+	.page-products .products-grid .product-item:nth-child(3n+1) {
+		margin-left: 20px !important;
+	}
+	.page-products .products-grid .product-item:nth-child(2n+1) {
+		margin-left: 0 !important;
+	}
+	.product-item-actions {
+		display: block;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.action.primary {
+		width: 100%;
+	}
 }
 /* Category page - page-layout-2columns-left */
 

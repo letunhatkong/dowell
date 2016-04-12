@@ -1,99 +1,154 @@
 <?php
-$objectManagerr = \Magento\Framework\App\ObjectManager::getInstance();
-$categoryFactory = $objectManagerr->create('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
-$categoryy = $categoryFactory->create()
-    ->addAttributeToFilter('is_active','1')
-    ->addAttributeToSelect('name');
 
-$category_ar = []; $rootId = 0; $first = false;
-foreach ($categoryy as $cate){
+function getSubcategories($category) {
 
-    $curId = intval($cate->getId());
-    $parentId = intval($cate->getParentID());
+    if ($this->categoryFlatConfig->isFlatEnabled() && $category->getUseFlatResource())
+        return (array)$category->getChildrenNodes();
 
-    if ($parentId == 1 && !$first) { $rootId = $curId; $first = true; }
+    return $category->getChildren();
+}
 
-    if (isset($parentId) && $rootId > 0 && $parentId == $rootId) {
-        $category_ar[$curId] = [
-            "id" => $curId,
-            "name" => $cate->getName(),
-            "url" => $cate->getURL(),
-            "parentId" => $parentId,
-            "isActive" => 1,
-            "subCategories" => []
-        ];
-    } else if ($parentId != $rootId && $first && $parentId != 1) {
-        if (isset($category_ar[$parentId])) {
-            $len = count($category_ar[$parentId]["subCategories"]);
-            $category_ar[$parentId]["subCategories"][$len] = [
-                "id" => $curId,
-                "name" => $cate->getName(),
-                "url" => $cate->getURL(),
-                "parentId" => $parentId,
-                "isActive" => 1
-            ];
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$categoryFactory = $objectManager->create('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
+
+$productsCate = $categoryFactory->create()
+    ->addAttributeToFilter('url_key','products')
+    ->addAttributeToSelect('*')
+    ->getFirstItem();
+
+$categoryModel = $objectManager->create('\Magento\Catalog\Model\Category');
+
+$result = $categoryModel->getCategories($productsCate->getId());
+
+
+
+//foreach ($result as $item) {
+//    echo $item->getName(). $item->getId().'<br>';
+//    if ($item->hasChildren()) {
+//        print_r( $item);
+//        exit;
+//    }
+//}
+
+
+
+//$category_ar = []; $rootId = 0; $first = false; $_name = "products";
+//foreach ($category as $cate){
+//
+//    $curId = intval($cate->getId());
+//    $parentId = intval($cate->getParentID());
+//
+//    if ($parentId == 1 && !$first) { $rootId = $curId; $first = true; }
+//
+//    if (isset($parentId) && $rootId > 0 && $parentId == $rootId) {
+//        $category_ar[$curId] = [
+//            "id" => $curId,
+//            "name" => $cate->getName(),
+//            "url" => $cate->getURL(),
+//            "url_key" => $cate->getUrlKey(),
+//            "parentId" => $parentId,
+//            "isActive" => 1,
+//            "subCategories" => []
+//        ];
+//    } else if ($parentId != $rootId && $first && $parentId != 1) {
+//        if (isset($category_ar[$parentId])) {
+//            $len = count($category_ar[$parentId]["subCategories"]);
+//            $category_ar[$parentId]["subCategories"][$len] = [
+//                "id" => $curId,
+//                "name" => $cate->getName(),
+//                "url" => $cate->getURL(),
+//                "parentId" => $parentId,
+//                "isActive" => 1
+//            ];
+//        }
+//    }
+//}
+//var_dump($category_ar);
+?>
+
+<?php // Get Current Category name
+$registry = $objectManager->create('Magento\Framework\Registry');
+$currentCategory = $objectManager->get('Magento\Framework\Registry')->registry('current_category');
+?>
+<h4 class=" visible-xs" ><?= $currentCategory->getName()?></h4>
+<style type="text/css">
+    @media only screen and (max-width: 767px) {
+        .breadcrumbs, .page-title-wrapper {
+            display: none;
         }
     }
-}
-?>
-<div class="categorySidebar">
-    <h4 class="title-sidaber">CATEGORY</h4>
-    <div id='cssmenu'>
-        <ul>
-            <?php
-            foreach ($category_ar as $key) {
-                $hasSub = (is_array($key["subCategories"]) && count($key["subCategories"]) > 0) ? true:false;
-                ?>
-                <li class='has-sub'>
-                    <a href="<?php echo ($hasSub) ? 'javascript:void(0);' : $key["url"] ?>" title="<?= $key['name'] ?>">
-                    <span>
-                        <?php
-                        echo ($hasSub) ? '<em class="txtDropCategory">(+)</em> ':"";
-                        echo $key['name'];
-                        ?>
-                    </span>
-                    </a>
+</style>
 
-                    <?php if($hasSub){ ?>
-                        <ul>
-                            <?php foreach ($key["subCategories"] as $subCate) { ?>
-                                <li>
-                                    <a href="<?= $subCate['url']?>" title="<?= $subCate['name']?>">
-                                        <span><?= $subCate['name']?></span>
-                                    </a>
-                                </li>
-                            <?php } ?>
+<div class="menuLeftSidebar ">
+    <h4 class="titleLeftSidebar hidden-xs">CATEGORY</h4>
+    <div id='productMenu' class="leftMenuDiv" >
+        <ul id="leftMenuUl">
+            <li class="lvl0 leftMenu-li hasSub" id="li-ct-1">
+                <div class="title-ct-leftMenu">
+                    <a href="#">Allograft And Regenerative Solutions</a>
+                    <span class="dropLeftMenu" data-id="1">+</span>
+                </div>
+                <ul class="lvl0">
+                    <li class="lvl1 leftMenu-li" id="li-ct-2">
+                        <div class="title-ct-leftMenu">
+                            <a href="#">Regenerative Solutions 1</a>
+                            <span class="dropLeftMenu" data-id="2">+</span>
+                        </div>
+                        <ul class="lvl1">
+                            <li class="leftMenu-li" id="li-ct-6">
+                                <div class="title-ct-leftMenu">
+                                    <a href="#">Solutions 1.1</a>
+                                </div>
+                            </li>
+                            <li class="leftMenu-li" id="li-ct-5">
+                                <div class="title-ct-leftMenu">
+                                    <a href="#">Solutions 1.2</a>
+                                </div>
+                            </li>
                         </ul>
-                    <?php } ?>
-                </li>
-            <?php } ?>
+                    </li>
+                    <li class="lvl1 leftMenu-li" id="li-ct-3">
+                        <div class="title-ct-leftMenu">
+                            <a href="#">Regenerative Solutions 2</a>
+                            <span class="dropLeftMenu" data-id="3">+</span>
+                        </div>
+                        <ul class="lvl1">
+                            <li class="leftMenu-li">
+                                <div class="title-ct-leftMenu">
+                                    <a href="#">Solutions 2.1</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl0 leftMenu-li" id="li-ct-4">
+                <div class="title-ct-leftMenu">
+                    <a href="#">ABC Solutions</a>
+                </div>
+            </li>
+
         </ul>
     </div>
 </div>
+
+
 <script type="text/javascript">
     require([ 'jquery', 'jquery/ui'], function($){
         $( document ).ready(function() {
-            $('#cssmenu > ul > li > a').click(function() {
-                $('#cssmenu li').removeClass('active');
-                $(this).closest('li').addClass('active');
-
-                var checkElement = $(this).next();
-                if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
-                    $(this).closest('li').removeClass('active');
-                    checkElement.slideUp('normal');
-                    $(this).find("em.txtDropCategory").text("(+)");
-                }
-                if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-                    $('#cssmenu ul ul:visible').slideUp('normal');
-                    checkElement.slideDown('normal');
-                    $(this).find("em.txtDropCategory").text("(-)");
-                }
-                if($(this).closest('li').find('ul').children().length == 0) {
-                    return true;
+            $('.dropLeftMenu').click(function(){
+                var id = $(this).attr('data-id');
+                var selectCt = $('#li-ct-'+id+' > ul');
+                if (selectCt.is(':visible')) {
+                    $(this).text("+");
+                    selectCt.slideUp('normal');
                 } else {
-                    return false;
+                    $(this).text("-");
+                    selectCt.slideDown('normal');
                 }
             });
+
+
         })
     });
 </script>
