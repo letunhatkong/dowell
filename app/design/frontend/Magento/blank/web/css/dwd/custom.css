@@ -18,6 +18,19 @@ body {
 	top: 0; left: 0; right: 0; bottom: 0;
 	margin: auto;
 }
+.img-resp > img.fullHeight {
+	height: 100%;
+}
+.img100 {
+	padding-bottom: 100%;
+}
+
+.img-full {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+/* # image responsive */
 
 .pad10 {
 	padding-bottom: 10px;
@@ -37,7 +50,7 @@ body {
 .pad100 {
 	padding-bottom: 50px;
 }
-/* # image responsive */
+
 
 /* GRID */
 @media only screen and (max-width: 1239px) {
@@ -490,3 +503,57 @@ body {
 }
 /* Category page - page-layout-2columns-left */
 
+
+/* Home page */
+	/* Carousel */
+.carousel-inner {
+	position: relative;
+	width: 100%;
+	padding: 0 35px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.prevButtonWrap, .nextButtonWrap  {
+	position: absolute;
+	top: 0;
+	width: 35px;
+	height: 100%;
+}
+.prevButtonWrap > img, .nextButtonWrap > img  {
+	position: absolute; top: 50%;
+	-webkit-transform: translate(0, -50%);
+	-moz-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	-o-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+}
+.prevButtonWrap, .prevButtonWrap > img { left: 0 }
+.nextButtonWrap, .nextButtonWrap > img { right: 0 }
+
+.HS-item-wrap {
+	border: 1px solid #e1e1e1;
+	padding: 10px;
+	margin: 0 0 20px;
+}
+.HS-item-wrap a {
+	text-decoration: none;
+}
+.HS-item-wrap p {
+	color: #8d8d8d;
+	padding: 10px 0 0;
+	margin: 0;
+}
+.head-homePage {
+	color: #474747;
+	margin: 0;
+	font-weight: 600;
+	padding: 0 0 20px;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+@media only screen and (max-width: 479px) {
+	.homeSlider .col-xs-6 {
+		width: 100%;
+	}
+}
+/* # Home page */

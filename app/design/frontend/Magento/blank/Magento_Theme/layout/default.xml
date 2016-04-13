@@ -55,5 +55,13 @@
         <!-- Move Copyright -->
         <move element="copyright" destination="before.body.end"/>
 
+        <!-- JS -->
+        <block class="Magento\Framework\View\Element\Text" name="carousel">
+            <arguments>
+                <argument name="text" xsi:type="string"><![CDATA[<script type="text/javascript" src="/pub/js/carousel.js"></script>]]></argument>
+            </arguments>
+        </block>
+        <move element="carousel" destination="before.body.end"/>
+
     </body>
 </page>

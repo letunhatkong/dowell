@@ -1,13 +1,5 @@
 <?php
 
-function getSubcategories($category) {
-
-    if ($this->categoryFlatConfig->isFlatEnabled() && $category->getUseFlatResource())
-        return (array)$category->getChildrenNodes();
-
-    return $category->getChildren();
-}
-
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $categoryFactory = $objectManager->create('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
 
@@ -63,7 +55,7 @@ $result = $categoryModel->getCategories($productsCate->getId());
 //        }
 //    }
 //}
-//var_dump($category_ar);
+
 ?>
 
 <?php // Get Current Category name

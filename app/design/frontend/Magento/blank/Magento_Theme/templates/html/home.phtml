@@ -1,0 +1,231 @@
+<?php
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$currentStore = $storeManager->getStore();
+$baseUrl = $currentStore->getBaseUrl();
+$mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+$linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
+?>
+
+<!-- 3 articles  -->
+<div class="row">
+    <div class="col-xs-12 col-sm-4">
+        <a href="javascript:void(0);">
+            <img class="img-full" src="<?= $mediaUrl . 'images/home/ad1.jpg' ?>"/>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <a href="javascript:void(0);">
+            <img class="img-full" src="<?= $mediaUrl . 'images/home/ad2.jpg' ?>"/>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <a href="javascript:void(0);">
+            <img class="img-full" src="<?= $mediaUrl . 'images/home/ad3.jpg' ?>"/>
+        </a>
+    </div>
+</div>
+<div class="clearfix pad30"></div>
+
+<?php // Get Latest Products
+
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$productCollection = $_objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
+$collection = $productCollection->create()
+    ->addAttributeToSelect('*')
+    ->addFieldToFilter("status", "1")
+    ->setOrder('created_at', 'DESC')
+    ->load();
+
+$latestAr = [];
+foreach ($collection as $product){
+    $item = array(
+        'getId' => $product->getId(),
+        'getName' => $product->getName(),
+        'getPrice' => floatval($product->getPrice()),
+        'priceString' => "$".number_format($product->getPrice(), 2),
+        'getStatus' => $product->getStatus(),
+        'thumbnail' => $mediaUrl .'catalog/product'. $product->getThumbnail(),
+        'getProductUrl' => $product->getProductUrl(),
+    );
+    array_push($latestAr, $item);
+}
+$newProSize = count($latestAr);
+?>
+
+<!-- New Products -->
+<p class="head-homePage">NEW PRODUCTS</p>
+<?php if ($newProSize > 0) { ?>
+<div id="newProductHS" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <!-- Items -->
+        <?php $i = 1; ?>
+        <?php foreach($latestAr as $newPro) { ?>
+            <?php if ($i % 4 == 1) { ?>
+            <div class="item <?= ($i == 1)?' active':'' ?>">
+                <div class="row">
+            <?php } ?>
+
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="HS-item-wrap">
+                            <a href="<?= $newPro["getProductUrl"] ?>">
+                                <div class="img-resp img100">
+                                    <img src="<?= $newPro['thumbnail'] ?>" />
+                                </div>
+                                <p><?= $newPro['getName'] ?></p>
+                            </a>
+                        </div>
+                    </div>
+            <?php if ($i % 4 == 0 || $i == $newProSize) { ?>
+                </div>
+            </div>
+            <?php } ?>
+            <?php $i++; ?>
+        <?php } ?>
+    </div>
+    <!-- Controls -->
+    <a href="#newProductHS" role="button" data-slide="prev">
+        <div class="prevButtonWrap" aria-hidden="true">
+            <img src="<?= $mediaUrl ?>images/home/left.png"/>
+        </div>
+    </a>
+    <a href="#newProductHS" role="button" data-slide="next">
+        <div class="nextButtonWrap" aria-hidden="true">
+            <img src="<?= $mediaUrl ?>images/home/right.png"/>
+        </div>
+    </a>
+</div>
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function ($) {
+        $(document).ready(function ($) {
+            $(window).load(function () {
+                $('#newProductHS').carousel({
+                    interval: false
+                });
+            });
+        });
+    });
+</script>
+<?php } ?>
+
+<div class="clearfix pad100"></div>
+<!-- Promotional Products -->
+<p class="head-homePage">PROMOTIONAL PRODUCTS</p>
+<div id="proProductHS" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner homeSlider" role="listbox">
+        <!-- Items -->
+        <div class="item active">
+            <div class="row">
+                <div class="col-xs-6 col-sm-3">
+                    <div class="HS-item-wrap">
+                        <a href="#">
+                            <div class="img-resp img100">
+                                <img src="<?= $mediaUrl ?>images/test/1.jpg" />
+                            </div>
+                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="HS-item-wrap">
+                        <a href="#">
+                            <div class="img-resp img100">
+                                <img src="<?= $mediaUrl ?>images/test/2.jpg" />
+                            </div>
+                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="HS-item-wrap">
+                        <a href="#">
+                            <div class="img-resp img100">
+                                <img src="<?= $mediaUrl ?>images/test/3.jpg" />
+                            </div>
+                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="HS-item-wrap">
+                        <a href="#">
+                            <div class="img-resp img100">
+                                <img src="<?= $mediaUrl ?>images/test/4.jpg" />
+                            </div>
+                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-xs-6 col-sm-3">
+                    <div class="HS-item-wrap">
+                        <a href="#">
+                            <div class="img-resp img100">
+                                <img class="fullHeight" src="<?= $mediaUrl ?>images/test/3.jpg" />
+                            </div>
+                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="HS-item-wrap">
+                        <a href="#">
+                            <div class="img-resp img100">
+                                <img class="fullHeight" src="<?= $mediaUrl ?>images/test/1.jpg" />
+                            </div>
+                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="HS-item-wrap">
+                        <a href="#">
+                            <div class="img-resp img100">
+                                <img class="fullHeight" src="<?= $mediaUrl ?>images/test/4.jpg" />
+                            </div>
+                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="HS-item-wrap">
+                        <a href="#">
+                            <div class="img-resp img100">
+                                <img class="fullHeight" src="<?= $mediaUrl ?>images/test/2.jpg" />
+                            </div>
+                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Controls -->
+    <a href="#proProductHS" role="button" data-slide="prev">
+        <div class="prevButtonWrap" aria-hidden="true">
+            <img src="<?= $mediaUrl ?>images/home/left.png"/>
+        </div>
+    </a>
+    <a href="#proProductHS" role="button" data-slide="next">
+        <div class="nextButtonWrap" aria-hidden="true">
+            <img src="<?= $mediaUrl ?>images/home/right.png"/>
+        </div>
+    </a>
+</div>
+
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function ($) {
+        $(document).ready(function ($) {
+            $(window).load(function () {
+                $('#proProductHS').carousel({
+                    interval: false
+                });
+            });
+        });
+    });
+</script>
