@@ -49,7 +49,10 @@
             </block>
         </referenceContainer>
 
-
+        <!-- Banner home -->
+        <block class="Magento\Framework\View\Element\Template" name="top.slider.home" template="Magento_Theme::html/top-slider-home.phtml"/>
+        <!--   <move element="top.slider.home" before="main.content" destination="page.wrapper"/> -->
+        <!-- # Banner home -->
         <!-- Remove footer -->
         <referenceContainer name="footer" remove="true" />
         <!-- Move Copyright -->

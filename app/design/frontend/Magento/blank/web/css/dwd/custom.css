@@ -506,7 +506,7 @@ body {
 
 /* Home page */
 	/* Carousel */
-.carousel-inner {
+.carousel-inner-fix {
 	position: relative;
 	width: 100%;
 	padding: 0 35px;
@@ -550,6 +550,30 @@ body {
 	padding: 0 0 20px;
 	font-size: 18px;
 	text-transform: uppercase;
+}
+#bannerHS img {
+	max-width: 100%;
+	width: 100%;
+}
+ol.carousel-indicators {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	padding: 0 10px;
+	margin: 5px 0 30px;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+}
+.carousel-indicators li {
+	background: #939393;
+	border: none;
+}
+.carousel-indicators li.active {
+	background: #424242;
 }
 @media only screen and (max-width: 479px) {
 	.homeSlider .col-xs-6 {
