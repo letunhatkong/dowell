@@ -505,6 +505,11 @@ body {
 
 
 /* Home page */
+	/* Banner slider */
+#bannerHS {
+	margin-bottom: 50px;
+}
+
 	/* Carousel */
 .carousel-inner-fix {
 	position: relative;
@@ -555,6 +560,9 @@ body {
 	max-width: 100%;
 	width: 100%;
 }
+.padHS {
+	padding: 0 30px;
+}
 ol.carousel-indicators {
 	position: relative;
 	bottom: 0;
@@ -574,6 +582,13 @@ ol.carousel-indicators {
 }
 .carousel-indicators li.active {
 	background: #424242;
+}
+
+#bannerHS .carousel-indicators {
+	position: absolute;
+	margin: 0;
+	bottom: -25px;
+	padding: 0;
 }
 @media only screen and (max-width: 479px) {
 	.homeSlider .col-xs-6 {
