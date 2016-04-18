@@ -524,6 +524,9 @@ body {
 	width: 35px;
 	height: 100%;
 }
+#bannerHS .prevButtonWrap, #bannerHS .nextButtonWrap  {
+	width: 60px;
+}
 .prevButtonWrap > img, .nextButtonWrap > img  {
 	position: absolute; top: 50%;
 	-webkit-transform: translate(0, -50%);
