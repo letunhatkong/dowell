@@ -599,3 +599,134 @@ ol.carousel-indicators {
 	}
 }
 /* # Home page */
+
+/* Doctor Review */
+img[src=""] {
+	display: none;
+}
+.docReviewItem {
+	border: 1px solid #c2c2c2;
+	padding: 10px;
+}
+.docReviewInner {
+	position: relative;
+	background: #ebebeb;
+	padding: 20px;
+}
+.review_left_img {
+	float: left;
+	position: relative;
+	width: 100px;
+	height: 100px;
+	background: #999;
+	margin: 0 20px 10px 0;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+.review_left_img > img {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+.review_right {
+	position: relative;
+	width: 100%;
+	padding-left: 120px;
+}
+.review_right ._tit {
+	color: #484848;
+	font-size: 16px;
+	font-weight: bold;
+}
+.review_right ._content {
+	position: relative;
+	padding: 0 15px;
+}
+.review_right ._content,
+.review_right ._content p,
+.review_right ._content h1,
+.review_right ._content h2,
+.review_right ._content h3,
+.review_right ._content h4,
+.review_right ._content h5,
+.review_right ._content h6,
+.review_right ._content span {
+	color: #474747 !important;
+	font-size: 14px !important;
+	font-weight: normal !important;
+	background: transparent !important;
+	outline: 0 !important;
+	letter-spacing: normal !important;
+	line-height: normal !important;
+}
+
+.review_right ._content::before, .review_right ._content::after {
+	position: absolute;
+	content: '';
+	width: 11px;
+	height: 10px;
+	top: 0;
+}
+.review_right ._content::before {
+	left: 0;
+	background: url(/pub/media/images/review/left_caret.png) no-repeat center;
+}
+.review_right ._content::after {
+	right: 0;
+	background: url(/pub/media/images/review/right_caret.png) no-repeat center;
+}
+.review_right ._auDate {
+	text-align: right;
+	margin: 0;
+	color: #474747;
+}
+.review_right ._author {
+	font-size: 16px;
+}
+.review_right ._date {
+	font-size: 14px;
+	font-style: italic;
+}
+.review_right ._plus {
+	display: none;
+	margin-bottom: 15px;
+}
+.review_right ._plus > img {
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+	.review_left_img {
+		float: none;
+		margin: 0 auto;
+	}
+
+	.review_right ._tit {
+		text-align: center;
+		padding-top: 10px;
+		margin-bottom: 15px;
+	}
+	.review_right ._auDate {
+		text-align: center;
+	}
+
+	#doctorReview .col-xs-12 {
+		margin-bottom: 20px;
+	}
+	.review_right {
+		padding-left: 0;
+	}
+	.review_right ._plus {
+		display: block;
+		text-align: center;
+	}
+	.review_right ._content, .review_right ._plus.clicked {
+		display: none;
+	}
+	.review_right ._content.clicked {
+		display: block;
+	}
+}
+
+/* # Doctor Review*/
