@@ -1,0 +1,47 @@
+<?php // echo $this->getItemUrl($newsItem) ?>
+<?php $_news = $this->getCollection(); ?>
+<?php if ($_news->getSize()): ?>
+<div class="row" id="doctorReview">
+    <?php foreach ($_news as $newsItem): ?>
+        <div id="docReview_<?php echo $newsItem->getId() ?>" class="col-xs-12 col-sm-6">
+            <div class="docReviewItem">
+                <div class="docReviewInner">
+                    <div class="review_left_img">
+                        <?php $imageUrl = $this->getImageUrl($newsItem, 100); ?>
+                        <img src="<?php echo $imageUrl ?>" alt="<?php echo $this->escapeHtml($newsItem->getTitle()); ?>" />
+                    </div>
+                    <div class="review_right">
+                        <p class="_tit"><?= $newsItem->getTitle() ?></p>
+                        <div class="_plus">
+                            <img src="/pub/media/images/review/plus.png" />
+                        </div>
+                        <div class="_content"><?= $newsItem->getContent() ?></div>
+                        <p class="_auDate">
+                            <span class="_author"><?= $newsItem->getAuthor() ?></span><br>
+                            <span class="_date"><?= $this->getDate($newsItem->getPublishedAt()) ?></span>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<script type="text/javascript">
+    require([ 'jquery', 'jquery/ui'], function($){
+        $(document).ready(function($) {
+            $('#doctorReview ._plus').click(function(){
+                $(this).parent().find('._content').addClass("clicked");
+                $(this).addClass("clicked");
+
+            })
+        });
+    });
+</script>
+
+
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('You have no review.'); ?></span></div>
+<?php endif ?>
+
