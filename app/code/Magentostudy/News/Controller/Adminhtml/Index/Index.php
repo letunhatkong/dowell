@@ -45,13 +45,13 @@ class Index extends \Magento\Backend\App\Action
         $resultPage->setActiveMenu(
             'Magentostudy_News::news_manage'
         )->addBreadcrumb(
-            __('News'),
-            __('News')
+            __('Review'),
+            __('Review')
         )->addBreadcrumb(
-            __('Manage News'),
-            __('Manage News')
+            __('Manage Review'),
+            __('Manage Review')
         );
-        $resultPage->getConfig()->getTitle()->prepend(__('News'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Review'));
 		return $resultPage;
     }
 }

@@ -50,11 +50,11 @@ class Edit extends \Magento\Backend\App\Action
         $resultPage->setActiveMenu(
             'Magentostudy_News::news_manage'
         )->addBreadcrumb(
-            __('News'),
-            __('News')
+            __('Review'),
+            __('Review')
         )->addBreadcrumb(
-            __('Manage News'),
-            __('Manage News')
+            __('Manage Reviews'),
+            __('Manage Reviews')
         );
 		return $resultPage;
     }
@@ -75,7 +75,7 @@ class Edit extends \Magento\Backend\App\Action
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {
-                $this->messageManager->addError(__('This news no longer exists.'));
+                $this->messageManager->addError(__('This Review no longer exists.'));
                 /** \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
 
@@ -96,12 +96,12 @@ class Edit extends \Magento\Backend\App\Action
 		/** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->_initAction();
         $resultPage->addBreadcrumb(
-            $id ? __('Edit News') : __('New News'),
-            $id ? __('Edit News') : __('New News')
+            $id ? __('Edit Review') : __('New Review'),
+            $id ? __('Edit Review') : __('New Review')
         );
-        $resultPage->getConfig()->getTitle()->prepend(__('News'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Review'));
         $resultPage->getConfig()->getTitle()
-            ->prepend($model->getId() ? $model->getTitle() : __('New News'));
+            ->prepend($model->getId() ? $model->getTitle() : __('New Review'));
 			
         return $resultPage;
     }

@@ -53,7 +53,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 
         $form->setHtmlIdPrefix('news_main_');
 
-        $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('News Information')]);
+        $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Review Information')]);
 
         if ($model->getId()) {
             $fieldset->addField('news_id', 'hidden', ['name' => 'news_id']);
@@ -64,8 +64,8 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
             'text',
             [
                 'name' => 'title',
-                'label' => __('News Title'),
-                'title' => __('News Title'),
+                'label' => __('Review Title'),
+                'title' => __('Review Title'),
                 'required' => true,
                 'disabled' => $isElementDisabled
             ]
@@ -109,7 +109,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
      */
     public function getTabLabel()
     {
-        return __('News Information');
+        return __('Review Information');
     }
 
     /**
@@ -119,7 +119,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
      */
     public function getTabTitle()
     {
-        return __('News Information');
+        return __('Review Information');
     }
 
     /**

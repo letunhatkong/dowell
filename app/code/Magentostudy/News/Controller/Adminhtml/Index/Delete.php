@@ -31,7 +31,7 @@ class Delete extends \Magento\Backend\App\Action
                 $title = $model->getTitle();
                 $model->delete();
                 // display success message
-                $this->messageManager->addSuccess(__('The news has been deleted.'));
+                $this->messageManager->addSuccess(__('The review has been deleted.'));
                 // go to grid
                 return $resultRedirect->setPath('*/*/');
             } catch (\Exception $e) {
@@ -42,7 +42,7 @@ class Delete extends \Magento\Backend\App\Action
             }
         }
         // display error message
-        $this->messageManager->addError(__('We can\'t find a news to delete.'));
+        $this->messageManager->addError(__('We can\'t find a review to delete.'));
         // go to grid
         return $resultRedirect->setPath('*/*/');
     }

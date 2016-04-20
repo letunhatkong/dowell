@@ -17,11 +17,13 @@ class View extends \Magento\Framework\View\Element\Template
     /** @var \Magentostudy\News\Helper\Data */
     protected $_dataHelper;
     
+
     /**
+     * View constructor.
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \Magento\Framework\Registry $registry
      * @param \Magento\Framework\App\Http\Context $httpContext
-     * @param \Magento\Payment\Helper\Data $paymentHelper
+     * @param \Magentostudy\News\Helper\Data $dataHelper
      * @param array $data
      */
     public function __construct(
@@ -73,17 +75,17 @@ class View extends \Magento\Framework\View\Element\Template
     public function getBackTitle()
     {
         if ($this->httpContext->getValue(Context::CONTEXT_AUTH)) {
-            return __('Back to News');
+            return __('Back to Review');
         }
-        return __('View Another News');
+        return __('View Another Review');
     }
     
     /**
      * Return URL for resized News Item image
      *
-     * @param Magentostudy_News_Model_News $item
-     * @param integer $width
-     * @return string|false
+     * @param $item
+     * @param $width
+     * @return bool|string
      */
     public function getImageUrl($item, $width)
     {

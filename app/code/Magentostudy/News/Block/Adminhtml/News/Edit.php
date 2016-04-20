@@ -38,7 +38,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
         parent::_construct();
 
         if ($this->_isAllowedAction('Magentostudy_News::save')) {
-            $this->buttonList->update('save', 'label', __('Save News'));
+            $this->buttonList->update('save', 'label', __('Save Review'));
             $this->buttonList->add(
                 'saveandcontinue',
                 [
@@ -57,7 +57,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
         }
 
         if ($this->_isAllowedAction('Magentostudy_News::news_delete')) {
-            $this->buttonList->update('delete', 'label', __('Delete News'));
+            $this->buttonList->update('delete', 'label', __('Delete Review'));
         } else {
             $this->buttonList->remove('delete');
         }
@@ -71,9 +71,9 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     public function getHeaderText()
     {
         if ($this->_coreRegistry->registry('news')->getId()) {
-            return __("Edit News '%1'", $this->escapeHtml($this->_coreRegistry->registry('news')->getTitle()));
+            return __("Edit Review '%1'", $this->escapeHtml($this->_coreRegistry->registry('news')->getTitle()));
         } else {
-            return __('New News');
+            return __('New Review');
         }
     }
 
@@ -96,7 +96,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
      */
     protected function _getSaveAndContinueUrl()
     {
-        return $this->getUrl('news/*/save', ['_current' => true, 'back' => 'edit', 'active_tab' => '{{tab_id}}']);
+        return $this->getUrl('reviews/*/save', ['_current' => true, 'back' => 'edit', 'active_tab' => '{{tab_id}}']);
     }
 
     /**
