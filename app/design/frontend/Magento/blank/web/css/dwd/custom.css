@@ -225,6 +225,12 @@ body {
 .page-header .panel.wrapper {
 	background: #e1e1e1;
 }
+
+.header.panel > .header.links > li a {
+	text-transform: uppercase;
+	color: #000;
+	text-decoration: none;
+}
 /* # Header */
 
 
@@ -403,7 +409,7 @@ body {
 .products-grid .product-item-actions .actions-secondary {
 	display: none;
 }
-.action.primary {
+.products-grid .action.primary {
 	width: 125px;
 	float: right;
 	background: #474747 !important;
@@ -411,7 +417,41 @@ body {
 	border-radius: 0;
 	text-transform: uppercase;
 	padding: 12px 0;
+	margin-top: 5px;
 }
+.product-item .price-box {
+	margin: 5px 0;
+}
+.products-grid .price-box .price {
+	font-size: 26px;
+	color: #474747;
+	font-weight: normal;
+}
+.products-grid .product-item-link {
+	color: #8d8d8d !important;
+	text-decoration: none !important;
+}
+.qv-tv-wrap {
+	float: left;
+}
+.qv-tv-wrap a {
+	text-decoration: none !important;
+	color: #8d8d8d !important;
+}
+.list-quickView {
+	float: left;
+	margin-bottom: 5px;
+}
+.list-trainVideo {
+	float: left;
+	clear: left;
+}
+@media only screen and (max-width: 1180px) {
+	.products-grid .action.primary {
+		width: 100%;
+	}
+}
+
 	/* # button */
 
 	/* left Menu SideBar */
