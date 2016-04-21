@@ -1,0 +1,51 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+<nav class="navigation" role="navigation">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <!-- HOME -->
+        <li class="level0 nav-1 level-top parent ui-menu-item">
+            <a href="/" class="level-top ui-corner-all" aria-haspopup="true" tabindex="-1" role="menuitem">
+                <span>Home</span>
+            </a>
+        </li>
+
+        <?php /* @escapeNotVerified */ echo $_menu; ?>
+
+        <li class="level0 nav-1 level-top parent ui-menu-item">
+            <a href="/reviews" class="level-top ui-corner-all" aria-haspopup="true" tabindex="-1" role="menuitem">
+                <span>Doctor's Review</span>
+            </a>
+        </li>
+        <li class="level0 nav-1 level-top parent ui-menu-item">
+            <a href="#" class="level-top ui-corner-all" aria-haspopup="true" tabindex="-1" role="menuitem">
+                <span>Gallery</span>
+            </a>
+        </li>
+        <li class="level0 nav-1 level-top parent ui-menu-item">
+            <a href="/about" class="level-top ui-corner-all" aria-haspopup="true" tabindex="-1" role="menuitem">
+                <span>About Us</span>
+            </a>
+        </li><li class="level0 nav-1 level-top parent ui-menu-item">
+            <a href="/contact" class="level-top ui-corner-all" aria-haspopup="true" tabindex="-1" role="menuitem">
+                <span>Contact Us</span>
+            </a>
+        </li>
+    </ul>
+</nav>

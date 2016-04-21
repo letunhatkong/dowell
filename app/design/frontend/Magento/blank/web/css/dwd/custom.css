@@ -222,6 +222,10 @@ body {
 
 
 /* Header */
+.page-header .header.panel {
+	width: 100%;
+	max-width: 100%;
+}
 .page-header .panel.wrapper {
 	background: #e1e1e1;
 }
@@ -230,6 +234,30 @@ body {
 	text-transform: uppercase;
 	color: #000;
 	text-decoration: none;
+}
+	/* mini cart */
+.minicart-wrapper .showcart {
+	font-size: 14px;
+	color: #000;
+	text-decoration: none;
+}
+	/* # mini cart*/
+
+.header.content {
+	padding: 30px 20px;
+	width: 100%;
+	max-width: 100%;
+}
+
+	/* navigation */
+.navigation {
+	float: left;
+	margin: 0 0 0 20px;
+}
+
+	/* Search */
+.block-search .nested {
+	display: none;
 }
 /* # Header */
 

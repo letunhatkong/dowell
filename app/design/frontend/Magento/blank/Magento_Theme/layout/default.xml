@@ -12,7 +12,8 @@
         </referenceContainer>
         <move element="header.panel" destination="header.panel.wrapper"/>
         <move element="top.links" destination="header.panel" after="-"/>
-        <move element="catalog.topnav" destination="store.menu" before="-"/>
+        <!--<move element="catalog.topnav" destination="store.menu" before="-"/>-->
+        <move element="catalog.topnav" destination="header-wrapper" after="logo"/>
         <referenceContainer name="page.top">
             <block class="Magento\Framework\View\Element\Template" name="navigation.sections" before="-" template="Magento_Theme::html/sections.phtml">
                 <arguments>
@@ -57,7 +58,14 @@
         <!-- Remove footer -->
         <referenceContainer name="footer" remove="true" />
         <!-- Move Copyright -->
-        <move element="copyright" destination="before.body.end"/>
+        <move element="copyright" destination="before.body.end" />
+        <!-- Remove WishList, Register in top link -->
+        <referenceBlock name="wish-list-link" remove="true" />
+        <referenceBlock name="register-link" remove="true" />
+        <!-- Move minicart -->
+        <move element="minicart" destination="top.links" after="-"/>
+
+
 
         <!-- JS -->
         <block class="Magento\Framework\View\Element\Text" name="carousel">
