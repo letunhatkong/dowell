@@ -380,7 +380,7 @@ body {
 }
 
 #topMenu .level0 > .submenu {
-    display: block;
+    display: none;
     position: absolute;
     top: 110px;
     left: 0;
