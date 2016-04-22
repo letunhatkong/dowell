@@ -7,7 +7,7 @@ $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_
 $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
 ?>
 
-<!-- 3 articles  -->
+<!-- 3 Categories  -->
 <div class="row">
     <div class="col-xs-12 col-sm-4">
         <a href="javascript:void(0);">
@@ -28,40 +28,24 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
 <div class="clearfix pad30"></div>
 
 <?php // Get Latest Products
-
 $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $productCollection = $_objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
-$collection = $productCollection->create()
+$latest = $productCollection->create()
     ->addAttributeToSelect('*')
     ->addFieldToFilter("status", "1")
     ->setOrder('created_at', 'DESC')
     ->load();
-
-$latestAr = [];
-foreach ($collection as $product){
-    $item = array(
-        'getId' => $product->getId(),
-        'getName' => $product->getName(),
-        'getPrice' => floatval($product->getPrice()),
-        'priceString' => "$".number_format($product->getPrice(), 2),
-        'getStatus' => $product->getStatus(),
-        'thumbnail' => $mediaUrl .'catalog/product'. $product->getThumbnail(),
-        'getProductUrl' => $product->getProductUrl(),
-    );
-    array_push($latestAr, $item);
-}
-$newProSize = count($latestAr);
 ?>
 
+<?php if (isset($latest) && $latest->getSize() > 0) { ?>
 <!-- New Products -->
 <p class="head-homePage">NEW PRODUCTS</p>
-<?php if ($newProSize > 0) { ?>
 <div id="newProductHS" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Wrapper for slides -->
     <div class="carousel-inner padHS" role="listbox">
         <!-- Items -->
         <?php $i = 1; ?>
-        <?php foreach($latestAr as $newPro) { ?>
+        <?php foreach($latest as $newPro) { ?>
             <?php if ($i % 4 == 1) { ?>
             <div class="item <?= ($i == 1)?' active':'' ?>">
                 <div class="row">
@@ -69,15 +53,15 @@ $newProSize = count($latestAr);
 
                     <div class="col-xs-6 col-sm-3">
                         <div class="HS-item-wrap">
-                            <a href="<?= $newPro["getProductUrl"] ?>">
+                            <a href="<?= $newPro->getProductUrl() ?>">
                                 <div class="img-resp img100">
-                                    <img src="<?= $newPro['thumbnail'] ?>" />
+                                    <img src="<?= $mediaUrl .'catalog/product'. $newPro->getThumbnail() ?>" />
                                 </div>
-                                <p><?= $newPro['getName'] ?></p>
+                                <p><?= $newPro->getName() ?></p>
                             </a>
                         </div>
                     </div>
-            <?php if ($i % 4 == 0 || $i == $newProSize) { ?>
+            <?php if ($i % 4 == 0 || $i == $latest->getSize()) { ?>
                 </div>
             </div>
             <?php } ?>
@@ -107,103 +91,54 @@ $newProSize = count($latestAr);
         });
     });
 </script>
+<div class="clearfix pad100"></div>
 <?php } ?>
 
-<div class="clearfix pad100"></div>
+
 <!-- Promotional Products -->
+<?php // Get Promotional Products
+$categoryFactory = $_objectManager->create('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
+$promotionCategory = $categoryFactory->create()
+    ->addAttributeToFilter('url_key','promotional')
+    ->addAttributeToSelect('*')
+    ->getFirstItem();
+
+$promotionCollection = $_objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
+$promo = $promotionCollection->create()
+    ->addAttributeToSelect('*')
+    ->addCategoryFilter($promotionCategory)
+    ->addAttributeToFilter('status', '1')
+    ->setOrder('created_at', 'DESC')->load();
+?>
+
+<?php if ($promo->getSize() > 0) { ?>
 <p class="head-homePage">PROMOTIONAL PRODUCTS</p>
 <div id="proProductHS" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Wrapper for slides -->
     <div class="carousel-inner padHS" role="listbox">
-        <!-- Items -->
-        <div class="item active">
-            <div class="row">
-                <div class="col-xs-6 col-sm-3">
-                    <div class="HS-item-wrap">
-                        <a href="#">
-                            <div class="img-resp img100">
-                                <img src="<?= $mediaUrl ?>images/test/1.jpg" />
-                            </div>
-                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
-                        </a>
+    <?php $i = 1; ?>
+    <?php foreach($promo as $item) { ?>
+        <?php if ($i % 4 == 1) { ?>
+            <div class="item <?= ($i == 1)?' active':'' ?>">
+                <div class="row">
+        <?php } ?>
+
+        <div class="col-xs-6 col-sm-3">
+            <div class="HS-item-wrap">
+                <a href="<?= $item->getProductUrl() ?>">
+                    <div class="img-resp img100">
+                        <img src="<?= $mediaUrl .'catalog/product'. $item->getThumbnail() ?>" />
                     </div>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                    <div class="HS-item-wrap">
-                        <a href="#">
-                            <div class="img-resp img100">
-                                <img src="<?= $mediaUrl ?>images/test/2.jpg" />
-                            </div>
-                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                    <div class="HS-item-wrap">
-                        <a href="#">
-                            <div class="img-resp img100">
-                                <img src="<?= $mediaUrl ?>images/test/3.jpg" />
-                            </div>
-                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                    <div class="HS-item-wrap">
-                        <a href="#">
-                            <div class="img-resp img100">
-                                <img src="<?= $mediaUrl ?>images/test/4.jpg" />
-                            </div>
-                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
-                        </a>
-                    </div>
-                </div>
+                    <p><?= $item->getName() ?></p>
+                </a>
             </div>
         </div>
-        <div class="item">
-            <div class="row">
-                <div class="col-xs-6 col-sm-3">
-                    <div class="HS-item-wrap">
-                        <a href="#">
-                            <div class="img-resp img100">
-                                <img class="fullHeight" src="<?= $mediaUrl ?>images/test/3.jpg" />
-                            </div>
-                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                    <div class="HS-item-wrap">
-                        <a href="#">
-                            <div class="img-resp img100">
-                                <img class="fullHeight" src="<?= $mediaUrl ?>images/test/1.jpg" />
-                            </div>
-                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                    <div class="HS-item-wrap">
-                        <a href="#">
-                            <div class="img-resp img100">
-                                <img class="fullHeight" src="<?= $mediaUrl ?>images/test/4.jpg" />
-                            </div>
-                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                    <div class="HS-item-wrap">
-                        <a href="#">
-                            <div class="img-resp img100">
-                                <img class="fullHeight" src="<?= $mediaUrl ?>images/test/2.jpg" />
-                            </div>
-                            <p>Product Name: This sample text is to Show Placement of Text on this...</p>
-                        </a>
-                    </div>
+        <?php if ($i % 4 == 0 || $i == $promo->getSize()) { ?>
                 </div>
             </div>
-        </div>
+        <?php } ?>
+        <?php $i++; ?>
+    <?php } ?>
     </div>
     <!-- Controls -->
     <a href="#proProductHS" role="button" data-slide="prev">
@@ -229,3 +164,4 @@ $newProSize = count($latestAr);
         });
     });
 </script>
+<?php } ?>
