@@ -316,6 +316,7 @@ body {
     margin-right: 75px;
     border: none;
     color: #000;
+    background: #c2c2c2;
 }
 
 .block-search .action.search:before {
