@@ -53,36 +53,14 @@
 <script type="text/javascript">
     require(['jquery', 'jquery/ui'], function ($) {
         $(document).ready(function ($) {
-//            $('#topMenu ul > .level0.parent').click(function(e){
-//                var $me = $(this),
-//                    width = $me.outerWidth(),
-//                    height = $me.outerHeight(),
-//                    top = $me.position().top,
-//                    left = $me.position().left;
-//                console.log($me);
-//                console.log("width : "+width);
-//                console.log("height : "+height);
-//                console.log("off x : "+ e.offsetX);
-//                console.log("off y : "+ e.offsetY);
-//
-//                var minX = width - 25, maxX = width - 10,
-//                    minY = 0, maxY = 25,
-//                    x = e.offsetX, y = e.offsetY;
-//
-//
-//                if (minX < x && x < maxX && minY < y && y < maxY) {
-//
-//                    console.log('ding');
-//                }
-//            })
             var isMobile = -1, first = true;
             function detectResize(){
                 var width = $(this).width();
-                if (width <= 1250 && (first || !isMobile)) {
+                if (width <= 1235 && (first || !isMobile)) {
                     console.log("khoi tao ");
                     initDropMenu();
                     isMobile = true;
-                } else if (width > 1250 && (first || isMobile)) {
+                } else if (width > 1235 && (first || isMobile)) {
                     console.log("xoa");
                     resetDropMenu();
                     isMobile = false;
