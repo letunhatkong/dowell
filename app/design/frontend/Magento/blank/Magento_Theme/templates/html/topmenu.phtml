@@ -54,14 +54,14 @@
     require(['jquery', 'jquery/ui'], function ($) {
         $(document).ready(function ($) {
             var isMobile = -1, first = true;
+
+            // Resize
             function detectResize(){
                 var width = $(this).width();
                 if (width <= 1235 && (first || !isMobile)) {
-                    console.log("khoi tao ");
                     initDropMenu();
                     isMobile = true;
                 } else if (width > 1235 && (first || isMobile)) {
-                    console.log("xoa");
                     resetDropMenu();
                     isMobile = false;
                 }
@@ -72,6 +72,7 @@
                detectResize();
             });
 
+            // Init menu
             function initDropMenu() {
                 $('#topMenu ul > li.level0.parent').each(function(){
                     $(this).addClass("isMobile");
@@ -88,6 +89,8 @@
                     }
                 })
             }
+
+            // Reset menu
             function resetDropMenu() {
                 $('#topMenu ul > li.level0.parent').each(function(){
                     $(this).removeClass("isMobile");
