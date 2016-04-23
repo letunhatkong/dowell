@@ -13,7 +13,8 @@
         <move element="header.panel" destination="header.panel.wrapper"/>
         <move element="top.links" destination="header.panel" after="-"/>
         <!--<move element="catalog.topnav" destination="store.menu" before="-"/>-->
-        <move element="catalog.topnav" destination="header-wrapper" after="logo"/>
+        <!-- Move Menu -->
+        <move element="catalog.topnav" destination="header-wrapper" after="top.search"/>
         <referenceContainer name="page.top">
             <block class="Magento\Framework\View\Element\Template" name="navigation.sections" before="-" template="Magento_Theme::html/sections.phtml">
                 <arguments>

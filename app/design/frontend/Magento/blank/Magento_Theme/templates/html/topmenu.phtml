@@ -20,7 +20,7 @@
 <nav class="navigation1" role="navigation" id="topMenu">
     <ul>
         <!-- HOME -->
-        <li class="level0 nav-1 level-top parent ui-menu-item">
+        <li class="level0 nav-1 level-top ui-menu-item">
             <a href="/" class="level-top ui-corner-all" aria-haspopup="true" tabindex="-1" role="menuitem">
                 <span>Home</span>
             </a>
@@ -28,24 +28,104 @@
 
         <?php /* @escapeNotVerified */ echo $_menu; ?>
 
-        <li class="level0 nav-1 level-top parent ui-menu-item">
+        <li class="level0 nav-1 level-top ui-menu-item">
             <a href="/reviews" class="level-top ui-corner-all" aria-haspopup="true" tabindex="-1" role="menuitem">
                 <span>Doctor's Review</span>
             </a>
         </li>
-        <li class="level0 nav-1 level-top parent ui-menu-item">
+        <li class="level0 nav-1 level-top ui-menu-item">
             <a href="#" class="level-top ui-corner-all" aria-haspopup="true" tabindex="-1" role="menuitem">
                 <span>Gallery</span>
             </a>
         </li>
-        <li class="level0 nav-1 level-top parent ui-menu-item">
+        <li class="level0 nav-1 level-top ui-menu-item">
             <a href="/about" class="level-top ui-corner-all" aria-haspopup="true" tabindex="-1" role="menuitem">
                 <span>About Us</span>
             </a>
-        </li><li class="level0 nav-1 level-top parent ui-menu-item">
+        </li><li class="level0 nav-1 level-top ui-menu-item">
             <a href="/contact" class="level-top ui-corner-all" aria-haspopup="true" tabindex="-1" role="menuitem">
                 <span>Contact Us</span>
             </a>
         </li>
     </ul>
 </nav>
+
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function ($) {
+        $(document).ready(function ($) {
+//            $('#topMenu ul > .level0.parent').click(function(e){
+//                var $me = $(this),
+//                    width = $me.outerWidth(),
+//                    height = $me.outerHeight(),
+//                    top = $me.position().top,
+//                    left = $me.position().left;
+//                console.log($me);
+//                console.log("width : "+width);
+//                console.log("height : "+height);
+//                console.log("off x : "+ e.offsetX);
+//                console.log("off y : "+ e.offsetY);
+//
+//                var minX = width - 25, maxX = width - 10,
+//                    minY = 0, maxY = 25,
+//                    x = e.offsetX, y = e.offsetY;
+//
+//
+//                if (minX < x && x < maxX && minY < y && y < maxY) {
+//
+//                    console.log('ding');
+//                }
+//            })
+            var isMobile = -1, first = true;
+            function detectResize(){
+                var width = $(this).width();
+                if (width <= 1250 && (first || !isMobile)) {
+                    console.log("khoi tao ");
+                    initDropMenu();
+                    isMobile = true;
+                } else if (width > 1250 && (first || isMobile)) {
+                    console.log("xoa");
+                    resetDropMenu();
+                    isMobile = false;
+                }
+                first = false;
+            }
+            detectResize();
+            $(window).on('resize', function(){
+               detectResize();
+            });
+
+            function initDropMenu() {
+                $('#topMenu ul > li.level0.parent').each(function(){
+                    $(this).addClass("isMobile");
+                    $(this).prepend('<span class="clickTopMenu">+</span>');
+                });
+                $('#topMenu .clickTopMenu').click(function(){
+                    var subMenu = $(this).parent().find('ul.submenu').first();
+                    if (subMenu.is(':visible')) {
+                        $(this).text("+");
+                        subMenu.slideUp('normal');
+                    } else {
+                        $(this).text("-");
+                        subMenu.slideDown('normal');
+                    }
+                })
+            }
+            function resetDropMenu() {
+                $('#topMenu ul > li.level0.parent').each(function(){
+                    $(this).removeClass("isMobile");
+                    $(this).find('span.clickTopMenu').remove();
+                    $(this).find('ul.submenu').attr("style","");
+                    $('#topMenu').attr("style","");
+                    $('.block-search').attr("style","");
+                });
+            }
+
+            // Click nav-icon to show top menu
+            $('.action.nav-toggle').click(function(){
+                $('#topMenu').toggle();
+                $('.block-search').toggle();
+            })
+
+        });
+    });
+</script>

@@ -390,6 +390,9 @@ body {
     padding: 50px;
     z-index: 4;
 }
+#topMenu .level0:not(.isMobile):hover > .submenu {
+    display: block;
+}
 
 #topMenu .level0 > .submenu > li {
     float: left;
@@ -401,6 +404,169 @@ body {
 #topMenu .level0 > .submenu .submenu {
     margin: 0;
     padding-left: 20px;
+}
+
+@media only screen and (max-width: 1250px) {
+    .block-search .action.search,
+    .block-search .label,
+    .block-search, #topMenu {
+        display: none;
+    }
+    .nav-toggle { display: block }
+
+    .nav-sections {
+        margin-bottom: 0;
+    }
+
+    .page-header {
+        border: none;
+        margin: 0;
+    }
+    .page-header .panel.wrapper {
+        padding-bottom: 40px;
+    }
+
+    .header.content {
+        padding: 0;
+    }
+
+    .header.content .logo {
+        position: relative;
+        z-index: 5;
+        float: none;
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        clear: both;
+    }
+    .header.content .logo > img {
+        max-width: 100%;
+        display: block;
+        height: auto;
+        max-height: 100%;
+        margin: 10px auto;
+    }
+
+    .block-search {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .block-search .control {
+        border: none;
+        clear: both;
+        margin: 0;
+        padding: 0;
+    }
+    #search {
+        width: 100%;
+        outline: 0;
+        box-shadow: none;
+        padding: 0 20px;
+        height: 40px;
+        margin: 0;
+    }
+    #search::-webkit-input-placeholder {
+        color: #464646;
+        font-style: italic;
+    }
+    #search:-moz-placeholder { /* Firefox 18- */
+        color: #464646;
+        font-style: italic;
+    }
+    #search::-moz-placeholder {  /* Firefox 19+ */
+        color: #464646;
+        font-style: italic;
+    }
+    #search:-ms-input-placeholder {
+        color: #464646;
+        font-style: italic;
+    }
+
+    /* menu */
+    .nav-toggle:before, .nav-toggle:hover:before {
+        font-size: 40px;
+        color: #828282;
+    }
+    #topMenu {
+        margin: 0;
+        width: 100%;
+    }
+    #topMenu li {
+        width: 100%;
+        background: #e1e1e1;
+    }
+    #topMenu li.level0 {
+        border-bottom: 1px solid #c2c2c2;
+        float: left;
+    }
+    #topMenu .level0 > .submenu {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        background: #464646;
+        padding: 0;
+        z-index: 4;
+    }
+    #topMenu .level0 {
+        padding: 0;
+        line-height: 2;
+    }
+    #topMenu .level0 > .level-top {
+        padding: 4px 0 4px 20px;
+        line-height: 1.42857143;
+        float: left;
+    }
+    #topMenu .level0 .submenu > li {
+        float: left;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background: #464646;
+        border-bottom: 1px solid #636363;
+    }
+    #topMenu .level0 .submenu > li.first {
+        border-top: 1px solid #636363;
+    }
+    #topMenu .level0 .submenu > li.parent {
+        border-bottom: none;
+    }
+    #topMenu .level0 > .submenu .submenu {
+        margin: 0;
+        padding-left: 0;
+    }
+
+    #topMenu .level0.submenu > li > a {
+        padding: 0 10px 0 40px;
+    }
+    #topMenu .level1.submenu > li > a {
+        padding: 0 10px 0 60px;
+    }
+    #topMenu .level2.submenu > li > a {
+        padding: 0 10px 0 80px;
+    }
+
+    #topMenu li.level0.parent > span  {
+        display: inline-block;
+        padding: 0;
+        margin: 6px 10px 0 20px;
+        width: 15px;
+        height: 15px;
+        line-height: 1;
+        border: 1px solid;
+        color: #000;
+        text-align: center;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    #topMenu > ul > li.level0 > ul.submenu {
+        display: none;
+    }
 }
 
 /* # Header */
