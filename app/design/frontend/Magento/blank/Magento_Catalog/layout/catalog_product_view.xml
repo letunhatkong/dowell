@@ -11,5 +11,21 @@
         <move element="page.main.title" destination="product.info.main" before="-"/>
     </body>
 
+    <referenceContainer name="product.info.extrahint" remove="true" />
+    <referenceBlock name="product.info.review" remove="true" />
+    <referenceContainer name="product.info.type" remove="true" />
+    <referenceContainer name="product.info.details" remove="true"  />
+
+
+    <!-- Move breadcrumbs -->
+    <move element="breadcrumbs" before="-" destination="product.info.main" />
+    <move element="page.main.title" destination="product.info.main" before="product.info.price"/>
+    <!-- Move breadcrumbs -->
+
+
+    <!-- Move description -->
+    <block class="Magento\Catalog\Block\Product\View" name="product-description" template="Magento_Catalog::product/view/des.phtml" />
+    <move element="product-description" destination="product.info.main" before="product.info.details"/>
+    <!-- # Move description -->
 
 </page>

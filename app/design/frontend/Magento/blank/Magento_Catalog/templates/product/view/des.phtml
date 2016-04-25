@@ -1,0 +1,19 @@
+<div class="des-detailProduct"><?= $this->getProduct()->getDescription(); ?></div>
+
+<?php
+    $video = $this->getProduct()->getVideoLink();
+    $_video = false;
+    if(isset($video) && !is_null($video)) {
+        $_video = $video;
+        if (strpos($video, 'youtube') > 0) {
+            preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $video, $matches);
+            $_video = 'https://www.youtube.com/embed/' . $matches[0];
+        }
+    }
+?>
+<?php if ($_video) { ?>
+<p id="tit-training-detail">TRAINING VIDEO</p>
+<div id="videoDetailPage">
+    <iframe width="100%" height="100%" src="<?= $_video ?>" frameborder="0" allowfullscreen></iframe>
+</div>
+<?php } ?>

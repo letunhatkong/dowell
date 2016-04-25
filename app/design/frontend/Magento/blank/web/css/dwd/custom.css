@@ -1,6 +1,6 @@
 
 body {
-    color: #464646;
+    color: #474747;
 }
 
 /* image responsive */
@@ -1265,3 +1265,62 @@ img[src=""] {
 }
 
 /* # Doctor Review*/
+
+/* Detail page */
+.des-detailProduct {
+    border-top: 1px solid #e1e1e1;
+    color: #818181;
+    padding: 20px 0 20px;
+}
+#tit-training-detail {
+    color: #8d8d8d;
+    font-weight: bold;
+    font-size: 16px;
+}
+#videoDetailPage {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+#videoDetailPage > iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#maincontent .product-info-main {
+    width: 50%;
+    padding-left: 10px;
+}
+#maincontent .product.media {
+    width: 50%;
+    padding-right: 10px;
+}
+
+.catalog-product-view .breadcrumbs {
+    margin-bottom: 20px;
+}
+.catalog-product-view .page-title {
+    font-size: 30px;
+}
+
+/* Slide media */
+.fotorama .fotorama__stage {
+    border: 1px solid #c2c2c2;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Slide media */
+
+/* Related product */
+.block.related {
+    width: 100%;
+    clear: both;
+    padding-top: 30px;
+}
+/* # Related Product */
+
+/* # Detail page */
+

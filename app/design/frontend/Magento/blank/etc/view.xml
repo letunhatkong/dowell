@@ -53,20 +53,20 @@
                 <height>70</height>
             </image>
             <image id="new_products_content_widget_grid" type="small_image">
-                <width>250</width>
-                <height>250</height>
+                <width>600</width>
+                <height>600</height>
             </image>
             <image id="new_products_content_widget_list" type="small_image">
-                <width>250</width>
-                <height>250</height>
+                <width>600</width>
+                <height>600</height>
             </image>
             <image id="new_products_images_only_widget" type="small_image">
                 <width>70</width>
                 <height>70</height>
             </image>
             <image id="product_base_image" type="image">
-                <width>250</width>
-                <height>250</height>
+                <width>600</width>
+                <height>600</height>
             </image>
             <image id="product_comparison_list" type="small_image">
                 <width>150</width>
@@ -82,12 +82,12 @@
                 <height>100</height>
             </image>
             <image id="product_page_main_image" type="image">
-                <width>700</width>
-                <height>700</height>
+                <width>600</width>
+                <height>600</height>
             </image>
             <image id="product_page_main_image_default" type="image">
-                <width>700</width>
-                <height>700</height>
+                <width>600</width>
+                <height>600</height>
             </image>
             <image id="product_page_more_views" type="thumbnail">
                 <width>100</width>
@@ -106,8 +106,8 @@
                 <height>70</height>
             </image>
             <image id="recently_compared_products_grid_content_widget" type="small_image">
-                <width>250</width>
-                <height>250</height>
+                <width>600</width>
+                <height>600</height>
             </image>
             <image id="recently_compared_products_images_names_widget" type="thumbnail">
                 <width>70</width>
@@ -118,12 +118,12 @@
                 <height>70</height>
             </image>
             <image id="recently_compared_products_list_content_widget" type="small_image">
-                <width>250</width>
-                <height>250</height>
+                <width>600</width>
+                <height>600</height>
             </image>
             <image id="recently_viewed_products_grid_content_widget" type="small_image">
-                <width>250</width>
-                <height>250</height>
+                <width>600</width>
+                <height>600</height>
             </image>
             <image id="recently_viewed_products_images_names_widget" type="small_image">
                 <width>70</width>
@@ -134,8 +134,8 @@
                 <height>70</height>
             </image>
             <image id="recently_viewed_products_list_content_widget" type="small_image">
-                <width>250</width>
-                <height>250</height>
+                <width>600</width>
+                <height>600</height>
             </image>
             <image id="related_products_list" type="small_image">
                 <width>150</width>
@@ -239,10 +239,10 @@
         <!-- end. Gallery and magnifier theme settings -->
 
         <var name="product_small_image_sidebar_size">100</var>  <!-- Override for small product image -->
-        <var name="product_base_image_size">275</var>           <!-- Override for base product image -->
-        <var name="product_base_image_icon_size">48</var>       <!-- Base product image icon size -->
+        <var name="product_base_image_size">600</var>           <!-- Override for base product image -->
+        <var name="product_base_image_icon_size">50</var>       <!-- Base product image icon size -->
 
-        <var name="product_list_image_size">166</var>           <!-- New Product image size used in product list -->
+        <var name="product_list_image_size">300</var>           <!-- New Product image size used in product list -->
         <var name="product_zoom_image_size">370</var>           <!-- New Product image size used for zooming -->
 
         <var name="product_image_white_borders">0</var>
