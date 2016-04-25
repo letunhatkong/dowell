@@ -290,6 +290,7 @@ body {
     padding: 30px 20px;
     width: 100%;
     max-width: 100%;
+    z-index: 1;
 }
 
 /* navigation */
@@ -302,6 +303,7 @@ body {
 .block-search {
     width: auto;
     margin-top: 10px;
+    z-index: 1;
 }
 
 .block-search .nested {
@@ -404,6 +406,10 @@ body {
 #topMenu .level0 > .submenu .submenu {
     margin: 0;
     padding-left: 20px;
+}
+
+.header.content .logo {
+    z-index: 1;
 }
 
 @media only screen and (max-width: 1250px) {
@@ -908,6 +914,59 @@ body {
 }
 
 /* # left Menu SideBar */
+
+/* Training video */
+#popUpTraining {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+#popUpTraining.open {
+    display: block;
+}
+#trainingVideoWrap {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    width: 100%;
+    max-width: 540px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform:  translate(-50%, -50%);
+    -moz-transform:  translate(-50%, -50%);
+    -ms-transform:  translate(-50%, -50%);
+    -o-transform:  translate(-50%, -50%);
+    transform:  translate(-50%, -50%);
+}
+#respTrainingVideo {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+#respTrainingVideo > iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+#closePopUpTraining {
+    text-align: right;
+    right: 0;
+    display: block;
+    color: #474747;
+    font-weight: bold;
+    font-size: 24px;
+    padding-bottom: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 @media only screen and (max-width: 980px) {
     .page-products .products-grid .product-item {
