@@ -1321,6 +1321,14 @@ img[src=""] {
     padding-top: 30px;
 }
 /* # Related Product */
-
+.catalog-product-view .column.main {
+    width: 100%;
+}
+@media only screen and (max-width: 767px) {
+    #maincontent .product-info-main, #maincontent .product.media {
+        width: 100%;
+        padding: 0;
+    }
+}
 /* # Detail page */
 
