@@ -269,6 +269,7 @@ body {
 
 .page-header .panel.wrapper {
     background: #e1e1e1;
+    padding: 0 !important;
 }
 
 .header.panel > .header.links > li a {
@@ -1311,16 +1312,26 @@ img[src=""] {
     margin: 0;
     padding: 20px;
 }
-
+.fotorama .fotorama__stage__shaft,
+.fotorama .fotorama__img {
+    width: 100% !important;
+}
+.fotorama__nav-wrap {
+    margin-top: 30px;
+}
+.fotorama .fotorama__nav--thumbs .fotorama__nav__frame {
+    margin-right: 20px;
+}
 /* Slide media */
 
 /* Related product */
-.block.related {
+#relatedSliderWrapper {
     width: 100%;
     clear: both;
     padding-top: 30px;
 }
 /* # Related Product */
+
 .catalog-product-view .column.main {
     width: 100%;
 }
