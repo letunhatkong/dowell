@@ -105,5 +105,9 @@
         <block class="Magento\Framework\View\Element\Template" name="category.menu" template="Magento_Theme::html/product-menu.phtml"/>
         <move element="category.menu" before="-" destination="div.sidebar.main"/>
 
+        <!-- Move pop up training -->
+        <block class="Magento\Framework\View\Element\Template" name="popup.training" template="Magento_Catalog::product/pop_up_training.phtml"/>
+        <move element="popup.training" after="-" destination="main.content"/>
+
     </body>
 </page>
