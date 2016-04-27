@@ -99,6 +99,8 @@
         <move element="breadcrumbs" before="-" destination="content" />
         <!-- Move title -->
         <move element="page.main.title" after="breadcrumbs" destination="content"/>
+        <!-- Move Left SideBar before content -->
+        <move element="div.sidebar.main" before="-" destination="columns"/>
 
         <!-- Remove sidebar additional -->
         <referenceContainer name="sidebar.additional" remove="true" />
