@@ -66,5 +66,6 @@ atlassian*
 /vendor
 /setup
 /*.*
+!/.htaccess
 !.gitignore
 
