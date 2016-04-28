@@ -296,985 +296,984 @@
 
 ######################################
 # Block all IP from Pakistan
-# Free IP2Location Firewall List by Country
-# Source: http://www.ip2location.com/free/visitor-blocker
-<RequireAll>
-	Require all granted
-	Require not ip 14.1.104.0/22
-	Require not ip 14.102.172.0/22
-	Require not ip 14.192.128.0/19
-	Require not ip 27.0.184.0/22
-	Require not ip 27.54.120.0/22
-	Require not ip 27.96.92.0/22
-	Require not ip 27.255.0.0/18
-	Require not ip 36.255.32.0/22
-	Require not ip 36.255.40.0/21
-	Require not ip 36.255.60.0/22
-	Require not ip 36.255.96.0/21
-	Require not ip 39.32.0.0/11
-	Require not ip 42.83.84.0/22
-	Require not ip 42.201.128.0/17
-	Require not ip 43.224.236.0/22
-	Require not ip 43.225.96.0/22
-	Require not ip 43.228.156.128/25
-	Require not ip 43.230.92.0/22
-	Require not ip 43.231.60.0/22
-	Require not ip 43.242.100.0/22
-	Require not ip 43.242.176.0/22
-	Require not ip 43.245.8.0/22
-	Require not ip 43.245.128.0/22
-	Require not ip 43.245.204.0/22
-	Require not ip 43.246.220.0/22
-	Require not ip 43.246.224.0/22
-	Require not ip 43.247.120.0/22
-	Require not ip 43.248.12.0/22
-	Require not ip 43.250.84.0/22
-	Require not ip 43.254.12.0/22
-	Require not ip 45.56.145.0/24
-	Require not ip 45.62.40.0/24
-	Require not ip 45.62.53.0/24
-	Require not ip 45.62.62.0/24
-	Require not ip 45.64.24.0/22
-	Require not ip 45.64.180.0/22
-	Require not ip 45.113.124.0/22
-	Require not ip 45.114.120.0/21
-	Require not ip 45.114.132.0/22
-	Require not ip 45.115.49.0/24
-	Require not ip 45.115.84.0/22
-	Require not ip 45.116.232.0/22
-	Require not ip 45.117.88.0/22
-	Require not ip 45.117.104.0/22
-	Require not ip 49.156.0.0/22
-	Require not ip 57.92.240.0/20
-	Require not ip 58.27.128.0/17
-	Require not ip 58.65.128.0/18
-	Require not ip 58.65.192.0/19
-	Require not ip 58.84.28.0/22
-	Require not ip 58.181.96.0/19
-	Require not ip 59.103.0.0/17
-	Require not ip 59.103.128.0/19
-	Require not ip 59.103.160.0/20
-	Require not ip 59.103.176.0/21
-	Require not ip 59.103.184.0/22
-	Require not ip 59.103.188.0/23
-	Require not ip 59.103.190.0/24
-	Require not ip 59.103.216.0/21
-	Require not ip 59.103.224.0/19
-	Require not ip 61.5.128.0/19
-	Require not ip 63.70.24.0/22
-	Require not ip 63.109.248.56/29
-	Require not ip 63.109.248.88/29
-	Require not ip 63.109.249.144/29
-	Require not ip 63.114.37.0/24
-	Require not ip 64.86.121.0/24
-	Require not ip 64.86.122.0/24
-	Require not ip 64.86.131.0/24
-	Require not ip 66.226.72.76/32
-	Require not ip 66.226.72.84/32
-	Require not ip 66.226.72.130/32
-	Require not ip 66.226.72.132/32
-	Require not ip 66.226.72.141/32
-	Require not ip 66.226.72.148/32
-	Require not ip 66.226.72.226/32
-	Require not ip 66.226.72.228/32
-	Require not ip 66.226.73.40/32
-	Require not ip 66.226.73.110/32
-	Require not ip 66.226.73.122/32
-	Require not ip 66.226.73.236/32
-	Require not ip 66.226.77.9/32
-	Require not ip 66.226.77.14/32
-	Require not ip 66.226.77.118/32
-	Require not ip 66.226.77.199/32
-	Require not ip 67.23.227.16/28
-	Require not ip 67.23.249.227/32
-	Require not ip 69.88.3.32/29
-	Require not ip 69.88.3.112/29
-	Require not ip 69.88.3.184/29
-	Require not ip 69.88.22.0/28
-	Require not ip 69.88.22.32/29
-	Require not ip 69.88.22.48/29
-	Require not ip 69.88.24.104/29
-	Require not ip 69.88.24.136/29
-	Require not ip 69.88.24.216/29
-	Require not ip 72.29.69.175/32
-	Require not ip 72.29.69.176/31
-	Require not ip 72.29.69.178/32
-	Require not ip 80.77.8.0/22
-	Require not ip 80.247.138.0/29
-	Require not ip 80.247.152.0/29
-	Require not ip 80.247.152.48/28
-	Require not ip 80.247.152.64/27
-	Require not ip 80.247.152.104/29
-	Require not ip 80.247.152.112/28
-	Require not ip 85.203.22.80/28
-	Require not ip 89.105.32.32/29
-	Require not ip 98.142.101.224/29
-	Require not ip 101.50.64.0/18
-	Require not ip 103.4.92.0/22
-	Require not ip 103.5.136.0/22
-	Require not ip 103.7.60.0/22
-	Require not ip 103.7.76.0/22
-	Require not ip 103.8.14.0/23
-	Require not ip 103.8.112.0/22
-	Require not ip 103.8.214.0/24
-	Require not ip 103.8.231.0/24
-	Require not ip 103.9.23.0/24
-	Require not ip 103.9.182.0/24
-	Require not ip 103.11.0.0/22
-	Require not ip 103.11.60.0/22
-	Require not ip 103.11.68.0/22
-	Require not ip 103.11.220.0/24
-	Require not ip 103.12.40.0/22
-	Require not ip 103.12.58.0/24
-	Require not ip 103.12.120.0/22
-	Require not ip 103.13.1.0/24
-	Require not ip 103.14.231.0/24
-	Require not ip 103.17.200.0/22
-	Require not ip 103.18.8.0/21
-	Require not ip 103.18.20.0/22
-	Require not ip 103.18.116.0/24
-	Require not ip 103.18.243.0/24
-	Require not ip 103.20.0.0/22
-	Require not ip 103.20.132.0/22
-	Require not ip 103.24.96.0/22
-	Require not ip 103.25.136.0/22
-	Require not ip 103.26.80.0/21
-	Require not ip 103.26.184.0/22
-	Require not ip 103.27.20.0/22
-	Require not ip 103.28.150.0/23
-	Require not ip 103.28.152.0/22
-	Require not ip 103.29.163.0/24
-	Require not ip 103.30.196.0/22
-	Require not ip 103.31.80.0/22
-	Require not ip 103.31.92.0/22
-	Require not ip 103.31.100.0/22
-	Require not ip 103.31.104.0/22
-	Require not ip 103.35.208.0/21
-	Require not ip 103.39.80.0/22
-	Require not ip 103.44.223.0/24
-	Require not ip 103.47.144.0/24
-	Require not ip 103.47.145.0/25
-	Require not ip 103.47.147.0/25
-	Require not ip 103.48.24.0/23
-	Require not ip 103.49.69.0/24
-	Require not ip 103.49.136.0/22
-	Require not ip 103.50.156.0/22
-	Require not ip 103.51.220.0/24
-	Require not ip 103.53.44.0/22
-	Require not ip 103.54.76.0/22
-	Require not ip 103.54.80.0/21
-	Require not ip 103.55.68.0/22
-	Require not ip 103.55.133.0/24
-	Require not ip 103.55.136.0/23
-	Require not ip 103.57.152.0/22
-	Require not ip 103.57.168.0/22
-	Require not ip 103.62.232.0/22
-	Require not ip 103.193.18.0/24
-	Require not ip 103.196.40.0/23
-	Require not ip 103.196.160.0/22
-	Require not ip 103.197.44.0/22
-	Require not ip 103.200.196.0/22
-	Require not ip 103.203.44.0/22
-	Require not ip 103.205.176.0/22
-	Require not ip 103.206.84.0/22
-	Require not ip 103.207.84.0/22
-	Require not ip 103.209.32.0/22
-	Require not ip 103.209.52.0/23
-	Require not ip 103.209.76.0/22
-	Require not ip 103.209.84.0/22
-	Require not ip 103.210.4.0/22
-	Require not ip 103.210.13.0/24
-	Require not ip 103.224.12.0/22
-	Require not ip 103.225.48.0/22
-	Require not ip 103.225.220.0/22
-	Require not ip 103.226.216.0/23
-	Require not ip 103.228.156.0/22
-	Require not ip 103.232.225.0/24
-	Require not ip 103.234.12.0/24
-	Require not ip 103.234.144.0/22
-	Require not ip 103.236.132.0/22
-	Require not ip 103.237.84.0/22
-	Require not ip 103.240.220.0/24
-	Require not ip 103.244.172.0/22
-	Require not ip 103.244.176.0/22
-	Require not ip 103.245.132.0/22
-	Require not ip 103.245.192.0/22
-	Require not ip 103.246.108.0/22
-	Require not ip 103.247.66.0/24
-	Require not ip 103.247.124.0/23
-	Require not ip 103.249.152.0/22
-	Require not ip 103.249.228.0/22
-	Require not ip 103.250.222.0/23
-	Require not ip 103.252.80.0/22
-	Require not ip 103.253.156.0/22
-	Require not ip 103.255.4.0/22
-	Require not ip 103.255.128.0/22
-	Require not ip 103.255.148.0/22
-	Require not ip 104.99.130.0/23
-	Require not ip 104.99.132.0/22
-	Require not ip 104.194.202.0/24
-	Require not ip 110.34.32.0/21
-	Require not ip 110.36.0.0/14
-	Require not ip 110.93.192.0/18
-	Require not ip 110.232.188.0/22
-	Require not ip 111.68.96.0/20
-	Require not ip 111.88.0.0/16
-	Require not ip 111.92.128.0/19
-	Require not ip 111.119.160.0/19
-	Require not ip 113.197.48.0/21
-	Require not ip 113.203.128.0/17
-	Require not ip 114.198.233.0/24
-	Require not ip 114.198.237.0/24
-	Require not ip 115.42.64.0/20
-	Require not ip 115.167.0.0/17
-	Require not ip 115.186.0.0/17
-	Require not ip 115.186.128.0/18
-	Require not ip 116.0.32.0/19
-	Require not ip 116.58.0.0/17
-	Require not ip 116.71.0.0/16
-	Require not ip 116.90.96.0/19
-	Require not ip 116.213.32.0/22
-	Require not ip 117.20.16.0/20
-	Require not ip 117.53.40.0/22
-	Require not ip 117.102.0.0/18
-	Require not ip 118.103.224.0/20
-	Require not ip 118.107.128.0/20
-	Require not ip 119.30.64.0/18
-	Require not ip 119.63.128.0/20
-	Require not ip 119.73.0.0/17
-	Require not ip 119.152.0.0/13
-	Require not ip 119.160.0.0/17
-	Require not ip 121.46.64.0/22
-	Require not ip 121.52.144.0/20
-	Require not ip 122.129.64.0/19
-	Require not ip 122.201.35.192/29
-	Require not ip 122.201.36.152/29
-	Require not ip 124.29.192.0/18
-	Require not ip 124.109.32.0/19
-	Require not ip 125.209.64.0/18
-	Require not ip 137.59.144.0/22
-	Require not ip 137.59.192.0/22
-	Require not ip 137.59.216.0/21
-	Require not ip 137.59.224.0/21
-	Require not ip 139.190.0.0/16
-	Require not ip 150.129.4.0/22
-	Require not ip 161.202.194.160/27
-	Require not ip 162.211.121.80/29
-	Require not ip 162.211.126.18/31
-	Require not ip 162.211.126.98/31
-	Require not ip 162.211.126.148/30
-	Require not ip 162.211.127.238/31
-	Require not ip 162.221.190.128/28
-	Require not ip 162.244.77.253/32
-	Require not ip 162.254.201.152/29
-	Require not ip 162.254.201.208/29
-	Require not ip 162.254.203.208/28
-	Require not ip 162.254.206.208/29
-	Require not ip 163.53.236.0/22
-	Require not ip 175.107.0.0/18
-	Require not ip 175.107.192.0/18
-	Require not ip 175.110.0.0/16
-	Require not ip 175.111.0.0/20
-	Require not ip 175.176.240.232/29
-	Require not ip 179.60.178.184/29
-	Require not ip 179.60.180.64/29
-	Require not ip 179.60.181.144/29
-	Require not ip 179.60.183.88/29
-	Require not ip 180.92.128.0/19
-	Require not ip 180.149.208.0/20
-	Require not ip 180.178.128.0/18
-	Require not ip 182.176.0.0/12
-	Require not ip 192.155.106.48/29
-	Require not ip 195.75.247.128/25
-	Require not ip 195.79.220.0/25
-	Require not ip 195.79.220.128/27
-	Require not ip 195.138.130.10/32
-	Require not ip 196.3.72.0/24
-	Require not ip 198.24.160.248/29
-	Require not ip 198.24.171.120/29
-	Require not ip 198.24.175.128/29
-	Require not ip 199.168.191.58/31
-	Require not ip 199.168.191.60/30
-	Require not ip 199.168.191.64/29
-	Require not ip 199.193.155.0/24
-	Require not ip 202.0.110.0/24
-	Require not ip 202.3.130.0/23
-	Require not ip 202.4.167.0/24
-	Require not ip 202.5.128.0/22
-	Require not ip 202.5.132.0/24
-	Require not ip 202.5.134.0/23
-	Require not ip 202.5.136.0/21
-	Require not ip 202.5.144.0/20
-	Require not ip 202.14.70.0/23
-	Require not ip 202.43.118.0/23
-	Require not ip 202.44.80.0/20
-	Require not ip 202.45.156.0/23
-	Require not ip 202.47.94.0/24
-	Require not ip 202.52.32.0/24
-	Require not ip 202.55.128.0/22
-	Require not ip 202.59.64.0/19
-	Require not ip 202.59.254.0/24
-	Require not ip 202.61.32.0/19
-	Require not ip 202.63.192.0/19
-	Require not ip 202.69.8.0/21
-	Require not ip 202.69.32.0/19
-	Require not ip 202.70.144.0/20
-	Require not ip 202.83.160.0/20
-	Require not ip 202.84.246.0/24
-	Require not ip 202.92.16.0/20
-	Require not ip 202.123.240.0/20
-	Require not ip 202.125.128.0/19
-	Require not ip 202.141.224.0/19
-	Require not ip 202.142.144.0/20
-	Require not ip 202.142.160.0/19
-	Require not ip 202.143.112.0/20
-	Require not ip 202.147.160.0/19
-	Require not ip 202.154.224.0/19
-	Require not ip 202.160.252.0/29
-	Require not ip 202.160.252.32/28
-	Require not ip 202.160.252.64/27
-	Require not ip 202.163.64.0/18
-	Require not ip 202.165.224.0/21
-	Require not ip 202.165.232.0/22
-	Require not ip 202.165.236.0/23
-	Require not ip 202.165.238.0/24
-	Require not ip 202.165.242.0/24
-	Require not ip 202.165.244.0/24
-	Require not ip 202.165.246.0/23
-	Require not ip 202.165.248.0/23
-	Require not ip 202.165.250.0/24
-	Require not ip 202.166.160.0/20
-	Require not ip 202.174.142.0/25
-	Require not ip 202.174.148.40/29
-	Require not ip 202.174.148.216/29
-	Require not ip 202.174.150.0/24
-	Require not ip 202.174.155.16/28
-	Require not ip 202.174.157.0/26
-	Require not ip 202.179.134.0/24
-	Require not ip 203.16.34.0/24
-	Require not ip 203.26.77.0/24
-	Require not ip 203.80.128.0/24
-	Require not ip 203.80.130.0/24
-	Require not ip 203.80.177.192/26
-	Require not ip 203.81.192.0/19
-	Require not ip 203.81.224.0/20
-	Require not ip 203.82.48.0/20
-	Require not ip 203.88.66.124/30
-	Require not ip 203.88.66.184/29
-	Require not ip 203.88.66.200/29
-	Require not ip 203.88.66.208/28
-	Require not ip 203.92.4.0/23
-	Require not ip 203.99.48.0/20
-	Require not ip 203.99.160.0/19
-	Require not ip 203.101.160.0/19
-	Require not ip 203.119.20.0/24
-	Require not ip 203.124.24.0/21
-	Require not ip 203.124.32.0/19
-	Require not ip 203.128.0.0/19
-	Require not ip 203.128.252.0/22
-	Require not ip 203.129.0.0/22
-	Require not ip 203.130.0.0/19
-	Require not ip 203.133.252.0/22
-	Require not ip 203.134.252.0/22
-	Require not ip 203.135.0.0/18
-	Require not ip 203.170.64.0/20
-	Require not ip 203.175.64.0/20
-	Require not ip 203.176.190.0/23
-	Require not ip 203.212.28.0/22
-	Require not ip 203.215.160.0/19
-	Require not ip 203.223.160.0/20
-	Require not ip 206.225.81.161/32
-	Require not ip 206.225.81.162/32
-	Require not ip 206.225.81.246/31
-	Require not ip 206.225.82.82/31
-	Require not ip 206.225.82.133/32
-	Require not ip 206.225.82.142/32
-	Require not ip 206.225.94.10/32
-	Require not ip 206.225.94.142/32
-	Require not ip 206.225.94.233/32
-	Require not ip 208.70.72.208/28
-	Require not ip 208.194.251.0/24
-	Require not ip 208.207.92.0/23
-	Require not ip 208.232.94.0/23
-	Require not ip 208.240.136.0/22
-	Require not ip 209.150.144.0/20
-	Require not ip 210.2.128.0/18
-	Require not ip 210.5.193.64/26
-	Require not ip 210.5.199.0/24
-	Require not ip 210.5.204.128/25
-	Require not ip 210.5.205.128/25
-	Require not ip 210.5.208.72/29
-	Require not ip 210.5.208.80/29
-	Require not ip 210.5.209.128/26
-	Require not ip 210.5.209.240/29
-	Require not ip 210.5.210.128/25
-	Require not ip 210.5.211.0/26
-	Require not ip 210.5.211.64/29
-	Require not ip 210.5.213.0/24
-	Require not ip 210.5.217.0/24
-	Require not ip 210.5.221.0/29
-	Require not ip 210.5.221.16/28
-	Require not ip 210.56.0.0/19
-	Require not ip 210.89.69.16/28
-	Require not ip 210.89.72.168/29
-	Require not ip 210.89.72.176/29
-	Require not ip 210.89.75.0/27
-	Require not ip 210.89.75.32/29
-	Require not ip 210.89.75.48/29
-	Require not ip 210.89.75.200/29
-	Require not ip 210.89.76.184/29
-	Require not ip 210.89.78.80/28
-	Require not ip 210.89.80.0/29
-	Require not ip 210.89.81.24/29
-	Require not ip 212.165.146.16/29
-	Require not ip 212.165.146.32/27
-	Require not ip 212.165.146.64/29
-	Require not ip 212.165.146.88/29
-	Require not ip 212.165.146.96/28
-	Require not ip 212.165.158.48/28
-	Require not ip 212.165.158.64/28
-	Require not ip 212.165.158.88/29
-	Require not ip 212.165.158.112/28
-	Require not ip 212.165.158.128/27
-	Require not ip 212.165.159.0/24
-	Require not ip 216.236.200.64/28
-	Require not ip 216.236.220.0/28
-	Require not ip 216.236.220.16/29
-	Require not ip 216.236.220.176/29
-	Require not ip 216.236.220.216/29
-	Require not ip 216.236.220.224/27
-	Require not ip 216.236.222.32/28
-	Require not ip 216.236.222.48/29
-	Require not ip 216.236.222.72/29
-	Require not ip 216.236.222.80/29
-	Require not ip 216.236.222.96/28
-	Require not ip 216.236.222.192/28
-	Require not ip 216.236.222.216/29
-	Require not ip 218.100.85.0/24
-	Require not ip 221.120.192.0/18
-	Require not ip 221.132.112.0/21
-	Require not ip 223.29.224.0/20
-	Require not ip ::FFFF:14.1.104.0/118
-    	Require not ip ::FFFF:14.102.172.0/118
-    	Require not ip ::FFFF:14.192.128.0/115
-    	Require not ip ::FFFF:27.0.184.0/118
-    	Require not ip ::FFFF:27.54.120.0/118
-    	Require not ip ::FFFF:27.96.92.0/118
-    	Require not ip ::FFFF:27.255.0.0/114
-    	Require not ip ::FFFF:36.255.32.0/118
-    	Require not ip ::FFFF:36.255.40.0/117
-    	Require not ip ::FFFF:36.255.60.0/118
-    	Require not ip ::FFFF:36.255.96.0/117
-    	Require not ip ::FFFF:39.32.0.0/107
-    	Require not ip ::FFFF:42.83.84.0/118
-    	Require not ip ::FFFF:42.201.128.0/113
-    	Require not ip ::FFFF:43.224.236.0/118
-    	Require not ip ::FFFF:43.225.96.0/118
-    	Require not ip ::FFFF:43.228.156.128/121
-    	Require not ip ::FFFF:43.230.92.0/118
-    	Require not ip ::FFFF:43.231.60.0/118
-    	Require not ip ::FFFF:43.242.100.0/118
-    	Require not ip ::FFFF:43.242.176.0/118
-    	Require not ip ::FFFF:43.245.8.0/118
-    	Require not ip ::FFFF:43.245.128.0/118
-    	Require not ip ::FFFF:43.245.204.0/118
-    	Require not ip ::FFFF:43.246.220.0/118
-    	Require not ip ::FFFF:43.246.224.0/118
-    	Require not ip ::FFFF:43.247.120.0/118
-    	Require not ip ::FFFF:43.248.12.0/118
-    	Require not ip ::FFFF:43.250.84.0/118
-    	Require not ip ::FFFF:43.254.12.0/118
-    	Require not ip ::FFFF:45.56.145.0/120
-    	Require not ip ::FFFF:45.62.40.0/120
-    	Require not ip ::FFFF:45.62.53.0/120
-    	Require not ip ::FFFF:45.62.62.0/120
-    	Require not ip ::FFFF:45.64.24.0/118
-    	Require not ip ::FFFF:45.64.180.0/118
-    	Require not ip ::FFFF:45.113.124.0/118
-    	Require not ip ::FFFF:45.114.120.0/117
-    	Require not ip ::FFFF:45.114.132.0/118
-    	Require not ip ::FFFF:45.115.49.0/120
-    	Require not ip ::FFFF:45.115.84.0/118
-    	Require not ip ::FFFF:45.116.232.0/118
-    	Require not ip ::FFFF:45.117.88.0/118
-    	Require not ip ::FFFF:45.117.104.0/118
-    	Require not ip ::FFFF:49.156.0.0/118
-    	Require not ip ::FFFF:57.92.240.0/116
-    	Require not ip ::FFFF:58.27.128.0/113
-    	Require not ip ::FFFF:58.65.128.0/114
-    	Require not ip ::FFFF:58.65.192.0/115
-    	Require not ip ::FFFF:58.84.28.0/118
-    	Require not ip ::FFFF:58.181.96.0/115
-    	Require not ip ::FFFF:59.103.0.0/113
-    	Require not ip ::FFFF:59.103.128.0/115
-    	Require not ip ::FFFF:59.103.160.0/116
-    	Require not ip ::FFFF:59.103.176.0/117
-    	Require not ip ::FFFF:59.103.184.0/118
-    	Require not ip ::FFFF:59.103.188.0/119
-    	Require not ip ::FFFF:59.103.190.0/120
-    	Require not ip ::FFFF:59.103.216.0/117
-    	Require not ip ::FFFF:59.103.224.0/115
-    	Require not ip ::FFFF:61.5.128.0/115
-    	Require not ip ::FFFF:63.70.24.0/118
-    	Require not ip ::FFFF:63.109.248.56/125
-    	Require not ip ::FFFF:63.109.248.88/125
-    	Require not ip ::FFFF:63.109.249.144/125
-    	Require not ip ::FFFF:63.114.37.0/120
-    	Require not ip ::FFFF:64.86.121.0/120
-    	Require not ip ::FFFF:64.86.122.0/120
-    	Require not ip ::FFFF:64.86.131.0/120
-    	Require not ip ::FFFF:66.226.72.76/128
-    	Require not ip ::FFFF:66.226.72.84/128
-    	Require not ip ::FFFF:66.226.72.130/128
-    	Require not ip ::FFFF:66.226.72.132/128
-    	Require not ip ::FFFF:66.226.72.141/128
-    	Require not ip ::FFFF:66.226.72.148/128
-    	Require not ip ::FFFF:66.226.72.226/128
-    	Require not ip ::FFFF:66.226.72.228/128
-    	Require not ip ::FFFF:66.226.73.40/128
-    	Require not ip ::FFFF:66.226.73.110/128
-    	Require not ip ::FFFF:66.226.73.122/128
-    	Require not ip ::FFFF:66.226.73.236/128
-    	Require not ip ::FFFF:66.226.77.9/128
-    	Require not ip ::FFFF:66.226.77.14/128
-    	Require not ip ::FFFF:66.226.77.118/128
-    	Require not ip ::FFFF:66.226.77.199/128
-    	Require not ip ::FFFF:67.23.227.16/124
-    	Require not ip ::FFFF:67.23.249.227/128
-    	Require not ip ::FFFF:69.88.3.32/125
-    	Require not ip ::FFFF:69.88.3.112/125
-    	Require not ip ::FFFF:69.88.3.184/125
-    	Require not ip ::FFFF:69.88.22.0/124
-    	Require not ip ::FFFF:69.88.22.32/125
-    	Require not ip ::FFFF:69.88.22.48/125
-    	Require not ip ::FFFF:69.88.24.104/125
-    	Require not ip ::FFFF:69.88.24.136/125
-    	Require not ip ::FFFF:69.88.24.216/125
-    	Require not ip ::FFFF:72.29.69.175/128
-    	Require not ip ::FFFF:72.29.69.176/127
-    	Require not ip ::FFFF:72.29.69.178/128
-    	Require not ip ::FFFF:80.77.8.0/118
-    	Require not ip ::FFFF:80.247.138.0/125
-    	Require not ip ::FFFF:80.247.152.0/125
-    	Require not ip ::FFFF:80.247.152.48/124
-    	Require not ip ::FFFF:80.247.152.64/123
-    	Require not ip ::FFFF:80.247.152.104/125
-    	Require not ip ::FFFF:80.247.152.112/124
-    	Require not ip ::FFFF:85.203.22.80/124
-    	Require not ip ::FFFF:89.105.32.32/125
-    	Require not ip ::FFFF:98.142.101.224/125
-    	Require not ip ::FFFF:101.50.64.0/114
-    	Require not ip ::FFFF:103.4.92.0/118
-    	Require not ip ::FFFF:103.5.136.0/118
-    	Require not ip ::FFFF:103.7.60.0/118
-    	Require not ip ::FFFF:103.7.76.0/118
-    	Require not ip ::FFFF:103.8.14.0/119
-    	Require not ip ::FFFF:103.8.112.0/118
-    	Require not ip ::FFFF:103.8.214.0/120
-    	Require not ip ::FFFF:103.8.231.0/120
-    	Require not ip ::FFFF:103.9.23.0/120
-    	Require not ip ::FFFF:103.9.182.0/120
-    	Require not ip ::FFFF:103.11.0.0/118
-    	Require not ip ::FFFF:103.11.60.0/118
-    	Require not ip ::FFFF:103.11.68.0/118
-    	Require not ip ::FFFF:103.11.220.0/120
-    	Require not ip ::FFFF:103.12.40.0/118
-    	Require not ip ::FFFF:103.12.58.0/120
-    	Require not ip ::FFFF:103.12.120.0/118
-    	Require not ip ::FFFF:103.13.1.0/120
-    	Require not ip ::FFFF:103.14.231.0/120
-    	Require not ip ::FFFF:103.17.200.0/118
-    	Require not ip ::FFFF:103.18.8.0/117
-    	Require not ip ::FFFF:103.18.20.0/118
-    	Require not ip ::FFFF:103.18.116.0/120
-    	Require not ip ::FFFF:103.18.243.0/120
-    	Require not ip ::FFFF:103.20.0.0/118
-    	Require not ip ::FFFF:103.20.132.0/118
-    	Require not ip ::FFFF:103.24.96.0/118
-    	Require not ip ::FFFF:103.25.136.0/118
-    	Require not ip ::FFFF:103.26.80.0/117
-    	Require not ip ::FFFF:103.26.184.0/118
-    	Require not ip ::FFFF:103.27.20.0/118
-    	Require not ip ::FFFF:103.28.150.0/119
-    	Require not ip ::FFFF:103.28.152.0/118
-    	Require not ip ::FFFF:103.29.163.0/120
-    	Require not ip ::FFFF:103.30.196.0/118
-    	Require not ip ::FFFF:103.31.80.0/118
-    	Require not ip ::FFFF:103.31.92.0/118
-    	Require not ip ::FFFF:103.31.100.0/118
-    	Require not ip ::FFFF:103.31.104.0/118
-    	Require not ip ::FFFF:103.35.208.0/117
-    	Require not ip ::FFFF:103.39.80.0/118
-    	Require not ip ::FFFF:103.44.223.0/120
-    	Require not ip ::FFFF:103.47.144.0/120
-    	Require not ip ::FFFF:103.47.145.0/121
-    	Require not ip ::FFFF:103.47.147.0/121
-    	Require not ip ::FFFF:103.48.24.0/119
-    	Require not ip ::FFFF:103.49.69.0/120
-    	Require not ip ::FFFF:103.49.136.0/118
-    	Require not ip ::FFFF:103.50.156.0/118
-    	Require not ip ::FFFF:103.51.220.0/120
-    	Require not ip ::FFFF:103.53.44.0/118
-    	Require not ip ::FFFF:103.54.76.0/118
-    	Require not ip ::FFFF:103.54.80.0/117
-    	Require not ip ::FFFF:103.55.68.0/118
-    	Require not ip ::FFFF:103.55.133.0/120
-    	Require not ip ::FFFF:103.55.136.0/119
-    	Require not ip ::FFFF:103.57.152.0/118
-    	Require not ip ::FFFF:103.57.168.0/118
-    	Require not ip ::FFFF:103.62.232.0/118
-    	Require not ip ::FFFF:103.193.18.0/120
-    	Require not ip ::FFFF:103.196.40.0/119
-    	Require not ip ::FFFF:103.196.160.0/118
-    	Require not ip ::FFFF:103.197.44.0/118
-    	Require not ip ::FFFF:103.200.196.0/118
-    	Require not ip ::FFFF:103.203.44.0/118
-    	Require not ip ::FFFF:103.205.176.0/118
-    	Require not ip ::FFFF:103.206.84.0/118
-    	Require not ip ::FFFF:103.207.84.0/118
-    	Require not ip ::FFFF:103.209.32.0/118
-    	Require not ip ::FFFF:103.209.52.0/119
-    	Require not ip ::FFFF:103.209.76.0/118
-    	Require not ip ::FFFF:103.209.84.0/118
-    	Require not ip ::FFFF:103.210.4.0/118
-    	Require not ip ::FFFF:103.210.13.0/120
-    	Require not ip ::FFFF:103.224.12.0/118
-    	Require not ip ::FFFF:103.225.48.0/118
-    	Require not ip ::FFFF:103.225.220.0/118
-    	Require not ip ::FFFF:103.226.216.0/119
-    	Require not ip ::FFFF:103.228.156.0/118
-    	Require not ip ::FFFF:103.232.225.0/120
-    	Require not ip ::FFFF:103.234.12.0/120
-    	Require not ip ::FFFF:103.234.144.0/118
-    	Require not ip ::FFFF:103.236.132.0/118
-    	Require not ip ::FFFF:103.237.84.0/118
-    	Require not ip ::FFFF:103.240.220.0/120
-    	Require not ip ::FFFF:103.244.172.0/118
-    	Require not ip ::FFFF:103.244.176.0/118
-    	Require not ip ::FFFF:103.245.132.0/118
-    	Require not ip ::FFFF:103.245.192.0/118
-    	Require not ip ::FFFF:103.246.108.0/118
-    	Require not ip ::FFFF:103.247.66.0/120
-    	Require not ip ::FFFF:103.247.124.0/119
-    	Require not ip ::FFFF:103.249.152.0/118
-    	Require not ip ::FFFF:103.249.228.0/118
-    	Require not ip ::FFFF:103.250.222.0/119
-    	Require not ip ::FFFF:103.252.80.0/118
-    	Require not ip ::FFFF:103.253.156.0/118
-    	Require not ip ::FFFF:103.255.4.0/118
-    	Require not ip ::FFFF:103.255.128.0/118
-    	Require not ip ::FFFF:103.255.148.0/118
-    	Require not ip ::FFFF:104.99.130.0/119
-    	Require not ip ::FFFF:104.99.132.0/118
-    	Require not ip ::FFFF:104.194.202.0/120
-    	Require not ip ::FFFF:110.34.32.0/117
-    	Require not ip ::FFFF:110.36.0.0/110
-    	Require not ip ::FFFF:110.93.192.0/114
-    	Require not ip ::FFFF:110.232.188.0/118
-    	Require not ip ::FFFF:111.68.96.0/116
-    	Require not ip ::FFFF:111.88.0.0/112
-    	Require not ip ::FFFF:111.92.128.0/115
-    	Require not ip ::FFFF:111.119.160.0/115
-    	Require not ip ::FFFF:113.197.48.0/117
-    	Require not ip ::FFFF:113.203.128.0/113
-    	Require not ip ::FFFF:114.198.233.0/120
-    	Require not ip ::FFFF:114.198.237.0/120
-    	Require not ip ::FFFF:115.42.64.0/116
-    	Require not ip ::FFFF:115.167.0.0/113
-    	Require not ip ::FFFF:115.186.0.0/113
-    	Require not ip ::FFFF:115.186.128.0/114
-    	Require not ip ::FFFF:116.0.32.0/115
-    	Require not ip ::FFFF:116.58.0.0/113
-    	Require not ip ::FFFF:116.71.0.0/112
-    	Require not ip ::FFFF:116.90.96.0/115
-    	Require not ip ::FFFF:116.213.32.0/118
-    	Require not ip ::FFFF:117.20.16.0/116
-    	Require not ip ::FFFF:117.53.40.0/118
-    	Require not ip ::FFFF:117.102.0.0/114
-    	Require not ip ::FFFF:118.103.224.0/116
-    	Require not ip ::FFFF:118.107.128.0/116
-    	Require not ip ::FFFF:119.30.64.0/114
-    	Require not ip ::FFFF:119.63.128.0/116
-    	Require not ip ::FFFF:119.73.0.0/113
-    	Require not ip ::FFFF:119.152.0.0/109
-    	Require not ip ::FFFF:119.160.0.0/113
-    	Require not ip ::FFFF:121.46.64.0/118
-    	Require not ip ::FFFF:121.52.144.0/116
-    	Require not ip ::FFFF:122.129.64.0/115
-    	Require not ip ::FFFF:122.201.35.192/125
-    	Require not ip ::FFFF:122.201.36.152/125
-    	Require not ip ::FFFF:124.29.192.0/114
-    	Require not ip ::FFFF:124.109.32.0/115
-    	Require not ip ::FFFF:125.209.64.0/114
-    	Require not ip ::FFFF:137.59.144.0/118
-    	Require not ip ::FFFF:137.59.192.0/118
-    	Require not ip ::FFFF:137.59.216.0/117
-    	Require not ip ::FFFF:137.59.224.0/117
-    	Require not ip ::FFFF:139.190.0.0/112
-    	Require not ip ::FFFF:150.129.4.0/118
-    	Require not ip ::FFFF:161.202.194.160/123
-    	Require not ip ::FFFF:162.211.121.80/125
-    	Require not ip ::FFFF:162.211.126.18/127
-    	Require not ip ::FFFF:162.211.126.98/127
-    	Require not ip ::FFFF:162.211.126.148/126
-    	Require not ip ::FFFF:162.211.127.238/127
-    	Require not ip ::FFFF:162.221.190.128/124
-    	Require not ip ::FFFF:162.244.77.253/128
-    	Require not ip ::FFFF:162.254.201.152/125
-    	Require not ip ::FFFF:162.254.201.208/125
-    	Require not ip ::FFFF:162.254.203.208/124
-    	Require not ip ::FFFF:162.254.206.208/125
-    	Require not ip ::FFFF:163.53.236.0/118
-    	Require not ip ::FFFF:175.107.0.0/114
-    	Require not ip ::FFFF:175.107.192.0/114
-    	Require not ip ::FFFF:175.110.0.0/112
-    	Require not ip ::FFFF:175.111.0.0/116
-    	Require not ip ::FFFF:175.176.240.232/125
-    	Require not ip ::FFFF:179.60.178.184/125
-    	Require not ip ::FFFF:179.60.180.64/125
-    	Require not ip ::FFFF:179.60.181.144/125
-    	Require not ip ::FFFF:179.60.183.88/125
-    	Require not ip ::FFFF:180.92.128.0/115
-    	Require not ip ::FFFF:180.149.208.0/116
-    	Require not ip ::FFFF:180.178.128.0/114
-    	Require not ip ::FFFF:182.176.0.0/108
-    	Require not ip ::FFFF:192.155.106.48/125
-    	Require not ip ::FFFF:195.75.247.128/121
-    	Require not ip ::FFFF:195.79.220.0/121
-    	Require not ip ::FFFF:195.79.220.128/123
-    	Require not ip ::FFFF:195.138.130.10/128
-    	Require not ip ::FFFF:196.3.72.0/120
-    	Require not ip ::FFFF:198.24.160.248/125
-    	Require not ip ::FFFF:198.24.171.120/125
-    	Require not ip ::FFFF:198.24.175.128/125
-    	Require not ip ::FFFF:199.168.191.58/127
-    	Require not ip ::FFFF:199.168.191.60/126
-    	Require not ip ::FFFF:199.168.191.64/125
-    	Require not ip ::FFFF:199.193.155.0/120
-    	Require not ip ::FFFF:202.0.110.0/120
-    	Require not ip ::FFFF:202.3.130.0/119
-    	Require not ip ::FFFF:202.4.167.0/120
-    	Require not ip ::FFFF:202.5.128.0/118
-    	Require not ip ::FFFF:202.5.132.0/120
-    	Require not ip ::FFFF:202.5.134.0/119
-    	Require not ip ::FFFF:202.5.136.0/117
-    	Require not ip ::FFFF:202.5.144.0/116
-    	Require not ip ::FFFF:202.14.70.0/119
-    	Require not ip ::FFFF:202.43.118.0/119
-    	Require not ip ::FFFF:202.44.80.0/116
-    	Require not ip ::FFFF:202.45.156.0/119
-    	Require not ip ::FFFF:202.47.94.0/120
-    	Require not ip ::FFFF:202.52.32.0/120
-    	Require not ip ::FFFF:202.55.128.0/118
-    	Require not ip ::FFFF:202.59.64.0/115
-    	Require not ip ::FFFF:202.59.254.0/120
-    	Require not ip ::FFFF:202.61.32.0/115
-    	Require not ip ::FFFF:202.63.192.0/115
-    	Require not ip ::FFFF:202.69.8.0/117
-    	Require not ip ::FFFF:202.69.32.0/115
-    	Require not ip ::FFFF:202.70.144.0/116
-    	Require not ip ::FFFF:202.83.160.0/116
-    	Require not ip ::FFFF:202.84.246.0/120
-    	Require not ip ::FFFF:202.92.16.0/116
-    	Require not ip ::FFFF:202.123.240.0/116
-    	Require not ip ::FFFF:202.125.128.0/115
-    	Require not ip ::FFFF:202.141.224.0/115
-    	Require not ip ::FFFF:202.142.144.0/116
-    	Require not ip ::FFFF:202.142.160.0/115
-    	Require not ip ::FFFF:202.143.112.0/116
-    	Require not ip ::FFFF:202.147.160.0/115
-    	Require not ip ::FFFF:202.154.224.0/115
-    	Require not ip ::FFFF:202.160.252.0/125
-    	Require not ip ::FFFF:202.160.252.32/124
-    	Require not ip ::FFFF:202.160.252.64/123
-    	Require not ip ::FFFF:202.163.64.0/114
-    	Require not ip ::FFFF:202.165.224.0/117
-    	Require not ip ::FFFF:202.165.232.0/118
-    	Require not ip ::FFFF:202.165.236.0/119
-    	Require not ip ::FFFF:202.165.238.0/120
-    	Require not ip ::FFFF:202.165.242.0/120
-    	Require not ip ::FFFF:202.165.244.0/120
-    	Require not ip ::FFFF:202.165.246.0/119
-    	Require not ip ::FFFF:202.165.248.0/119
-    	Require not ip ::FFFF:202.165.250.0/120
-    	Require not ip ::FFFF:202.166.160.0/116
-    	Require not ip ::FFFF:202.174.142.0/121
-    	Require not ip ::FFFF:202.174.148.40/125
-    	Require not ip ::FFFF:202.174.148.216/125
-    	Require not ip ::FFFF:202.174.150.0/120
-    	Require not ip ::FFFF:202.174.155.16/124
-    	Require not ip ::FFFF:202.174.157.0/122
-    	Require not ip ::FFFF:202.179.134.0/120
-    	Require not ip ::FFFF:203.16.34.0/120
-    	Require not ip ::FFFF:203.26.77.0/120
-    	Require not ip ::FFFF:203.80.128.0/120
-    	Require not ip ::FFFF:203.80.130.0/120
-    	Require not ip ::FFFF:203.80.177.192/122
-    	Require not ip ::FFFF:203.81.192.0/115
-    	Require not ip ::FFFF:203.81.224.0/116
-    	Require not ip ::FFFF:203.82.48.0/116
-    	Require not ip ::FFFF:203.88.66.124/126
-    	Require not ip ::FFFF:203.88.66.184/125
-    	Require not ip ::FFFF:203.88.66.200/125
-    	Require not ip ::FFFF:203.88.66.208/124
-    	Require not ip ::FFFF:203.92.4.0/119
-    	Require not ip ::FFFF:203.99.48.0/116
-    	Require not ip ::FFFF:203.99.160.0/115
-    	Require not ip ::FFFF:203.101.160.0/115
-    	Require not ip ::FFFF:203.119.20.0/120
-    	Require not ip ::FFFF:203.124.24.0/117
-    	Require not ip ::FFFF:203.124.32.0/115
-    	Require not ip ::FFFF:203.128.0.0/115
-    	Require not ip ::FFFF:203.128.252.0/118
-    	Require not ip ::FFFF:203.129.0.0/118
-    	Require not ip ::FFFF:203.130.0.0/115
-    	Require not ip ::FFFF:203.133.252.0/118
-    	Require not ip ::FFFF:203.134.252.0/118
-    	Require not ip ::FFFF:203.135.0.0/114
-    	Require not ip ::FFFF:203.170.64.0/116
-    	Require not ip ::FFFF:203.175.64.0/116
-    	Require not ip ::FFFF:203.176.190.0/119
-    	Require not ip ::FFFF:203.212.28.0/118
-    	Require not ip ::FFFF:203.215.160.0/115
-    	Require not ip ::FFFF:203.223.160.0/116
-    	Require not ip ::FFFF:206.225.81.161/128
-    	Require not ip ::FFFF:206.225.81.162/128
-    	Require not ip ::FFFF:206.225.81.246/127
-    	Require not ip ::FFFF:206.225.82.82/127
-    	Require not ip ::FFFF:206.225.82.133/128
-    	Require not ip ::FFFF:206.225.82.142/128
-    	Require not ip ::FFFF:206.225.94.10/128
-    	Require not ip ::FFFF:206.225.94.142/128
-    	Require not ip ::FFFF:206.225.94.233/128
-    	Require not ip ::FFFF:208.70.72.208/124
-    	Require not ip ::FFFF:208.194.251.0/120
-    	Require not ip ::FFFF:208.207.92.0/119
-    	Require not ip ::FFFF:208.232.94.0/119
-    	Require not ip ::FFFF:208.240.136.0/118
-    	Require not ip ::FFFF:209.150.144.0/116
-    	Require not ip ::FFFF:210.2.128.0/114
-    	Require not ip ::FFFF:210.5.193.64/122
-    	Require not ip ::FFFF:210.5.199.0/120
-    	Require not ip ::FFFF:210.5.204.128/121
-    	Require not ip ::FFFF:210.5.205.128/121
-    	Require not ip ::FFFF:210.5.208.72/125
-    	Require not ip ::FFFF:210.5.208.80/125
-    	Require not ip ::FFFF:210.5.209.128/122
-    	Require not ip ::FFFF:210.5.209.240/125
-    	Require not ip ::FFFF:210.5.210.128/121
-    	Require not ip ::FFFF:210.5.211.0/122
-    	Require not ip ::FFFF:210.5.211.64/125
-    	Require not ip ::FFFF:210.5.213.0/120
-    	Require not ip ::FFFF:210.5.217.0/120
-    	Require not ip ::FFFF:210.5.221.0/125
-    	Require not ip ::FFFF:210.5.221.16/124
-    	Require not ip ::FFFF:210.56.0.0/115
-    	Require not ip ::FFFF:210.89.69.16/124
-    	Require not ip ::FFFF:210.89.72.168/125
-    	Require not ip ::FFFF:210.89.72.176/125
-    	Require not ip ::FFFF:210.89.75.0/123
-    	Require not ip ::FFFF:210.89.75.32/125
-    	Require not ip ::FFFF:210.89.75.48/125
-    	Require not ip ::FFFF:210.89.75.200/125
-    	Require not ip ::FFFF:210.89.76.184/125
-    	Require not ip ::FFFF:210.89.78.80/124
-    	Require not ip ::FFFF:210.89.80.0/125
-    	Require not ip ::FFFF:210.89.81.24/125
-    	Require not ip ::FFFF:212.165.146.16/125
-    	Require not ip ::FFFF:212.165.146.32/123
-    	Require not ip ::FFFF:212.165.146.64/125
-    	Require not ip ::FFFF:212.165.146.88/125
-    	Require not ip ::FFFF:212.165.146.96/124
-    	Require not ip ::FFFF:212.165.158.48/124
-    	Require not ip ::FFFF:212.165.158.64/124
-    	Require not ip ::FFFF:212.165.158.88/125
-    	Require not ip ::FFFF:212.165.158.112/124
-    	Require not ip ::FFFF:212.165.158.128/123
-    	Require not ip ::FFFF:212.165.159.0/120
-    	Require not ip ::FFFF:216.236.200.64/124
-    	Require not ip ::FFFF:216.236.220.0/124
-    	Require not ip ::FFFF:216.236.220.16/125
-    	Require not ip ::FFFF:216.236.220.176/125
-    	Require not ip ::FFFF:216.236.220.216/125
-    	Require not ip ::FFFF:216.236.220.224/123
-    	Require not ip ::FFFF:216.236.222.32/124
-    	Require not ip ::FFFF:216.236.222.48/125
-    	Require not ip ::FFFF:216.236.222.72/125
-    	Require not ip ::FFFF:216.236.222.80/125
-    	Require not ip ::FFFF:216.236.222.96/124
-    	Require not ip ::FFFF:216.236.222.192/124
-    	Require not ip ::FFFF:216.236.222.216/125
-    	Require not ip ::FFFF:218.100.85.0/120
-    	Require not ip ::FFFF:221.120.192.0/114
-    	Require not ip ::FFFF:221.132.112.0/117
-    	Require not ip ::FFFF:223.29.224.0/116
-    	Require not ip 2001:DD8:1C::/48
-    	Require not ip 2001:DF0:84::/48
-    	Require not ip 2001:DF0:279::/48
-    	Require not ip 2001:DF0:2CB::/48
-    	Require not ip 2001:DF0:3200::/48
-    	Require not ip 2001:DF0:4A00::/48
-    	Require not ip 2001:DF6:3C00::/48
-    	Require not ip 2001:FE8::/32
-    	Require not ip 2001:19F0:200:2F71::/64
-    	Require not ip 2001:19F0:200:2FF3::/64
-    	Require not ip 2001:19F0:200:2FFC::/64
-    	Require not ip 2001:4538::/32
-    	Require not ip 2400:1680::/32
-    	Require not ip 2400:1A80::/32
-    	Require not ip 2400:4F00::/32
-    	Require not ip 2400:FC00::/32
-    	Require not ip 2401::/31
-    	Require not ip 2401:4100::/32
-    	Require not ip 2401:8E00::/32
-    	Require not ip 2401:9E00::/32
-    	Require not ip 2401:BA80::/32
-    	Require not ip 2401:C900:1101:1E0::/64
-    	Require not ip 2401:C900:1101:4BA::/64
-    	Require not ip 2401:EA00::/32
-    	Require not ip 2402:1680::/47
-    	Require not ip 2402:1680:A::/47
-    	Require not ip 2402:1680:C::/46
-    	Require not ip 2402:1680:10::/47
-    	Require not ip 2402:1680:12::/48
-    	Require not ip 2402:1680:14::/46
-    	Require not ip 2402:1680:18::/47
-    	Require not ip 2402:7C00::/32
-    	Require not ip 2402:AD80::/32
-    	Require not ip 2402:E000::/32
-    	Require not ip 2402:FD00::/32
-    	Require not ip 2403:7980::/32
-    	Require not ip 2403:A500::/32
-    	Require not ip 2404:3100::/32
-    	Require not ip 2404:3C80::/32
-    	Require not ip 2404:6680::/32
-    	Require not ip 2404:7000::/32
-    	Require not ip 2404:7580::/32
-    	Require not ip 2404:7680::/36
-    	Require not ip 2404:7B80::/32
-    	Require not ip 2404:8180::/32
-    	Require not ip 2404:8300::/32
-    	Require not ip 2404:D400::/32
-    	Require not ip 2404:F400::/32
-    	Require not ip 2405:C00::/32
-    	Require not ip 2406:D00::/32
-    	Require not ip 2406:1300::/32
-    	Require not ip 2406:7000::/32
-    	Require not ip 2406:8400::/32
-    	Require not ip 2406:AC00::/32
-    	Require not ip 2406:F500::/32
-    	Require not ip 2407:1B00::/32
-    	Require not ip 2407:4500::/32
-    	Require not ip 2407:9C00::/32
-    	Require not ip 2407:9E00::/32
-    	Require not ip 2407:D000::/32
-    	Require not ip 2604:BC80:2:2::/64
-    	Require not ip 2607:F0D0:1101:C3::/64
-    	Require not ip 2607:F0D0:3801:C7::/64
-    	Require not ip 2A03:8180:1002:BF::/64
-    	Require not ip 2A03:8180:1002:228::/64
-    	Require not ip 2A03:8180:1101:10A::/64
-    	Require not ip 2A03:8180:1401:8::/64
-    	Require not ip 2A03:8180:1401:127::/64
-    	Require not ip 2A05:DFC7:9900::/43
-</RequireAll>
+<Limit GET HEAD POST>
+order allow,deny
+allow from all
+deny from 14.1.104.0/22
+deny from 14.102.172.0/22
+deny from 14.192.128.0/19
+deny from 27.0.184.0/22
+deny from 27.54.120.0/22
+deny from 27.96.92.0/22
+deny from 27.255.0.0/18
+deny from 36.255.32.0/22
+deny from 36.255.40.0/21
+deny from 36.255.60.0/22
+deny from 36.255.96.0/21
+deny from 39.32.0.0/11
+deny from 42.83.84.0/22
+deny from 42.201.128.0/17
+deny from 43.224.236.0/22
+deny from 43.225.96.0/22
+deny from 43.228.156.128/25
+deny from 43.230.92.0/22
+deny from 43.231.60.0/22
+deny from 43.242.100.0/22
+deny from 43.242.176.0/22
+deny from 43.245.8.0/22
+deny from 43.245.128.0/22
+deny from 43.245.204.0/22
+deny from 43.246.220.0/22
+deny from 43.246.224.0/22
+deny from 43.247.120.0/22
+deny from 43.248.12.0/22
+deny from 43.250.84.0/22
+deny from 43.254.12.0/22
+deny from 45.56.145.0/24
+deny from 45.62.40.0/24
+deny from 45.62.53.0/24
+deny from 45.62.62.0/24
+deny from 45.64.24.0/22
+deny from 45.64.180.0/22
+deny from 45.113.124.0/22
+deny from 45.114.120.0/21
+deny from 45.114.132.0/22
+deny from 45.115.49.0/24
+deny from 45.115.84.0/22
+deny from 45.116.232.0/22
+deny from 45.117.88.0/22
+deny from 45.117.104.0/22
+deny from 49.156.0.0/22
+deny from 57.92.240.0/20
+deny from 58.27.128.0/17
+deny from 58.65.128.0/18
+deny from 58.65.192.0/19
+deny from 58.84.28.0/22
+deny from 58.181.96.0/19
+deny from 59.103.0.0/17
+deny from 59.103.128.0/19
+deny from 59.103.160.0/20
+deny from 59.103.176.0/21
+deny from 59.103.184.0/22
+deny from 59.103.188.0/23
+deny from 59.103.190.0/24
+deny from 59.103.216.0/21
+deny from 59.103.224.0/19
+deny from 61.5.128.0/19
+deny from 63.70.24.0/22
+deny from 63.109.248.56/29
+deny from 63.109.248.88/29
+deny from 63.109.249.144/29
+deny from 63.114.37.0/24
+deny from 64.86.121.0/24
+deny from 64.86.122.0/24
+deny from 64.86.131.0/24
+deny from 66.226.72.76/32
+deny from 66.226.72.84/32
+deny from 66.226.72.130/32
+deny from 66.226.72.132/32
+deny from 66.226.72.141/32
+deny from 66.226.72.148/32
+deny from 66.226.72.226/32
+deny from 66.226.72.228/32
+deny from 66.226.73.40/32
+deny from 66.226.73.110/32
+deny from 66.226.73.122/32
+deny from 66.226.73.236/32
+deny from 66.226.77.9/32
+deny from 66.226.77.14/32
+deny from 66.226.77.118/32
+deny from 66.226.77.199/32
+deny from 67.23.227.16/28
+deny from 67.23.249.227/32
+deny from 69.88.3.32/29
+deny from 69.88.3.112/29
+deny from 69.88.3.184/29
+deny from 69.88.22.0/28
+deny from 69.88.22.32/29
+deny from 69.88.22.48/29
+deny from 69.88.24.104/29
+deny from 69.88.24.136/29
+deny from 69.88.24.216/29
+deny from 72.29.69.175/32
+deny from 72.29.69.176/31
+deny from 72.29.69.178/32
+deny from 80.77.8.0/22
+deny from 80.247.138.0/29
+deny from 80.247.152.0/29
+deny from 80.247.152.48/28
+deny from 80.247.152.64/27
+deny from 80.247.152.104/29
+deny from 80.247.152.112/28
+deny from 85.203.22.80/28
+deny from 89.105.32.32/29
+deny from 98.142.101.224/29
+deny from 101.50.64.0/18
+deny from 103.4.92.0/22
+deny from 103.5.136.0/22
+deny from 103.7.60.0/22
+deny from 103.7.76.0/22
+deny from 103.8.14.0/23
+deny from 103.8.112.0/22
+deny from 103.8.214.0/24
+deny from 103.8.231.0/24
+deny from 103.9.23.0/24
+deny from 103.9.182.0/24
+deny from 103.11.0.0/22
+deny from 103.11.60.0/22
+deny from 103.11.68.0/22
+deny from 103.11.220.0/24
+deny from 103.12.40.0/22
+deny from 103.12.58.0/24
+deny from 103.12.120.0/22
+deny from 103.13.1.0/24
+deny from 103.14.231.0/24
+deny from 103.17.200.0/22
+deny from 103.18.8.0/21
+deny from 103.18.20.0/22
+deny from 103.18.116.0/24
+deny from 103.18.243.0/24
+deny from 103.20.0.0/22
+deny from 103.20.132.0/22
+deny from 103.24.96.0/22
+deny from 103.25.136.0/22
+deny from 103.26.80.0/21
+deny from 103.26.184.0/22
+deny from 103.27.20.0/22
+deny from 103.28.150.0/23
+deny from 103.28.152.0/22
+deny from 103.29.163.0/24
+deny from 103.30.196.0/22
+deny from 103.31.80.0/22
+deny from 103.31.92.0/22
+deny from 103.31.100.0/22
+deny from 103.31.104.0/22
+deny from 103.35.208.0/21
+deny from 103.39.80.0/22
+deny from 103.44.223.0/24
+deny from 103.47.144.0/24
+deny from 103.47.145.0/25
+deny from 103.47.147.0/25
+deny from 103.48.24.0/23
+deny from 103.49.69.0/24
+deny from 103.49.136.0/22
+deny from 103.50.156.0/22
+deny from 103.51.220.0/24
+deny from 103.53.44.0/22
+deny from 103.54.76.0/22
+deny from 103.54.80.0/21
+deny from 103.55.68.0/22
+deny from 103.55.133.0/24
+deny from 103.55.136.0/23
+deny from 103.57.152.0/22
+deny from 103.57.168.0/22
+deny from 103.62.232.0/22
+deny from 103.193.18.0/24
+deny from 103.196.40.0/23
+deny from 103.196.160.0/22
+deny from 103.197.44.0/22
+deny from 103.200.196.0/22
+deny from 103.203.44.0/22
+deny from 103.205.176.0/22
+deny from 103.206.84.0/22
+deny from 103.207.84.0/22
+deny from 103.209.32.0/22
+deny from 103.209.52.0/23
+deny from 103.209.76.0/22
+deny from 103.209.84.0/22
+deny from 103.210.4.0/22
+deny from 103.210.13.0/24
+deny from 103.224.12.0/22
+deny from 103.225.48.0/22
+deny from 103.225.220.0/22
+deny from 103.226.216.0/23
+deny from 103.228.156.0/22
+deny from 103.232.225.0/24
+deny from 103.234.12.0/24
+deny from 103.234.144.0/22
+deny from 103.236.132.0/22
+deny from 103.237.84.0/22
+deny from 103.240.220.0/24
+deny from 103.244.172.0/22
+deny from 103.244.176.0/22
+deny from 103.245.132.0/22
+deny from 103.245.192.0/22
+deny from 103.246.108.0/22
+deny from 103.247.66.0/24
+deny from 103.247.124.0/23
+deny from 103.249.152.0/22
+deny from 103.249.228.0/22
+deny from 103.250.222.0/23
+deny from 103.252.80.0/22
+deny from 103.253.156.0/22
+deny from 103.255.4.0/22
+deny from 103.255.128.0/22
+deny from 103.255.148.0/22
+deny from 104.99.130.0/23
+deny from 104.99.132.0/22
+deny from 104.194.202.0/24
+deny from 110.34.32.0/21
+deny from 110.36.0.0/14
+deny from 110.93.192.0/18
+deny from 110.232.188.0/22
+deny from 111.68.96.0/20
+deny from 111.88.0.0/16
+deny from 111.92.128.0/19
+deny from 111.119.160.0/19
+deny from 113.197.48.0/21
+deny from 113.203.128.0/17
+deny from 114.198.233.0/24
+deny from 114.198.237.0/24
+deny from 115.42.64.0/20
+deny from 115.167.0.0/17
+deny from 115.186.0.0/17
+deny from 115.186.128.0/18
+deny from 116.0.32.0/19
+deny from 116.58.0.0/17
+deny from 116.71.0.0/16
+deny from 116.90.96.0/19
+deny from 116.213.32.0/22
+deny from 117.20.16.0/20
+deny from 117.53.40.0/22
+deny from 117.102.0.0/18
+deny from 118.103.224.0/20
+deny from 118.107.128.0/20
+deny from 119.30.64.0/18
+deny from 119.63.128.0/20
+deny from 119.73.0.0/17
+deny from 119.152.0.0/13
+deny from 119.160.0.0/17
+deny from 121.46.64.0/22
+deny from 121.52.144.0/20
+deny from 122.129.64.0/19
+deny from 122.201.35.192/29
+deny from 122.201.36.152/29
+deny from 124.29.192.0/18
+deny from 124.109.32.0/19
+deny from 125.209.64.0/18
+deny from 137.59.144.0/22
+deny from 137.59.192.0/22
+deny from 137.59.216.0/21
+deny from 137.59.224.0/21
+deny from 139.190.0.0/16
+deny from 150.129.4.0/22
+deny from 161.202.194.160/27
+deny from 162.211.121.80/29
+deny from 162.211.126.18/31
+deny from 162.211.126.98/31
+deny from 162.211.126.148/30
+deny from 162.211.127.238/31
+deny from 162.221.190.128/28
+deny from 162.244.77.253/32
+deny from 162.254.201.152/29
+deny from 162.254.201.208/29
+deny from 162.254.203.208/28
+deny from 162.254.206.208/29
+deny from 163.53.236.0/22
+deny from 175.107.0.0/18
+deny from 175.107.192.0/18
+deny from 175.110.0.0/16
+deny from 175.111.0.0/20
+deny from 175.176.240.232/29
+deny from 179.60.178.184/29
+deny from 179.60.180.64/29
+deny from 179.60.181.144/29
+deny from 179.60.183.88/29
+deny from 180.92.128.0/19
+deny from 180.149.208.0/20
+deny from 180.178.128.0/18
+deny from 182.176.0.0/12
+deny from 192.155.106.48/29
+deny from 195.75.247.128/25
+deny from 195.79.220.0/25
+deny from 195.79.220.128/27
+deny from 195.138.130.10/32
+deny from 196.3.72.0/24
+deny from 198.24.160.248/29
+deny from 198.24.171.120/29
+deny from 198.24.175.128/29
+deny from 199.168.191.58/31
+deny from 199.168.191.60/30
+deny from 199.168.191.64/29
+deny from 199.193.155.0/24
+deny from 202.0.110.0/24
+deny from 202.3.130.0/23
+deny from 202.4.167.0/24
+deny from 202.5.128.0/22
+deny from 202.5.132.0/24
+deny from 202.5.134.0/23
+deny from 202.5.136.0/21
+deny from 202.5.144.0/20
+deny from 202.14.70.0/23
+deny from 202.43.118.0/23
+deny from 202.44.80.0/20
+deny from 202.45.156.0/23
+deny from 202.47.94.0/24
+deny from 202.52.32.0/24
+deny from 202.55.128.0/22
+deny from 202.59.64.0/19
+deny from 202.59.254.0/24
+deny from 202.61.32.0/19
+deny from 202.63.192.0/19
+deny from 202.69.8.0/21
+deny from 202.69.32.0/19
+deny from 202.70.144.0/20
+deny from 202.83.160.0/20
+deny from 202.84.246.0/24
+deny from 202.92.16.0/20
+deny from 202.123.240.0/20
+deny from 202.125.128.0/19
+deny from 202.141.224.0/19
+deny from 202.142.144.0/20
+deny from 202.142.160.0/19
+deny from 202.143.112.0/20
+deny from 202.147.160.0/19
+deny from 202.154.224.0/19
+deny from 202.160.252.0/29
+deny from 202.160.252.32/28
+deny from 202.160.252.64/27
+deny from 202.163.64.0/18
+deny from 202.165.224.0/21
+deny from 202.165.232.0/22
+deny from 202.165.236.0/23
+deny from 202.165.238.0/24
+deny from 202.165.242.0/24
+deny from 202.165.244.0/24
+deny from 202.165.246.0/23
+deny from 202.165.248.0/23
+deny from 202.165.250.0/24
+deny from 202.166.160.0/20
+deny from 202.174.142.0/25
+deny from 202.174.148.40/29
+deny from 202.174.148.216/29
+deny from 202.174.150.0/24
+deny from 202.174.155.16/28
+deny from 202.174.157.0/26
+deny from 202.179.134.0/24
+deny from 203.16.34.0/24
+deny from 203.26.77.0/24
+deny from 203.80.128.0/24
+deny from 203.80.130.0/24
+deny from 203.80.177.192/26
+deny from 203.81.192.0/19
+deny from 203.81.224.0/20
+deny from 203.82.48.0/20
+deny from 203.88.66.124/30
+deny from 203.88.66.184/29
+deny from 203.88.66.200/29
+deny from 203.88.66.208/28
+deny from 203.92.4.0/23
+deny from 203.99.48.0/20
+deny from 203.99.160.0/19
+deny from 203.101.160.0/19
+deny from 203.119.20.0/24
+deny from 203.124.24.0/21
+deny from 203.124.32.0/19
+deny from 203.128.0.0/19
+deny from 203.128.252.0/22
+deny from 203.129.0.0/22
+deny from 203.130.0.0/19
+deny from 203.133.252.0/22
+deny from 203.134.252.0/22
+deny from 203.135.0.0/18
+deny from 203.170.64.0/20
+deny from 203.175.64.0/20
+deny from 203.176.190.0/23
+deny from 203.212.28.0/22
+deny from 203.215.160.0/19
+deny from 203.223.160.0/20
+deny from 206.225.81.161/32
+deny from 206.225.81.162/32
+deny from 206.225.81.246/31
+deny from 206.225.82.82/31
+deny from 206.225.82.133/32
+deny from 206.225.82.142/32
+deny from 206.225.94.10/32
+deny from 206.225.94.142/32
+deny from 206.225.94.233/32
+deny from 208.70.72.208/28
+deny from 208.194.251.0/24
+deny from 208.207.92.0/23
+deny from 208.232.94.0/23
+deny from 208.240.136.0/22
+deny from 209.150.144.0/20
+deny from 210.2.128.0/18
+deny from 210.5.193.64/26
+deny from 210.5.199.0/24
+deny from 210.5.204.128/25
+deny from 210.5.205.128/25
+deny from 210.5.208.72/29
+deny from 210.5.208.80/29
+deny from 210.5.209.128/26
+deny from 210.5.209.240/29
+deny from 210.5.210.128/25
+deny from 210.5.211.0/26
+deny from 210.5.211.64/29
+deny from 210.5.213.0/24
+deny from 210.5.217.0/24
+deny from 210.5.221.0/29
+deny from 210.5.221.16/28
+deny from 210.56.0.0/19
+deny from 210.89.69.16/28
+deny from 210.89.72.168/29
+deny from 210.89.72.176/29
+deny from 210.89.75.0/27
+deny from 210.89.75.32/29
+deny from 210.89.75.48/29
+deny from 210.89.75.200/29
+deny from 210.89.76.184/29
+deny from 210.89.78.80/28
+deny from 210.89.80.0/29
+deny from 210.89.81.24/29
+deny from 212.165.146.16/29
+deny from 212.165.146.32/27
+deny from 212.165.146.64/29
+deny from 212.165.146.88/29
+deny from 212.165.146.96/28
+deny from 212.165.158.48/28
+deny from 212.165.158.64/28
+deny from 212.165.158.88/29
+deny from 212.165.158.112/28
+deny from 212.165.158.128/27
+deny from 212.165.159.0/24
+deny from 216.236.200.64/28
+deny from 216.236.220.0/28
+deny from 216.236.220.16/29
+deny from 216.236.220.176/29
+deny from 216.236.220.216/29
+deny from 216.236.220.224/27
+deny from 216.236.222.32/28
+deny from 216.236.222.48/29
+deny from 216.236.222.72/29
+deny from 216.236.222.80/29
+deny from 216.236.222.96/28
+deny from 216.236.222.192/28
+deny from 216.236.222.216/29
+deny from 218.100.85.0/24
+deny from 221.120.192.0/18
+deny from 221.132.112.0/21
+deny from 223.29.224.0/20
+deny from ::FFFF:14.1.104.0/118
+deny from ::FFFF:14.102.172.0/118
+deny from ::FFFF:14.192.128.0/115
+deny from ::FFFF:27.0.184.0/118
+deny from ::FFFF:27.54.120.0/118
+deny from ::FFFF:27.96.92.0/118
+deny from ::FFFF:27.255.0.0/114
+deny from ::FFFF:36.255.32.0/118
+deny from ::FFFF:36.255.40.0/117
+deny from ::FFFF:36.255.60.0/118
+deny from ::FFFF:36.255.96.0/117
+deny from ::FFFF:39.32.0.0/107
+deny from ::FFFF:42.83.84.0/118
+deny from ::FFFF:42.201.128.0/113
+deny from ::FFFF:43.224.236.0/118
+deny from ::FFFF:43.225.96.0/118
+deny from ::FFFF:43.228.156.128/121
+deny from ::FFFF:43.230.92.0/118
+deny from ::FFFF:43.231.60.0/118
+deny from ::FFFF:43.242.100.0/118
+deny from ::FFFF:43.242.176.0/118
+deny from ::FFFF:43.245.8.0/118
+deny from ::FFFF:43.245.128.0/118
+deny from ::FFFF:43.245.204.0/118
+deny from ::FFFF:43.246.220.0/118
+deny from ::FFFF:43.246.224.0/118
+deny from ::FFFF:43.247.120.0/118
+deny from ::FFFF:43.248.12.0/118
+deny from ::FFFF:43.250.84.0/118
+deny from ::FFFF:43.254.12.0/118
+deny from ::FFFF:45.56.145.0/120
+deny from ::FFFF:45.62.40.0/120
+deny from ::FFFF:45.62.53.0/120
+deny from ::FFFF:45.62.62.0/120
+deny from ::FFFF:45.64.24.0/118
+deny from ::FFFF:45.64.180.0/118
+deny from ::FFFF:45.113.124.0/118
+deny from ::FFFF:45.114.120.0/117
+deny from ::FFFF:45.114.132.0/118
+deny from ::FFFF:45.115.49.0/120
+deny from ::FFFF:45.115.84.0/118
+deny from ::FFFF:45.116.232.0/118
+deny from ::FFFF:45.117.88.0/118
+deny from ::FFFF:45.117.104.0/118
+deny from ::FFFF:49.156.0.0/118
+deny from ::FFFF:57.92.240.0/116
+deny from ::FFFF:58.27.128.0/113
+deny from ::FFFF:58.65.128.0/114
+deny from ::FFFF:58.65.192.0/115
+deny from ::FFFF:58.84.28.0/118
+deny from ::FFFF:58.181.96.0/115
+deny from ::FFFF:59.103.0.0/113
+deny from ::FFFF:59.103.128.0/115
+deny from ::FFFF:59.103.160.0/116
+deny from ::FFFF:59.103.176.0/117
+deny from ::FFFF:59.103.184.0/118
+deny from ::FFFF:59.103.188.0/119
+deny from ::FFFF:59.103.190.0/120
+deny from ::FFFF:59.103.216.0/117
+deny from ::FFFF:59.103.224.0/115
+deny from ::FFFF:61.5.128.0/115
+deny from ::FFFF:63.70.24.0/118
+deny from ::FFFF:63.109.248.56/125
+deny from ::FFFF:63.109.248.88/125
+deny from ::FFFF:63.109.249.144/125
+deny from ::FFFF:63.114.37.0/120
+deny from ::FFFF:64.86.121.0/120
+deny from ::FFFF:64.86.122.0/120
+deny from ::FFFF:64.86.131.0/120
+deny from ::FFFF:66.226.72.76/128
+deny from ::FFFF:66.226.72.84/128
+deny from ::FFFF:66.226.72.130/128
+deny from ::FFFF:66.226.72.132/128
+deny from ::FFFF:66.226.72.141/128
+deny from ::FFFF:66.226.72.148/128
+deny from ::FFFF:66.226.72.226/128
+deny from ::FFFF:66.226.72.228/128
+deny from ::FFFF:66.226.73.40/128
+deny from ::FFFF:66.226.73.110/128
+deny from ::FFFF:66.226.73.122/128
+deny from ::FFFF:66.226.73.236/128
+deny from ::FFFF:66.226.77.9/128
+deny from ::FFFF:66.226.77.14/128
+deny from ::FFFF:66.226.77.118/128
+deny from ::FFFF:66.226.77.199/128
+deny from ::FFFF:67.23.227.16/124
+deny from ::FFFF:67.23.249.227/128
+deny from ::FFFF:69.88.3.32/125
+deny from ::FFFF:69.88.3.112/125
+deny from ::FFFF:69.88.3.184/125
+deny from ::FFFF:69.88.22.0/124
+deny from ::FFFF:69.88.22.32/125
+deny from ::FFFF:69.88.22.48/125
+deny from ::FFFF:69.88.24.104/125
+deny from ::FFFF:69.88.24.136/125
+deny from ::FFFF:69.88.24.216/125
+deny from ::FFFF:72.29.69.175/128
+deny from ::FFFF:72.29.69.176/127
+deny from ::FFFF:72.29.69.178/128
+deny from ::FFFF:80.77.8.0/118
+deny from ::FFFF:80.247.138.0/125
+deny from ::FFFF:80.247.152.0/125
+deny from ::FFFF:80.247.152.48/124
+deny from ::FFFF:80.247.152.64/123
+deny from ::FFFF:80.247.152.104/125
+deny from ::FFFF:80.247.152.112/124
+deny from ::FFFF:85.203.22.80/124
+deny from ::FFFF:89.105.32.32/125
+deny from ::FFFF:98.142.101.224/125
+deny from ::FFFF:101.50.64.0/114
+deny from ::FFFF:103.4.92.0/118
+deny from ::FFFF:103.5.136.0/118
+deny from ::FFFF:103.7.60.0/118
+deny from ::FFFF:103.7.76.0/118
+deny from ::FFFF:103.8.14.0/119
+deny from ::FFFF:103.8.112.0/118
+deny from ::FFFF:103.8.214.0/120
+deny from ::FFFF:103.8.231.0/120
+deny from ::FFFF:103.9.23.0/120
+deny from ::FFFF:103.9.182.0/120
+deny from ::FFFF:103.11.0.0/118
+deny from ::FFFF:103.11.60.0/118
+deny from ::FFFF:103.11.68.0/118
+deny from ::FFFF:103.11.220.0/120
+deny from ::FFFF:103.12.40.0/118
+deny from ::FFFF:103.12.58.0/120
+deny from ::FFFF:103.12.120.0/118
+deny from ::FFFF:103.13.1.0/120
+deny from ::FFFF:103.14.231.0/120
+deny from ::FFFF:103.17.200.0/118
+deny from ::FFFF:103.18.8.0/117
+deny from ::FFFF:103.18.20.0/118
+deny from ::FFFF:103.18.116.0/120
+deny from ::FFFF:103.18.243.0/120
+deny from ::FFFF:103.20.0.0/118
+deny from ::FFFF:103.20.132.0/118
+deny from ::FFFF:103.24.96.0/118
+deny from ::FFFF:103.25.136.0/118
+deny from ::FFFF:103.26.80.0/117
+deny from ::FFFF:103.26.184.0/118
+deny from ::FFFF:103.27.20.0/118
+deny from ::FFFF:103.28.150.0/119
+deny from ::FFFF:103.28.152.0/118
+deny from ::FFFF:103.29.163.0/120
+deny from ::FFFF:103.30.196.0/118
+deny from ::FFFF:103.31.80.0/118
+deny from ::FFFF:103.31.92.0/118
+deny from ::FFFF:103.31.100.0/118
+deny from ::FFFF:103.31.104.0/118
+deny from ::FFFF:103.35.208.0/117
+deny from ::FFFF:103.39.80.0/118
+deny from ::FFFF:103.44.223.0/120
+deny from ::FFFF:103.47.144.0/120
+deny from ::FFFF:103.47.145.0/121
+deny from ::FFFF:103.47.147.0/121
+deny from ::FFFF:103.48.24.0/119
+deny from ::FFFF:103.49.69.0/120
+deny from ::FFFF:103.49.136.0/118
+deny from ::FFFF:103.50.156.0/118
+deny from ::FFFF:103.51.220.0/120
+deny from ::FFFF:103.53.44.0/118
+deny from ::FFFF:103.54.76.0/118
+deny from ::FFFF:103.54.80.0/117
+deny from ::FFFF:103.55.68.0/118
+deny from ::FFFF:103.55.133.0/120
+deny from ::FFFF:103.55.136.0/119
+deny from ::FFFF:103.57.152.0/118
+deny from ::FFFF:103.57.168.0/118
+deny from ::FFFF:103.62.232.0/118
+deny from ::FFFF:103.193.18.0/120
+deny from ::FFFF:103.196.40.0/119
+deny from ::FFFF:103.196.160.0/118
+deny from ::FFFF:103.197.44.0/118
+deny from ::FFFF:103.200.196.0/118
+deny from ::FFFF:103.203.44.0/118
+deny from ::FFFF:103.205.176.0/118
+deny from ::FFFF:103.206.84.0/118
+deny from ::FFFF:103.207.84.0/118
+deny from ::FFFF:103.209.32.0/118
+deny from ::FFFF:103.209.52.0/119
+deny from ::FFFF:103.209.76.0/118
+deny from ::FFFF:103.209.84.0/118
+deny from ::FFFF:103.210.4.0/118
+deny from ::FFFF:103.210.13.0/120
+deny from ::FFFF:103.224.12.0/118
+deny from ::FFFF:103.225.48.0/118
+deny from ::FFFF:103.225.220.0/118
+deny from ::FFFF:103.226.216.0/119
+deny from ::FFFF:103.228.156.0/118
+deny from ::FFFF:103.232.225.0/120
+deny from ::FFFF:103.234.12.0/120
+deny from ::FFFF:103.234.144.0/118
+deny from ::FFFF:103.236.132.0/118
+deny from ::FFFF:103.237.84.0/118
+deny from ::FFFF:103.240.220.0/120
+deny from ::FFFF:103.244.172.0/118
+deny from ::FFFF:103.244.176.0/118
+deny from ::FFFF:103.245.132.0/118
+deny from ::FFFF:103.245.192.0/118
+deny from ::FFFF:103.246.108.0/118
+deny from ::FFFF:103.247.66.0/120
+deny from ::FFFF:103.247.124.0/119
+deny from ::FFFF:103.249.152.0/118
+deny from ::FFFF:103.249.228.0/118
+deny from ::FFFF:103.250.222.0/119
+deny from ::FFFF:103.252.80.0/118
+deny from ::FFFF:103.253.156.0/118
+deny from ::FFFF:103.255.4.0/118
+deny from ::FFFF:103.255.128.0/118
+deny from ::FFFF:103.255.148.0/118
+deny from ::FFFF:104.99.130.0/119
+deny from ::FFFF:104.99.132.0/118
+deny from ::FFFF:104.194.202.0/120
+deny from ::FFFF:110.34.32.0/117
+deny from ::FFFF:110.36.0.0/110
+deny from ::FFFF:110.93.192.0/114
+deny from ::FFFF:110.232.188.0/118
+deny from ::FFFF:111.68.96.0/116
+deny from ::FFFF:111.88.0.0/112
+deny from ::FFFF:111.92.128.0/115
+deny from ::FFFF:111.119.160.0/115
+deny from ::FFFF:113.197.48.0/117
+deny from ::FFFF:113.203.128.0/113
+deny from ::FFFF:114.198.233.0/120
+deny from ::FFFF:114.198.237.0/120
+deny from ::FFFF:115.42.64.0/116
+deny from ::FFFF:115.167.0.0/113
+deny from ::FFFF:115.186.0.0/113
+deny from ::FFFF:115.186.128.0/114
+deny from ::FFFF:116.0.32.0/115
+deny from ::FFFF:116.58.0.0/113
+deny from ::FFFF:116.71.0.0/112
+deny from ::FFFF:116.90.96.0/115
+deny from ::FFFF:116.213.32.0/118
+deny from ::FFFF:117.20.16.0/116
+deny from ::FFFF:117.53.40.0/118
+deny from ::FFFF:117.102.0.0/114
+deny from ::FFFF:118.103.224.0/116
+deny from ::FFFF:118.107.128.0/116
+deny from ::FFFF:119.30.64.0/114
+deny from ::FFFF:119.63.128.0/116
+deny from ::FFFF:119.73.0.0/113
+deny from ::FFFF:119.152.0.0/109
+deny from ::FFFF:119.160.0.0/113
+deny from ::FFFF:121.46.64.0/118
+deny from ::FFFF:121.52.144.0/116
+deny from ::FFFF:122.129.64.0/115
+deny from ::FFFF:122.201.35.192/125
+deny from ::FFFF:122.201.36.152/125
+deny from ::FFFF:124.29.192.0/114
+deny from ::FFFF:124.109.32.0/115
+deny from ::FFFF:125.209.64.0/114
+deny from ::FFFF:137.59.144.0/118
+deny from ::FFFF:137.59.192.0/118
+deny from ::FFFF:137.59.216.0/117
+deny from ::FFFF:137.59.224.0/117
+deny from ::FFFF:139.190.0.0/112
+deny from ::FFFF:150.129.4.0/118
+deny from ::FFFF:161.202.194.160/123
+deny from ::FFFF:162.211.121.80/125
+deny from ::FFFF:162.211.126.18/127
+deny from ::FFFF:162.211.126.98/127
+deny from ::FFFF:162.211.126.148/126
+deny from ::FFFF:162.211.127.238/127
+deny from ::FFFF:162.221.190.128/124
+deny from ::FFFF:162.244.77.253/128
+deny from ::FFFF:162.254.201.152/125
+deny from ::FFFF:162.254.201.208/125
+deny from ::FFFF:162.254.203.208/124
+deny from ::FFFF:162.254.206.208/125
+deny from ::FFFF:163.53.236.0/118
+deny from ::FFFF:175.107.0.0/114
+deny from ::FFFF:175.107.192.0/114
+deny from ::FFFF:175.110.0.0/112
+deny from ::FFFF:175.111.0.0/116
+deny from ::FFFF:175.176.240.232/125
+deny from ::FFFF:179.60.178.184/125
+deny from ::FFFF:179.60.180.64/125
+deny from ::FFFF:179.60.181.144/125
+deny from ::FFFF:179.60.183.88/125
+deny from ::FFFF:180.92.128.0/115
+deny from ::FFFF:180.149.208.0/116
+deny from ::FFFF:180.178.128.0/114
+deny from ::FFFF:182.176.0.0/108
+deny from ::FFFF:192.155.106.48/125
+deny from ::FFFF:195.75.247.128/121
+deny from ::FFFF:195.79.220.0/121
+deny from ::FFFF:195.79.220.128/123
+deny from ::FFFF:195.138.130.10/128
+deny from ::FFFF:196.3.72.0/120
+deny from ::FFFF:198.24.160.248/125
+deny from ::FFFF:198.24.171.120/125
+deny from ::FFFF:198.24.175.128/125
+deny from ::FFFF:199.168.191.58/127
+deny from ::FFFF:199.168.191.60/126
+deny from ::FFFF:199.168.191.64/125
+deny from ::FFFF:199.193.155.0/120
+deny from ::FFFF:202.0.110.0/120
+deny from ::FFFF:202.3.130.0/119
+deny from ::FFFF:202.4.167.0/120
+deny from ::FFFF:202.5.128.0/118
+deny from ::FFFF:202.5.132.0/120
+deny from ::FFFF:202.5.134.0/119
+deny from ::FFFF:202.5.136.0/117
+deny from ::FFFF:202.5.144.0/116
+deny from ::FFFF:202.14.70.0/119
+deny from ::FFFF:202.43.118.0/119
+deny from ::FFFF:202.44.80.0/116
+deny from ::FFFF:202.45.156.0/119
+deny from ::FFFF:202.47.94.0/120
+deny from ::FFFF:202.52.32.0/120
+deny from ::FFFF:202.55.128.0/118
+deny from ::FFFF:202.59.64.0/115
+deny from ::FFFF:202.59.254.0/120
+deny from ::FFFF:202.61.32.0/115
+deny from ::FFFF:202.63.192.0/115
+deny from ::FFFF:202.69.8.0/117
+deny from ::FFFF:202.69.32.0/115
+deny from ::FFFF:202.70.144.0/116
+deny from ::FFFF:202.83.160.0/116
+deny from ::FFFF:202.84.246.0/120
+deny from ::FFFF:202.92.16.0/116
+deny from ::FFFF:202.123.240.0/116
+deny from ::FFFF:202.125.128.0/115
+deny from ::FFFF:202.141.224.0/115
+deny from ::FFFF:202.142.144.0/116
+deny from ::FFFF:202.142.160.0/115
+deny from ::FFFF:202.143.112.0/116
+deny from ::FFFF:202.147.160.0/115
+deny from ::FFFF:202.154.224.0/115
+deny from ::FFFF:202.160.252.0/125
+deny from ::FFFF:202.160.252.32/124
+deny from ::FFFF:202.160.252.64/123
+deny from ::FFFF:202.163.64.0/114
+deny from ::FFFF:202.165.224.0/117
+deny from ::FFFF:202.165.232.0/118
+deny from ::FFFF:202.165.236.0/119
+deny from ::FFFF:202.165.238.0/120
+deny from ::FFFF:202.165.242.0/120
+deny from ::FFFF:202.165.244.0/120
+deny from ::FFFF:202.165.246.0/119
+deny from ::FFFF:202.165.248.0/119
+deny from ::FFFF:202.165.250.0/120
+deny from ::FFFF:202.166.160.0/116
+deny from ::FFFF:202.174.142.0/121
+deny from ::FFFF:202.174.148.40/125
+deny from ::FFFF:202.174.148.216/125
+deny from ::FFFF:202.174.150.0/120
+deny from ::FFFF:202.174.155.16/124
+deny from ::FFFF:202.174.157.0/122
+deny from ::FFFF:202.179.134.0/120
+deny from ::FFFF:203.16.34.0/120
+deny from ::FFFF:203.26.77.0/120
+deny from ::FFFF:203.80.128.0/120
+deny from ::FFFF:203.80.130.0/120
+deny from ::FFFF:203.80.177.192/122
+deny from ::FFFF:203.81.192.0/115
+deny from ::FFFF:203.81.224.0/116
+deny from ::FFFF:203.82.48.0/116
+deny from ::FFFF:203.88.66.124/126
+deny from ::FFFF:203.88.66.184/125
+deny from ::FFFF:203.88.66.200/125
+deny from ::FFFF:203.88.66.208/124
+deny from ::FFFF:203.92.4.0/119
+deny from ::FFFF:203.99.48.0/116
+deny from ::FFFF:203.99.160.0/115
+deny from ::FFFF:203.101.160.0/115
+deny from ::FFFF:203.119.20.0/120
+deny from ::FFFF:203.124.24.0/117
+deny from ::FFFF:203.124.32.0/115
+deny from ::FFFF:203.128.0.0/115
+deny from ::FFFF:203.128.252.0/118
+deny from ::FFFF:203.129.0.0/118
+deny from ::FFFF:203.130.0.0/115
+deny from ::FFFF:203.133.252.0/118
+deny from ::FFFF:203.134.252.0/118
+deny from ::FFFF:203.135.0.0/114
+deny from ::FFFF:203.170.64.0/116
+deny from ::FFFF:203.175.64.0/116
+deny from ::FFFF:203.176.190.0/119
+deny from ::FFFF:203.212.28.0/118
+deny from ::FFFF:203.215.160.0/115
+deny from ::FFFF:203.223.160.0/116
+deny from ::FFFF:206.225.81.161/128
+deny from ::FFFF:206.225.81.162/128
+deny from ::FFFF:206.225.81.246/127
+deny from ::FFFF:206.225.82.82/127
+deny from ::FFFF:206.225.82.133/128
+deny from ::FFFF:206.225.82.142/128
+deny from ::FFFF:206.225.94.10/128
+deny from ::FFFF:206.225.94.142/128
+deny from ::FFFF:206.225.94.233/128
+deny from ::FFFF:208.70.72.208/124
+deny from ::FFFF:208.194.251.0/120
+deny from ::FFFF:208.207.92.0/119
+deny from ::FFFF:208.232.94.0/119
+deny from ::FFFF:208.240.136.0/118
+deny from ::FFFF:209.150.144.0/116
+deny from ::FFFF:210.2.128.0/114
+deny from ::FFFF:210.5.193.64/122
+deny from ::FFFF:210.5.199.0/120
+deny from ::FFFF:210.5.204.128/121
+deny from ::FFFF:210.5.205.128/121
+deny from ::FFFF:210.5.208.72/125
+deny from ::FFFF:210.5.208.80/125
+deny from ::FFFF:210.5.209.128/122
+deny from ::FFFF:210.5.209.240/125
+deny from ::FFFF:210.5.210.128/121
+deny from ::FFFF:210.5.211.0/122
+deny from ::FFFF:210.5.211.64/125
+deny from ::FFFF:210.5.213.0/120
+deny from ::FFFF:210.5.217.0/120
+deny from ::FFFF:210.5.221.0/125
+deny from ::FFFF:210.5.221.16/124
+deny from ::FFFF:210.56.0.0/115
+deny from ::FFFF:210.89.69.16/124
+deny from ::FFFF:210.89.72.168/125
+deny from ::FFFF:210.89.72.176/125
+deny from ::FFFF:210.89.75.0/123
+deny from ::FFFF:210.89.75.32/125
+deny from ::FFFF:210.89.75.48/125
+deny from ::FFFF:210.89.75.200/125
+deny from ::FFFF:210.89.76.184/125
+deny from ::FFFF:210.89.78.80/124
+deny from ::FFFF:210.89.80.0/125
+deny from ::FFFF:210.89.81.24/125
+deny from ::FFFF:212.165.146.16/125
+deny from ::FFFF:212.165.146.32/123
+deny from ::FFFF:212.165.146.64/125
+deny from ::FFFF:212.165.146.88/125
+deny from ::FFFF:212.165.146.96/124
+deny from ::FFFF:212.165.158.48/124
+deny from ::FFFF:212.165.158.64/124
+deny from ::FFFF:212.165.158.88/125
+deny from ::FFFF:212.165.158.112/124
+deny from ::FFFF:212.165.158.128/123
+deny from ::FFFF:212.165.159.0/120
+deny from ::FFFF:216.236.200.64/124
+deny from ::FFFF:216.236.220.0/124
+deny from ::FFFF:216.236.220.16/125
+deny from ::FFFF:216.236.220.176/125
+deny from ::FFFF:216.236.220.216/125
+deny from ::FFFF:216.236.220.224/123
+deny from ::FFFF:216.236.222.32/124
+deny from ::FFFF:216.236.222.48/125
+deny from ::FFFF:216.236.222.72/125
+deny from ::FFFF:216.236.222.80/125
+deny from ::FFFF:216.236.222.96/124
+deny from ::FFFF:216.236.222.192/124
+deny from ::FFFF:216.236.222.216/125
+deny from ::FFFF:218.100.85.0/120
+deny from ::FFFF:221.120.192.0/114
+deny from ::FFFF:221.132.112.0/117
+deny from ::FFFF:223.29.224.0/116
+deny from 2001:DD8:1C::/48
+deny from 2001:DF0:84::/48
+deny from 2001:DF0:279::/48
+deny from 2001:DF0:2CB::/48
+deny from 2001:DF0:3200::/48
+deny from 2001:DF0:4A00::/48
+deny from 2001:DF6:3C00::/48
+deny from 2001:FE8::/32
+deny from 2001:19F0:200:2F71::/64
+deny from 2001:19F0:200:2FF3::/64
+deny from 2001:19F0:200:2FFC::/64
+deny from 2001:4538::/32
+deny from 2400:1680::/32
+deny from 2400:1A80::/32
+deny from 2400:4F00::/32
+deny from 2400:FC00::/32
+deny from 2401::/31
+deny from 2401:4100::/32
+deny from 2401:8E00::/32
+deny from 2401:9E00::/32
+deny from 2401:BA80::/32
+deny from 2401:C900:1101:1E0::/64
+deny from 2401:C900:1101:4BA::/64
+deny from 2401:EA00::/32
+deny from 2402:1680::/47
+deny from 2402:1680:A::/47
+deny from 2402:1680:C::/46
+deny from 2402:1680:10::/47
+deny from 2402:1680:12::/48
+deny from 2402:1680:14::/46
+deny from 2402:1680:18::/47
+deny from 2402:7C00::/32
+deny from 2402:AD80::/32
+deny from 2402:E000::/32
+deny from 2402:FD00::/32
+deny from 2403:7980::/32
+deny from 2403:A500::/32
+deny from 2404:3100::/32
+deny from 2404:3C80::/32
+deny from 2404:6680::/32
+deny from 2404:7000::/32
+deny from 2404:7580::/32
+deny from 2404:7680::/36
+deny from 2404:7B80::/32
+deny from 2404:8180::/32
+deny from 2404:8300::/32
+deny from 2404:D400::/32
+deny from 2404:F400::/32
+deny from 2405:C00::/32
+deny from 2406:D00::/32
+deny from 2406:1300::/32
+deny from 2406:7000::/32
+deny from 2406:8400::/32
+deny from 2406:AC00::/32
+deny from 2406:F500::/32
+deny from 2407:1B00::/32
+deny from 2407:4500::/32
+deny from 2407:9C00::/32
+deny from 2407:9E00::/32
+deny from 2407:D000::/32
+deny from 2604:BC80:2:2::/64
+deny from 2607:F0D0:1101:C3::/64
+deny from 2607:F0D0:3801:C7::/64
+deny from 2A03:8180:1002:BF::/64
+deny from 2A03:8180:1002:228::/64
+deny from 2A03:8180:1101:10A::/64
+deny from 2A03:8180:1401:8::/64
+deny from 2A03:8180:1401:127::/64
+deny from 2A05:DFC7:9900::/43
+</Limit>
