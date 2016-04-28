@@ -1,0 +1,72 @@
+<?php
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance(); //instance of \Magento\Framework\App\ObjectManager
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$currentStore = $storeManager->getStore();
+$baseUrl = $currentStore->getBaseUrl();
+$mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+
+$videoObj = $_objectManager->get('Sahy\Banner\Block\Frontend\Banners');
+$videos = $videoObj->getVideoContent();
+?>
+
+<div style="width: 100%">
+    <p class="headingTrainVideo">TRAINING VIDEO</p>
+<?php if (count($videos) > 0) { ?>
+    <div class="row" id="trainVideoRow">
+    <?php foreach($videos as $item) { ?>
+        <div class="videoItemWrap" id="train_video_<?= $item['id'] ?>">
+            <?php
+            $img = $mediaUrl . $item['image'];
+            $videoLink = trim($item['link']);
+            if(isset($videoLink) && !is_null($videoLink)) {
+                if (strpos($videoLink, 'youtube') > 0) {
+                    preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $videoLink, $matches);
+                    $videoLink = 'https://www.youtube.com/embed/' . $matches[0];
+                    if (is_null($item['image'])) {
+                        $img = 'http://img.youtube.com/vi/'.$matches[0].'/0.jpg';
+                    }
+                }
+            }
+            ?>
+            <a href="javascript:void(0);" class="clickVideo" data-video="<?= $videoLink ?>">
+                <div class="videoItem">
+                    <div class="img-resp noBg" style="padding-bottom: 75%">
+                        <img class="img-full" src="<?= $img ?>" />
+                    </div>
+                    <p class="titTrainVideo"><?= $item['name'] ?></p>
+                </div>
+            </a>
+        </div>
+    <?php } ?>
+    </div>
+    <div id="popUpTraining">
+        <div id="trainingVideoWrap">
+            <a id="closePopUpTraining">[ x ]</a>
+            <div id="respTrainingVideo">
+                <iframe width="100%" height="100%" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        require(['jquery', 'jquery/ui'], function ($) {
+            $(document).ready(function () {
+                // Click Training video
+                $('.clickVideo').click(function () {
+                    var videoLink =  $(this).attr('data-video');
+                    if (videoLink != "") {
+                        $('#respTrainingVideo > iframe').attr("src",videoLink);
+                        $('#popUpTraining').addClass("open");
+                    }
+                });
+                // Click close pop-up
+                $('#closePopUpTraining').click(function() {
+                    $('#popUpTraining').removeClass("open");
+                    $('#respTrainingVideo > iframe').attr("src","");
+                })
+            });
+        })
+    </script>
+<?php } else echo "<p>We haven't video now.</p>"; ?>
+</div>
+

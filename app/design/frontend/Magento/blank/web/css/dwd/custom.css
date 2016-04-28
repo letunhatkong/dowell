@@ -11,6 +11,10 @@ body {
     overflow: hidden;
 }
 
+.noBg {
+    background: transparent;
+}
+
 .img-resp > img {
     width: 100%;
     height: auto;
@@ -1425,3 +1429,37 @@ img[src=""] {
 }
 /* # Detail page */
 
+
+/* Training Video Page */
+.headingTrainVideo {
+    font-size: 30px;
+    font-weight: bold;
+}
+.videoItemWrap {
+    width: 25%;
+    float: left;
+    padding: 10px;
+}
+.videoItem {
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+}
+#trainVideoRow a {
+    text-decoration: none;
+}
+.titTrainVideo {
+    color: #474747;
+    margin: 20px 0 0;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 992px) {
+    .videoItemWrap {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 479px) {
+    .videoItemWrap {
+        width: 100%;
+    }
+}
+/* # Training Video Page */
