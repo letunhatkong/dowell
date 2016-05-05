@@ -34,6 +34,7 @@ $latest = $productCollection->create()
     ->addAttributeToSelect('*')
     ->addFieldToFilter("status", "1")
     ->setOrder('created_at', 'DESC')
+    ->setPageSize(20)
     ->load();
 ?>
 
@@ -108,7 +109,9 @@ $promo = $promotionCollection->create()
     ->addAttributeToSelect('*')
     ->addCategoryFilter($promotionCategory)
     ->addAttributeToFilter('status', '1')
-    ->setOrder('created_at', 'DESC')->load();
+    ->setOrder('created_at', 'DESC')
+    ->setPageSize(20)
+    ->load();
 ?>
 
 <?php if ($promo->getSize() > 0) { ?>
