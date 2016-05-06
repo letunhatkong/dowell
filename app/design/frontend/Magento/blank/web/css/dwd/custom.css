@@ -1506,4 +1506,8 @@ img[src=""] {
     width: 25%;
     padding: 0 5px;
 }
+
+.mainImgGallery img {
+    width: 100%;
+}
 /* # Gallery */

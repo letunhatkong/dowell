@@ -40,7 +40,7 @@ $galleries = $gallery->getGalleryCollection();
         <div class="clearfix"></div>
 
         <div id="gallerySlide_<?= $gallery['id'] ?>" class="carousel slide" data-ride="carousel" data-interval="false">
-            <div class="carousel-inner">
+            <div class="carousel-inner mainImgGallery">
             <?php foreach($gallery['images'] as $i => $thumb) { ?>
                 <div class="item <?= ($i == 0) ? 'active':'' ?>">
                     <img src="<?= $thumb['path'] ?>" data-i="<?= $i ?>">
