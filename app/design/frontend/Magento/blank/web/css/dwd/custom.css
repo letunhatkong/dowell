@@ -1463,3 +1463,47 @@ img[src=""] {
     }
 }
 /* # Training Video Page */
+
+/* Gallery */
+.popUpGalleryWrap {
+    display: none;
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    width: 100%;
+    max-width: 540px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform:  translate(-50%, -50%);
+    -moz-transform:  translate(-50%, -50%);
+    -ms-transform:  translate(-50%, -50%);
+    -o-transform:  translate(-50%, -50%);
+    transform:  translate(-50%, -50%);
+}
+.popUpGalleryWrap.open {
+    display: block;
+}
+.titGalleryImg {
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+.closePopUpGallery {
+    float: right;
+    text-align: right;
+    display: block;
+    color: #474747 !important;
+    font-weight: bold;
+    font-size: 24px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.thumbGallery {
+    float: left;
+    width: 25%;
+    padding: 0 5px;
+}
+/* # Gallery */
