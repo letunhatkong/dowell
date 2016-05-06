@@ -61,6 +61,9 @@
         <block class="Magento\Framework\View\Element\Template" name="training.video" template="Magento_Theme::html/video.phtml"/>
         <!-- Update XML in Video Page <move element="training.video" destination="content" after="breadcrumbs"/> -->
 
+        <!-- Create block Image Gallery -->
+        <block class="DR\Gallery\Block\Gallery" as="default" name="image.gallery" template="Magento_Theme::html/gallery.phtml"/>
+
         <!-- Remove footer -->
         <referenceContainer name="footer" remove="true" />
         <!-- Move Copyright -->
