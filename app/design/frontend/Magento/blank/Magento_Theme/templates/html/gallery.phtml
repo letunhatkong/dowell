@@ -1,0 +1,112 @@
+<?php
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$currentStore = $storeManager->getStore();
+$mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+
+$gallery = $_objectManager->get('DR\Gallery\Block\Gallery');
+$galleries = $gallery->getGalleryCollection();
+
+?>
+
+<?php if ($galleries) { ?>
+<div style="width: 100%">
+    <p class="headingTrainVideo">GALLERY</p>
+
+    <div class="row">
+    <?php foreach($galleries as $gallery) { ?>
+        <?php if (count($gallery['images']) > 0) { ?>
+        <div class="videoItemWrap">
+            <a href="javascript:void(0);" class="clickGallery" data-id="<?= $gallery['id'] ?>">
+                <div class="videoItem">
+                    <div class="img-resp noBg" style="padding-bottom: 75%">
+                        <img class="img-full" src="<?= $gallery['images'][0]['path'] ?>" />
+                    </div>
+                    <p class="titTrainVideo"><?= $gallery['name'] ?></p>
+                </div>
+            </a>
+        </div>
+        <?php } ?>
+    <?php } ?>
+    </div>
+</div>
+
+<div id="popUpTraining">
+<?php foreach($galleries as $gallery) { ?>
+    <?php if (count($gallery['images']) > 0) { ?>
+    <div class="popUpGalleryWrap" id="popUpImgGal_<?= $gallery['id'] ?>">
+        <span class="titGalleryImg"><?= $gallery['name'] ?></span>
+        <a class="closePopUpGallery">[ x ]</a>
+        <div class="clearfix"></div>
+
+        <div id="gallerySlide_<?= $gallery['id'] ?>" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner">
+            <?php foreach($gallery['images'] as $i => $thumb) { ?>
+                <div class="item <?= ($i == 0) ? 'active':'' ?>">
+                    <img src="<?= $thumb['path'] ?>" data-i="<?= $i ?>">
+                </div>
+            <?php } ?>
+            </div>
+        </div>
+        <div class="clearfix pad20"></div>
+
+        <div id="thumbSlide_<?= $gallery['id'] ?>" class="carousel slide" data-interval="false">
+            <div class="carousel-inner padHS">
+            <?php foreach($gallery['images'] as $i => $thumb) { ?>
+                <?php if ($i % 4 == 0) { ?>
+                    <div class="item <?= ($i == 0) ? 'active':'' ?>">
+                <?php } ?>
+                        <div data-target="#gallerySlide_<?= $gallery['id'] ?>" data-slide-to="<?= $i ?>" class="thumbGallery">
+                            <img src="<?= $thumb['path'] ?>">
+                        </div>
+                <?php if ($i % 4 == 3 || ($i + 1) == count($gallery['images'])) { ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+            </div>
+            <!-- /carousel-inner -->
+
+            <!-- Controls -->
+            <a href="#thumbSlide_<?= $gallery['id'] ?>" role="button" data-slide="prev">
+                <div class="prevButtonWrap" aria-hidden="true">
+                    <img src="<?= $mediaUrl ?>images/home/left.png"/>
+                </div>
+            </a>
+            <a href="#thumbSlide_<?= $gallery['id'] ?>" role="button" data-slide="next">
+                <div class="nextButtonWrap" aria-hidden="true">
+                    <img src="<?= $mediaUrl ?>images/home/right.png"/>
+                </div>
+            </a>
+        </div>
+        <!-- # ThumbSlide -->
+    </div>
+
+    <?php } ?>
+<?php } ?>
+</div>
+
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function ($) {
+        $(document).ready(function ($) {
+            $(window).load(function () {
+                $('.clickGallery').click(function () {
+                    var gId = $(this).attr('data-id');
+                    $('#popUpTraining').addClass("open");
+                    $('#popUpImgGal_'+gId).addClass("open");
+                });
+                $('.closePopUpGallery').click(function(){
+                    $('#popUpTraining').removeClass("open");
+                    $(this).parent().removeClass('open');
+                });
+            });
+        });
+    });
+</script>
+
+<?php } ?>
+
+
+
+
+
+
