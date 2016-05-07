@@ -1061,8 +1061,12 @@ body {
     border: 1px solid #c2c2c2;
 }
 #dataQuickView img {
-    width: 100%;
+    width: auto;
     height: auto;
+    max-width: 100%;
+    max-height: 700px;
+    margin: 0 auto;
+    display: block;
 }
 #titQuickView {
     text-decoration: none;
