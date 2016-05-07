@@ -993,8 +993,8 @@ body {
 }
 /* left Menu - category page */
 
-/* Training video */
-#popUpTraining {
+/* Training video - Quick View */
+#popUpTraining, .containerPopUpWrap {
     position: fixed;
     background: rgba(0, 0, 0, 0.75);
     width: 100%;
@@ -1004,10 +1004,11 @@ body {
     z-index: 100;
     display: none;
 }
-#popUpTraining.open {
+
+#popUpTraining.open, .containerPopUpWrap.open {
     display: block;
 }
-#trainingVideoWrap {
+#trainingVideoWrap, .popUpInnerWrap {
     position: relative;
     background: #fff;
     padding: 20px;
@@ -1020,6 +1021,9 @@ body {
     -ms-transform:  translate(-50%, -50%);
     -o-transform:  translate(-50%, -50%);
     transform:  translate(-50%, -50%);
+}
+.popUpInnerWrap {
+    max-width: 700px;
 }
 #respTrainingVideo {
     position: relative;
@@ -1044,7 +1048,54 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+#closeQuickViewAction {
+    float: right;
+    color: #808080;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
 
+#dataQuickView .leftImg {
+    padding: 5px;
+    border: 1px solid #c2c2c2;
+}
+#dataQuickView img {
+    width: 100%;
+    height: auto;
+}
+#titQuickView {
+    text-decoration: none;
+    color: #474747;
+    font-size: 20px;
+    line-height: normal;
+    font-weight: bold;
+    display: block;
+}
+#skuQuickView {
+    color: #c4c4c4;
+    font-size: 12px;
+    margin: 10px 0 20px;
+}
+#priceQuickView {
+    font-size: 26px;
+    font-weight: normal;
+    margin: 0;
+}
+.lineQuickView {
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #e1e1e1;
+    margin: 20px 0;
+}
+#desQuickView {
+    margin: 0;
+}
+#desQuickView, #desQuickView p,
+#desQuickView span, #desQuickView div {
+    color: #808080 !important;
+}
 
 @media only screen and (max-width: 980px) {
     .page-products .products-grid .product-item {
@@ -1071,6 +1122,9 @@ body {
 @media only screen and (max-width: 767px) {
     .action.primary {
         width: 100%;
+    }
+    #titQuickView {
+        margin-top: 20px;
     }
 }
 

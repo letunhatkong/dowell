@@ -18,6 +18,10 @@ use Magento\Framework\App\Action\Action;
 <?php
 $_productCollection = $block->getLoadedProductCollection();
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$currentStore = $storeManager->getStore();
+$mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
 ?>
 <?php if (!$_productCollection->count()): ?>
     <div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
@@ -81,7 +85,14 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 
                         <div class="product-item-inner">
                             <div class="qv-tv-wrap">
-                                <a href="#" class="list-quickView">
+                                <a href="javascript:void(0);" class="list-quickView"
+                                    data-title="<?= $_helper->productAttribute($_product, $_product->getName(), 'name') ?>"
+                                    data-url="<?= $_product->getProductUrl() ?>"
+                                    data-sku="<?= $_product->getSku() ?>"
+                                    data-img="<?= $mediaUrl . 'catalog/product'. $_product->getImage() ?>"
+                                    data-price="<?= number_format((float)$_product->getPrice(), 2, '.', '')  ?>"
+                                    data-des="<?= $_product->getDescription()?>"
+                                >
                                     <img src="/pub/media/images/icon/quick_view.png" />
                                     <span>Quick View</span>
                                 </a>
@@ -175,15 +186,38 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
         </script>
     <?php endif; ?>
 
-    <!-- Training Video -->
-    <!--<div id="popUpTraining">
-        <div id="trainingVideoWrap">
-            <a id="closePopUpTraining">[ x ]</a>
-            <div id="respTrainingVideo">
-                <iframe width="100%" height="100%" src="" frameborder="0" allowfullscreen></iframe>
+    <!-- Quick View -->
+    <div class="containerPopUpWrap" id="">
+        <div class="popUpInnerWrap">
+            <a href="javascript:void(0);" id="closeQuickViewAction">Close the window [x]</a>
+            <div class="clearfix"></div>
+            <div id="dataQuickView">
+<!--                <a href="javascript:void(0);" class="list-quickView"-->
+<!--                   data-title=""-->
+<!--                   data-url=""-->
+<!--                   data-sku="product 1"-->
+<!--                   data-img="http://dowell.vn/pub/media/catalog/product/4/_/4.jpg"-->
+<!--                   data-price="100.00"-->
+<!--                   data-des="">-->
+<!--                </a>-->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="leftImg">
+                            <img id="imgQuickView" src="http://dowell.vn/pub/media/catalog/product/4/_/4.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <a href="#" id="titQuickView">product 1: This sample text is to show placement of tetxt. This sample text is to show placement of tetxt </a>
+                        <p id="skuQuickView">product 1</p>
+                        <p id="priceQuickView">$ 100.00</p>
+                        <div class="lineQuickView"></div>
+                        <div id="desQuickView"><p>This sample text is to show placement of tetxt. This sample text is to show placement of tetxt&nbsp;</p></div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>-->
+    </div>
+
     <script type="text/javascript">
         require(['jquery', 'jquery/ui'], function ($) {
             $(document).ready(function () {
@@ -195,12 +229,36 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
                         $('#popUpTraining').addClass("open");
                     }
                 });
-                // Click close pop-up
+                // Click close pop-up training video
                 $('#closePopUpTraining').click(function() {
                     $('#popUpTraining').removeClass("open");
                     $('#respTrainingVideo > iframe').attr("src","");
+                });
+
+                // Click Quick View
+                $('.list-quickView').click(function(){
+                    var title = $(this).attr("data-title"),
+                        url = $(this).attr("data-url"),
+                        img = $(this).attr("data-img"),
+                        sku = $(this).attr("data-sku"),
+                        price = $(this).attr("data-price"),
+                        des = $(this).attr("data-des");
+
+                    $('#imgQuickView').attr("src",img);
+                    $('#titQuickView').attr("href",url);
+                    $('#titQuickView').text(title);
+                    $('#skuQuickView').text("SKU: "+sku);
+                    $('#priceQuickView').text('$ '+price);
+                    $('#desQuickView').html(des);
+
+                    $('.containerPopUpWrap').addClass("open");
+
+                });
+                // Click close pop-up quickView
+                $('#closeQuickViewAction').click(function() {
+                    $('.containerPopUpWrap').removeClass("open");
                 })
             });
-        })
+        });
     </script>
 <?php endif; ?>
