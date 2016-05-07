@@ -44,6 +44,8 @@ $currentCategory = $objectManager->get('Magento\Framework\Registry')->registry('
         $( document ).ready(function() {
             $('#leftMenuUl li.parent').each(function() {
                 var data = $(this).hasClass("has-active") ? "-" : "+";
+                var curWidth = $(window).width();
+                if (curWidth <= 767) data = "+";
                 $(this).prepend('<span class="dropLeftMenu">'+data+'</span>');
             });
 

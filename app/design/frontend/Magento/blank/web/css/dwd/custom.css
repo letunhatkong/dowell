@@ -1,6 +1,11 @@
 
 body {
     color: #474747;
+    font-size: 14px;
+}
+
+.columns .column.main {
+    width: 100%;
 }
 
 /* image responsive */
@@ -418,6 +423,10 @@ body {
 #topMenu .level0 > .submenu .submenu {
     margin: 0;
     padding-left: 20px;
+}
+
+#topMenu .level1.submenu{
+    display:none;
 }
 
 .header.content .logo {
@@ -920,6 +929,9 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+    #leftMenuUl li.has-active > ul.submenu {
+        display: none;
+    }
     .page-layout-2columns-left .sidebar-main {
         width: 100%;
         padding: 0;
@@ -1062,9 +1074,22 @@ body {
     }
 }
 
+@media only screen and (max-width: 479px) {
+    .page-products .products-grid .product-item {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+    .page-products .products-grid .product-item:nth-child(3n+1) {
+        margin-left: 0 !important;
+    }
+}
+
 /* Category page - page-layout-2columns-left */
 
 /* Home page */
+.threeCategory .col-xs-12 {
+    margin-bottom: 5px;
+}
 /* Banner slider */
 #bannerHS {
     margin-bottom: 50px;
@@ -1122,6 +1147,7 @@ body {
     color: #8d8d8d;
     padding: 10px 0 0;
     margin: 0;
+    font-size: 14px;
 }
 
 .head-homePage {
@@ -1172,9 +1198,24 @@ ol.carousel-indicators {
     padding: 0;
 }
 
+
+@media only screen and (max-width: 767px) {
+    .HS-item-wrap p {
+        font-size: 12px;
+        white-space: nowrap;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+
 @media only screen and (max-width: 479px) {
-    .homeSlider .col-xs-6 {
+    .homeSlider .col-xs-6, .resizeText .col-xs-6 {
         width: 100%;
+    }
+    .HS-item-wrap p {
+        white-space: normal;
     }
 }
 
@@ -1398,6 +1439,14 @@ img[src=""] {
 .fotorama .fotorama__nav__frame--thumb.fotorama__active {
     /*border: 1px solid red;*/
 }
+.fotorama__stage__frame .fotorama__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
 @media only screen and (max-width: 767px) {
     .fotorama .fotorama__stage {
         border: none;
@@ -1511,3 +1560,74 @@ img[src=""] {
     width: 100%;
 }
 /* # Gallery */
+
+
+
+/* Button */
+.action.primary:hover {
+    background: #ff6129;
+    border: 1px solid #ff6129;
+}
+
+.action.primary {
+    background: #ff6129 none;
+    border: 1px solid #ff6129;
+}
+/*button end*/
+
+/* Tab*/
+
+
+.tabs-menu {
+    height: 30px;
+    float: left;
+    clear: both;
+}
+
+.tabs-menu li {
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-right: 10px;
+    background-color: #ccc;
+    border-top: 1px solid #d4d4d1;
+    border-right: 1px solid #d4d4d1;
+    border-left: 1px solid #d4d4d1;
+}
+
+.tabs-menu li.current {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 5;
+}
+
+.tabs-menu li a {
+    padding: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+}
+
+.tabs-menu .current a {
+    color: #2e7da3;
+}
+
+.tab {
+    border: 1px solid #d4d4d1;
+    background-color: #fff;
+    float: left;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+.tab-content {
+    width: 660px;
+    padding: 20px;
+    display: none;
+}
+
+#tab-1 {
+    display: block;
+}
+/*  Tab end */

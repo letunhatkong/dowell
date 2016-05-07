@@ -86,20 +86,21 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
                                     <span>Quick View</span>
                                 </a>
                                 <?php
-                                    $video = $_product->getVideoLink();
+                                    $video = trim($_product->getVideoLink());
                                     $_video = $video;
-                                    if(isset($video) && !is_null($video)) {
+                                    if(isset($video) && !is_null($video) && $video != "") {
                                         $_video = $video;
                                         if (strpos($video, 'youtube') > 0) {
                                             preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $video, $matches);
                                             $_video = 'https://www.youtube.com/embed/' . $matches[0];
-                                        }
-                                    }
-                                ?>
-                                <a href="javascript:void(0);" class="list-trainVideo" data-video="<?= $_video ?>">
-                                    <img src="/pub/media/images/icon/video.png" />
-                                    <span>Training Video</span>
-                                </a>
+                                        } ?>
+
+                                        <a href="javascript:void(0);" class="list-trainVideo" data-video="<?= $_video ?>">
+                                            <img src="/pub/media/images/icon/video.png" />
+                                            <span>Training Video</span>
+                                        </a>
+                                <?php } ?>
+
                                 <div class="clearfix"></div>
                             </div>
                             <div class="product actions product-item-actions"<?php echo strpos($pos, $viewMode . '-actions') ? $position : ''; ?>>
