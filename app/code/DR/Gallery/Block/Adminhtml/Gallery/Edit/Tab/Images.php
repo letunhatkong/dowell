@@ -47,7 +47,7 @@ class Images extends Extended
     }
 
     /**
-     * {@inheritdoc}
+     *
      */
     protected function _construct()
     {
@@ -70,15 +70,13 @@ class Images extends Extended
     {
         /** @var Collection $collection */
         $collection = $this->collectionFactory->create();
-
         $collection->getSelect()->joinLeft(
             ['link_table' => $collection->getTable('dr_gallery_gallery_image')],
             'main_table.image_id = link_table.image_id',
-            ['gallery_id', 'position']
-        );
+            ['gallery_id', 'position'])
+            ->where("link_table.image_id is null");
 
         $this->setCollection($collection);
-
         return parent::_prepareCollection();
     }
 
