@@ -12,7 +12,6 @@ body {
 .img-resp {
     position: relative;
     width: 100%;
-    background: #000;
     overflow: hidden;
 }
 
@@ -130,7 +129,7 @@ body {
 #ft_cpr {
     background: #636363;
     text-align: center;
-    color: #3b3b3b;
+    color: #e2e2e2;
     padding: 10px 0;
 }
 
@@ -272,7 +271,7 @@ body {
 
 /* Header */
 .page-header {
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 .nav-sections {
     margin-bottom: 0;
@@ -447,7 +446,7 @@ body {
 
     .page-header {
         border: none;
-        margin: 0 0 30px;
+        margin: 0 0 0;
     }
     .page-header .panel.wrapper {
         padding-bottom: 40px;
@@ -1515,7 +1514,7 @@ img[src=""] {
         padding-top: 20px;
     }
 }
-    /* Slide media */
+/* Slide media */
 
 /* Related product */
 #relatedSliderWrapper {

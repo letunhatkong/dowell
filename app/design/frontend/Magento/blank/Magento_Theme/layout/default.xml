@@ -74,7 +74,8 @@
         <!-- Move minicart -->
         <move element="minicart" destination="top.links" after="-"/>
 
-
+        <block class="Magento\Framework\View\Element\Template" name="languages" template="Magento_Theme::html/languages.phtml"/>
+        <move element="languages" destination="header.panel" before="-"/>
 
         <!-- JS -->
         <block class="Magento\Framework\View\Element\Text" name="carousel">
