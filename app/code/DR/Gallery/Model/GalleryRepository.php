@@ -85,16 +85,6 @@ class GalleryRepository implements GalleryRepositoryInterface
     }
 
     /**
-     * Get All Gallery with status = 1
-     * @return mixed
-     */
-    public function getAllGallery() {
-        return $this->galleryCollectionFactory->create()
-            ->addFieldToFilter("status", "1")
-            ->setOrder('updated_at', 'DESC');
-    }
-
-    /**
      * Save gallery
      *
      * @param GalleryInterface $gallery
@@ -224,5 +214,15 @@ class GalleryRepository implements GalleryRepositoryInterface
     public function deleteById($galleryId)
     {
         return $this->delete($this->getById($galleryId));
+    }
+
+    /**
+     * Get All Gallery with status = 1
+     * @return mixed
+     */
+    public function getAllGallery() {
+        return $this->galleryCollectionFactory->create()
+            ->addFieldToFilter("status", "1")
+            ->setOrder('updated_at', 'DESC');
     }
 }

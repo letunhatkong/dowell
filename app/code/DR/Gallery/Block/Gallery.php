@@ -36,46 +36,6 @@ class Gallery extends Template
     }
 
     /**
-     * Get Gallery Collection (status = 1)
-     * @return mixed Gallery Collection
-     */
-    public function getGalleryCollection()
-    {
-        $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
-        $currentStore = $storeManager->getStore();
-        $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
-        $result = [];
-        $galleries = $this->galleryRepository->getAllGallery();
-        if (is_null($galleries) || count($galleries) <= 0) return [];
-        foreach($galleries as $gallery) {
-            $_gal = [
-                'id' => $gallery->getId(),
-                'name' => $gallery->getName(),
-                'status' => $gallery->getStatus(),
-                'images' => []
-            ];
-            $images = $gallery->getImageCollection();
-            if (count($images) > 0) {
-                $_img = [];
-                foreach ($images as $image) {
-                    if ($image->getStatus()) {
-                        $img = [
-                            'id' => $gallery->getId(),
-                            'name' => $gallery->getName(),
-                            'path' => $mediaUrl . $image->getPath()
-                        ];
-                        array_push($_img, $img);
-                    }
-                }
-                $_gal['images'] = $_img;
-            }
-            array_push($result, $_gal);
-        }
-        return $result;
-    }
-
-    /**
      * @return mixed
      */
     public function getGallery()
@@ -144,5 +104,45 @@ class Gallery extends Template
         }
 
         return $gallery->getImageCollection();
+    }
+
+    /**
+     * Get Gallery Collection (status = 1)
+     * @return mixed Gallery Collection
+     */
+    public function getGalleryCollection()
+    {
+        $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+        $currentStore = $storeManager->getStore();
+        $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+        $result = [];
+        $galleries = $this->galleryRepository->getAllGallery();
+        if (is_null($galleries) || count($galleries) <= 0) return [];
+        foreach($galleries as $gallery) {
+            $_gal = [
+                'id' => $gallery->getId(),
+                'name' => $gallery->getName(),
+                'status' => $gallery->getStatus(),
+                'images' => []
+            ];
+            $images = $gallery->getImageCollection();
+            if (count($images) > 0) {
+                $_img = [];
+                foreach ($images as $image) {
+                    if ($image->getStatus()) {
+                        $img = [
+                            'id' => $gallery->getId(),
+                            'name' => $gallery->getName(),
+                            'path' => $mediaUrl . $image->getPath()
+                        ];
+                        array_push($_img, $img);
+                    }
+                }
+                $_gal['images'] = $_img;
+            }
+            array_push($result, $_gal);
+        }
+        return $result;
     }
 }
