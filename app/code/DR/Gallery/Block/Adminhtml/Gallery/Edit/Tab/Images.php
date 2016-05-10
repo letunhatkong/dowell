@@ -74,7 +74,7 @@ class Images extends Extended
             ['link_table' => $collection->getTable('dr_gallery_gallery_image')],
             'main_table.image_id = link_table.image_id',
             ['gallery_id', 'position'])
-            ->where("link_table.image_id is null");
+        ->group('main_table.image_id');
 
         $this->setCollection($collection);
         return parent::_prepareCollection();
