@@ -19,6 +19,7 @@ use Magento\Framework\App\Action\Action;
 $_productCollection = $block->getLoadedProductCollection();
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
 $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$formKey = $_objectManager->get('Magento\Checkout\Block\Onepage')->getFormKey();
 $storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
 $currentStore = $storeManager->getStore();
 $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
@@ -82,7 +83,7 @@ $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_
                         <?php echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
                         <?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?>
                         <?php echo $block->getProductDetailsHtml($_product); ?>
-
+                        <?php $addCart = $block->getAddToCartPostParams($_product); ?>
                         <div class="product-item-inner">
                             <div class="qv-tv-wrap">
                                 <a href="javascript:void(0);" class="list-quickView"
@@ -92,6 +93,12 @@ $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_
                                     data-img="<?= $mediaUrl . 'catalog/product'. $_product->getImage() ?>"
                                     data-price="<?= number_format((float)$_product->getPrice(), 2, '.', '')  ?>"
                                     data-des="<?= $_product->getDescription()?>"
+                                    data-action="<?= $addCart['action'] ?>"
+                                    data-product="<?= $addCart['data']['product'] ?>"
+                                    data-name="<?=  Action::PARAM_NAME_URL_ENCODED ?>"
+                                    data-name-val="<?= $addCart['data'][Action::PARAM_NAME_URL_ENCODED];  ?>"
+                                    data-form-key='<?= $formKey ?>'
+
                                 >
                                     <img src="/pub/media/images/icon/quick_view.png" />
                                     <span>Quick View</span>
@@ -120,7 +127,8 @@ $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_
                                         <?php $postParams = $block->getAddToCartPostParams($_product); ?>
                                         <form data-role="tocart-form" action="<?php /* @escapeNotVerified */ echo $postParams['action']; ?>" method="post">
                                             <input type="hidden" name="product" value="<?php /* @escapeNotVerified */ echo $postParams['data']['product']; ?>">
-                                            <input type="hidden" name="<?php /* @escapeNotVerified */ echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php /* @escapeNotVerified */ echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
+                                            <input type="hidden" name="<?php /* @escapeNotVerified */ echo Action::PARAM_NAME_URL_ENCODED; ?>"
+                                                   value="<?php /* @escapeNotVerified */ echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
                                             <?php echo $block->getBlockHtml('formkey')?>
                                             <button type="submit"
                                                     title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
@@ -214,12 +222,25 @@ $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_
                         price = $(this).attr("data-price"),
                         des = $(this).attr("data-des");
 
+                    var action = $(this).attr("data-action"),
+                    productId = $(this).attr("data-product"),
+                    name = $(this).attr("data-name"),
+                    nameVal = $(this).attr("data-name-val"),
+                    formKey = $(this).attr("data-form-key");
+
+
                     $('#imgQuickView').attr("src",img);
                     $('#titQuickView').attr("href",url);
                     $('#titQuickView').text(title);
                     $('#skuQuickView').text("SKU: "+sku);
                     $('#priceQuickView').text('$ '+price);
                     $('#desQuickView').html(des);
+
+                    $('#addToCartQuickView > form').attr("action",action);
+                    $('#addToCartQuickView input.productWV').val(productId);
+                    $('#addToCartQuickView input.uenc').attr("name",name);
+                    $('#addToCartQuickView input.uenc').val(nameVal);
+                    $('#addToCartQuickView input.formKeyWV').val(formKey);
 
                     $('.containerPopUpWrap').addClass("open");
 
