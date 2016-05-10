@@ -305,6 +305,7 @@ body {
 /* # mini cart*/
 
 .header.content {
+    position: relative;
     border-bottom: 1px solid #e1e1e1;
     padding: 30px 20px 0;
     width: 100%;
@@ -598,6 +599,11 @@ body {
     }
 }
 
+@media only screen and (max-width: 767px) {
+    .page-header .header.panel{
+        padding: 10px 15px;
+    }
+}
 /* # Header */
 
 .page-title {
@@ -861,6 +867,11 @@ body {
 @media only screen and (max-width: 1180px) {
     .products-grid .action.primary {
         width: 100%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .products-grid .product-item-link {
+        font-size: 12px;
     }
 }
 
@@ -1135,13 +1146,13 @@ body {
 }
 
 @media only screen and (max-width: 479px) {
-    .page-products .products-grid .product-item {
-        width: 100% !important;
-        margin-left: 0 !important;
-    }
-    .page-products .products-grid .product-item:nth-child(3n+1) {
-        margin-left: 0 !important;
-    }
+    /*.page-products .products-grid .product-item {*/
+        /*width: 100% !important;*/
+        /*margin-left: 0 !important;*/
+    /*}*/
+    /*.page-products .products-grid .product-item:nth-child(3n+1) {*/
+        /*margin-left: 0 !important;*/
+    /*}*/
 }
 
 /* Category page - page-layout-2columns-left */
@@ -1275,7 +1286,7 @@ ol.carousel-indicators {
         width: 100%;
     }
     .HS-item-wrap p {
-        white-space: normal;
+        /*white-space: normal;*/
     }
 }
 
@@ -1464,6 +1475,7 @@ img[src=""] {
     padding-left: 10px;
 }
 #maincontent .product.media {
+    position: relative;
     width: 50%;
     padding-right: 10px;
 }
@@ -1514,6 +1526,14 @@ img[src=""] {
     width: auto !important;
     max-width: 100%;
 }
+.magnifier-preview {
+    top: 0 !important;
+    right: 0 !important;
+    left: 100% !important;
+    width: 100% !important;
+    height: 50vw !important;
+    max-height: 600px !important;
+}
 @media only screen and (max-width: 767px) {
     .fotorama .fotorama__stage {
         border: none;
@@ -1524,7 +1544,7 @@ img[src=""] {
         padding-top: 20px;
     }
 }
-/* Slide media */
+/* # Slide media */
 
 /* Related product */
 #relatedSliderWrapper {

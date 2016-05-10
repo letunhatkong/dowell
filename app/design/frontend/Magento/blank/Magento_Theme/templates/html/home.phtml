@@ -43,7 +43,7 @@ $latest = $productCollection->create()
 <p class="head-homePage">NEW PRODUCTS</p>
 <div id="newProductHS" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Wrapper for slides -->
-    <div class="carousel-inner padHS resizeText" role="listbox">
+    <div class="carousel-inner padHS " role="listbox">
         <!-- Items -->
         <?php $i = 1; ?>
         <?php foreach($latest as $newPro) { ?>
@@ -118,7 +118,7 @@ $promo = $promotionCollection->create()
 <p class="head-homePage">PROMOTIONAL PRODUCTS</p>
 <div id="proProductHS" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Wrapper for slides -->
-    <div class="carousel-inner padHS resizeText" role="listbox">
+    <div class="carousel-inner padHS " role="listbox">
     <?php $i = 1; ?>
     <?php foreach($promo as $item) { ?>
         <?php if ($i % 4 == 1) { ?>
