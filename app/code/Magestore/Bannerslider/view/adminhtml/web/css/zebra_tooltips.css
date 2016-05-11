@@ -63,6 +63,8 @@
 }
 
 #slider_tabs_main_section_content .admin__field.field-style_content,
-#slider_tabs_main_section_content .admin__field.field-style_slide {
+#slider_tabs_main_section_content .admin__field.field-style_slide,
+#slider_tabs_main_section_content .admin__field.field-custom_code,
+#slider_tabs_main_section_content .admin__field.field-description {
     visibility: hidden;
 }
