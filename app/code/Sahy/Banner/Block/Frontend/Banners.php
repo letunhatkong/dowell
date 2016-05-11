@@ -49,12 +49,12 @@ class Banners extends \Magento\Framework\View\Element\Template
         return $dd;
 
     }
-    public function getVideoContent()
+
+    public function getAllBanner()
     {
         $collection = $this->_imageCollectionFactory->create();
-
-        $iCollection = $collection->getCollection();
-
+        $iCollection = $collection->getCollection()
+            ->addFieldToFilter('image', array('notnull' => true));
         $dd = $iCollection->getData();
 
         return $dd;

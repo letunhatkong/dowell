@@ -5,19 +5,24 @@ $currentStore = $storeManager->getStore();
 $baseUrl = $currentStore->getBaseUrl();
 $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
 $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
+
+$banners = $_objectManager->get('Sahy\Banner\Block\Frontend\Banners');
+$collection = $banners->getAllBanner();
 ?>
 
+<?php if (isset($collection) && count($collection) > 0) { ?>
+    <?php $size = count($collection); ?>
 
 <div id="bannerHS" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <!-- Items -->
-        <div class="item active">
-            <img src="<?= $mediaUrl ?>images/banner/dwd_main1.jpg" />
-        </div>
-        <div class="item">
-            <img src="<?= $mediaUrl ?>images/banner/dwd_main2.jpg" />
-        </div>
+        <?php $i = 1; ?>
+        <?php foreach($collection as $bn) { ?>
+            <div class="item <?= ($i == 1) ? 'active':'' ?>">
+                <img src="<?= $mediaUrl . $bn['image']?>" />
+            </div>
+            <?php $i++; ?>
+        <?php } ?>
     </div>
     <!-- Controls -->
     <a href="#bannerHS" role="button" data-slide="prev">
@@ -33,20 +38,25 @@ $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_L
 
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        <li data-target="#bannerHS" data-slide-to="0" class="active"></li>
-        <li data-target="#bannerHS" data-slide-to="1"></li>
+    <?php $i =0 ?>
+    <?php foreach($collection as $bn) { ?>
+        <li data-target="#bannerHS" data-slide-to="<?= $i ?>" class="<?= ($i == 1) ? 'active':'' ?>"></li>
+        <?php $i++; ?>
+    <?php } ?>
     </ol>
 </div>
 
 
-<script type="text/javascript">
-    require(['jquery', 'jquery/ui'], function ($) {
-        $(document).ready(function ($) {
-            $(window).load(function () {
-                $('#bannerHS').carousel({
-                    interval: false
-                });
-            });
-        });
-    });
-</script>
+<!--<script type="text/javascript">-->
+<!--    require(['jquery', 'jquery/ui'], function ($) {-->
+<!--        $(document).ready(function ($) {-->
+<!--            $(window).load(function () {-->
+<!--                $('#bannerHS').carousel({-->
+<!--                    interval: false-->
+<!--                });-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+
+<?php } ?>
