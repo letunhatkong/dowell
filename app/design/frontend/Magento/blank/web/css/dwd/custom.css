@@ -1605,8 +1605,27 @@ img[src=""] {
     padding: 10px;
     border: 1px solid #e1e1e1;
 }
-#trainVideoRow a {
+.leftMenuVideo {
+    border: 1px solid #e1e1e1;
+    padding: 10px;
+}
+a.ctTrainingVideo {
     text-decoration: none;
+    color: #474747;
+}
+a.ctTrainingVideo.active,
+a.ctTrainingVideo:hover{
+    color: #ff5f2b;
+}
+
+.trainVideoRow {
+    display: none;
+}
+.trainVideoRow a {
+    text-decoration: none;
+}
+.trainVideoRow.active {
+    display: block;
 }
 .titTrainVideo {
     color: #474747;
