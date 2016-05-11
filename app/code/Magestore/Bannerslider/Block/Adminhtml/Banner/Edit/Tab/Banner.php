@@ -234,8 +234,8 @@ class Banner extends \Magento\Backend\Block\Widget\Form\Generic implements \Mage
             ]
         );
 
-        $dateFormat = $this->_localeDate->getDateFormat(\IntlDateFormatter::SHORT);
-        $timeFormat = $this->_localeDate->getTimeFormat(\IntlDateFormatter::SHORT);
+//        $dateFormat = $this->_localeDate->getDateFormat(\IntlDateFormatter::SHORT);
+//        $timeFormat = $this->_localeDate->getTimeFormat(\IntlDateFormatter::SHORT);
 
         if($dataObj->hasData('start_time')) {
             $datetime = new \DateTime($dataObj->getData('start_time'));
@@ -247,7 +247,7 @@ class Banner extends \Magento\Backend\Block\Widget\Form\Generic implements \Mage
             $dataObj->setData('end_time', $datetime->setTimezone(new \DateTimeZone($this->_localeDate->getConfigTimezone())));
         }
 
-        $style = 'color: #000;background-color: #fff; font-weight: bold; font-size: 13px;';
+//        $style = 'color: #000;background-color: #fff; font-weight: bold; font-size: 13px;';
 //        $elements['start_time'] = $fieldset->addField(
 //            'start_time',
 //            'date',
