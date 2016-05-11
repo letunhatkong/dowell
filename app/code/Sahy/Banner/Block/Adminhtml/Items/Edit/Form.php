@@ -13,7 +13,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
     {
         parent::_construct();
         $this->setId('sahy_items_form');
-        $this->setTitle(__('Video Information'));
+        $this->setTitle(__('Banner Information'));
     }
 
     /**

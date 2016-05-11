@@ -8,7 +8,6 @@ use Magento\Backend\Block\Widget\Form\Generic;
 use Magento\Backend\Block\Widget\Tab\TabInterface;
 
 
-
 class Main extends Generic implements TabInterface
 {
 
@@ -17,7 +16,7 @@ class Main extends Generic implements TabInterface
      */
     public function getTabLabel()
     {
-        return __('Video Information');
+        return __('Banner Information');
     }
 
     /**
@@ -25,9 +24,9 @@ class Main extends Generic implements TabInterface
      */
     public function getTabTitle()
     {
-        return __('Video Information');
+        return __('Banner Information');
     }
-	
+
     /**
      * {@inheritdoc}
      */
@@ -57,27 +56,27 @@ class Main extends Generic implements TabInterface
         /** @var \Magento\Framework\Data\Form $form */
         $form = $this->_formFactory->create();
         $form->setHtmlIdPrefix('item_');
-        $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Video Information')]);
+        $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Banner Information')]);
         if ($model->getId()) {
             $fieldset->addField('id', 'hidden', ['name' => 'id']);
         }
         $fieldset->addField(
             'name',
             'text',
-            ['name' => 'name', 'label' => __('Video Name'), 'title' => __('Video Name'), 'required' => true]
+            ['name' => 'name', 'label' => __('Banner Name'), 'title' => __('Banner Name'), 'required' => true]
         );
-		$fieldset->addField(
+        $fieldset->addField(
             'details',
             'textarea',
-            ['name' => 'details', 'label' => __('Details'), 'title' => __('details'), 'required' => false]
+            ['name' => 'details', 'label' => __('Details'), 'title' => __('Details'), 'required' => false]
         );
         $fieldset->addField(
             'image',
             'image',
             [
-                'label' => __('Image'),
-                'title' => __('image'),
-                'name' => 'image',
+                'label' => __('Banner Image'),
+                'title' => __('Banner Image'),
+                'name' => 'image'
             ]
         );
 
@@ -86,13 +85,13 @@ class Main extends Generic implements TabInterface
             'pages',
             'hidden',
             [
-                'name'      => 'pages',
-                'label'     => __('Pages'),
-                'options'   =>  array(
-                '' => '-- Select Page --',
-                   'Home Page' => 'Home Page',
-                   'Category Page' => 'Category Page',
-                   'Product Detail Page' => 'Product Detail Page',
+                'name' => 'pages',
+                'label' => __('Pages'),
+                'options' => array(
+                    '' => '-- Select Page --',
+                    'Home Page' => 'Home Page',
+                    'Category Page' => 'Category Page',
+                    'Product Detail Page' => 'Product Detail Page',
                 )
             ]
         );
@@ -101,25 +100,31 @@ class Main extends Generic implements TabInterface
             'layout',
             'hidden',
             [
-                'name'      => 'layout',
-                'label'     => __('Layout'),
-                'options'   =>  array(
-                   '' => '-- Select Layout --',
-                   'Left' => 'Left',
-                   'Right' => 'Right',
-           'Top content' => 'Top content',
-           'Bottom Content' => 'Bottom Content'
-             )
+                'name' => 'layout',
+                'label' => __('Layout'),
+                'options' => array(
+                    '' => '-- Select Layout --',
+                    'Left' => 'Left',
+                    'Right' => 'Right',
+                    'Top content' => 'Top content',
+                    'Bottom Content' => 'Bottom Content'
+                )
             ]
         );
 
         $fieldset->addField(
             'link',
             'text',
-            ['name' => 'link', 'label' => __('Video Link'), 'title' => __('Video Link'), 'required' => false]
+            [
+                'name' => 'link',
+                'label' => __('Banner Link'),
+                'title' => __('Banner Link'),
+                'required' => false,
+                'class' => 'validate-url'
+            ]
         );
-		
-		
+
+
         $form->setValues($model->getData());
         $this->setForm($form);
         return parent::_prepareForm();

@@ -14,7 +14,7 @@ class Index extends \Sahy\Banner\Controller\Adminhtml\Items
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Sahy_Banner::banner');
-        $resultPage->getConfig()->getTitle()->prepend(__('Training Video'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Home Banner CMS'));
         $resultPage->addBreadcrumb(__('Banners'), __('Banners'));
         $resultPage->addBreadcrumb(__('Items'), __('Items'));
         return $resultPage;

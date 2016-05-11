@@ -14,6 +14,6 @@ class Tabs extends \Magento\Backend\Block\Widget\Tabs
         parent::_construct();
         $this->setId('sahy_banner_items_edit_tabs');
         $this->setDestElementId('edit_form');
-        $this->setTitle(__('Training Video'));
+        $this->setTitle(__('Home Banner'));
     }
 }

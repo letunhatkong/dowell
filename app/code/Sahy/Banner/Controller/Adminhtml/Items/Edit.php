@@ -13,7 +13,7 @@ class Edit extends \Sahy\Banner\Controller\Adminhtml\Items
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {
-                $this->messageManager->addError(__('This video no longer exists.'));
+                $this->messageManager->addError(__('This banner no longer exists.'));
                 $this->_redirect('sahy_banner/*');
                 return;
             }

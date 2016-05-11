@@ -6,10 +6,10 @@ class Save extends \Sahy\Banner\Controller\Adminhtml\Items
 {
     public function execute()
     {
-                 
+
         if ($this->getRequest()->getPostValue()) {
             try {
-                
+
                 $model = $this->_objectManager->create('Sahy\Banner\Model\Items');
                 $data = $this->getRequest()->getPostValue();
                 
@@ -20,42 +20,39 @@ class Save extends \Sahy\Banner\Controller\Adminhtml\Items
                     [],
                     $data
                 );
-                
+
                 $data = $inputFilter->getUnescaped();
                 $id = $this->getRequest()->getParam('id');
-                if($id) {
+                if ($id) {
                     $model->load($id);
                     if ($id != $model->getId()) {
-                        throw new \Magento\Framework\Exception\LocalizedException(__('The wrong video is specified.'));
+                        throw new \Magento\Framework\Exception\LocalizedException(__('The wrong banner is specified.'));
                     }
                 }
-          
-                 if($_FILES['image']['name'])
-                 {
-          
+
+                if ($_FILES['image']['name']) {
+
                     $helper = $this->_objectManager->get('Sahy\Banner\Helper\Data');
                     $basedir = $helper->getBaseDir();
-                    $destinationFile=$basedir.'/'.$_FILES['image']['name'];
+                    $destinationFile = $basedir . '/' . $_FILES['image']['name'];
                     if (!file_exists($basedir)) {
                         mkdir($basedir, 0777);
-                    }   
-                    
-                    move_uploaded_file($_FILES['image']['tmp_name'],$destinationFile);                                     
-                    if($_FILES['image']['name'] !="")
-                    {
-                       $data['image']="banners/".$_FILES['image']['name'];
                     }
-                 }   
-                 
-                 $model->setData($data);
-                    
-                 $session = $this->_objectManager->get('Magento\Backend\Model\Session');
-                 $session->setPageData($model->getData());
-                 $model->save();
-                 $this->messageManager->addSuccess(__('You saved the video.'));
-                 $session->setPageData(false);
-                 if($this->getRequest()->getParam('back')) 
-                 {
+
+                    move_uploaded_file($_FILES['image']['tmp_name'], $destinationFile);
+                    if ($_FILES['image']['name'] != "") {
+                        $data['image'] = "banners/" . $_FILES['image']['name'];
+                    }
+                }
+
+                $model->setData($data);
+
+                $session = $this->_objectManager->get('Magento\Backend\Model\Session');
+                $session->setPageData($model->getData());
+                $model->save();
+                $this->messageManager->addSuccess(__('You saved the banner.'));
+                $session->setPageData(false);
+                if ($this->getRequest()->getParam('back')) {
                     $this->_redirect('sahy_banner/*/edit', ['id' => $model->getId()]);
                     return;
                 }

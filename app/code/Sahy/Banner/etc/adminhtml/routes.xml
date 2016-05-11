@@ -2,7 +2,7 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/App/etc/routes.xsd">
     <router id="admin">
-        <route id="sahy_banner" frontName="sahy_banner">
+        <route id="sahy_banner" frontName="home_banner">
             <module name="Sahy_Banner" />
         </route>
     </router>

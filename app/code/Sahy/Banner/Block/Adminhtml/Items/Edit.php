@@ -62,9 +62,9 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     {
         $item = $this->_coreRegistry->registry('current_sahy_banner_items');
         if ($item->getId()) {
-            return __("Edit Video '%1'", $this->escapeHtml($item->getName()));
+            return __("Edit Banner '%1'", $this->escapeHtml($item->getName()));
         } else {
-            return __('New Video');
+            return __('New Banner');
         }
     }
 }
