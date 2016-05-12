@@ -65,6 +65,9 @@ class Main extends Generic implements TabInterface
             'text',
             ['name' => 'name', 'label' => __('Banner Name'), 'title' => __('Banner Name'), 'required' => true]
         );
+
+
+
         $fieldset->addField(
             'details',
             'textarea',
@@ -98,16 +101,13 @@ class Main extends Generic implements TabInterface
 
         $fieldset->addField(
             'layout',
-            'hidden',
+            'select',
             [
                 'name' => 'layout',
-                'label' => __('Layout'),
+                'label' => __('Image Type'),
                 'options' => array(
-                    '' => '-- Select Layout --',
-                    'Left' => 'Left',
-                    'Right' => 'Right',
-                    'Top content' => 'Top content',
-                    'Bottom Content' => 'Bottom Content'
+                    'homeBanner' => 'Home Banner',
+                    'subBanner' => 'Sub Banner'
                 )
             ]
         );

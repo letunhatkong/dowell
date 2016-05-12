@@ -1,55 +1,43 @@
 <?php
 namespace Sahy\Banner\Block\Frontend;
-  
+
 class Banners extends \Magento\Framework\View\Element\Template
 {
+
+    const TYPE_HOME_BANNER = 'homeBanner';
+    const TYPE_SUB_BANNER = 'subBanner';
+
     protected $_imageCollection = null;
-    
+
     /**
      * Page factory
      *
      * @var \Magento\Cms\Model\PageFactory
      */
     protected $_imageCollectionFactory;
-    
-        public function __construct(
+
+    /**
+     * Banners constructor.
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Sahy\Banner\Model\ItemsFactory $imageCollectionFactory
+     * @param array $data
+     */
+    public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-         \Sahy\Banner\Model\ItemsFactory $imageCollectionFactory,
-        array $data = []
-    ) {     
+        \Sahy\Banner\Model\ItemsFactory $imageCollectionFactory,
+        array $data = [] )
+    {
         $this->_imageCollectionFactory = $imageCollectionFactory;
         parent::__construct(
-            $context,   
+            $context,
             $data
         );
     }
-    
- 
-    
-    public function getHomeLeftcollection()
-    {
-        $collection = $this->_imageCollectionFactory->create();
-       
-        $iCollection = $collection->getCollection()->addFieldToFilter('layout','left')->addFieldToFilter('pages','home page');
-        
-        
-        $dd = $iCollection->getData();
-        
-        return $dd;
 
-    }
-    public function getHomeContentcollection()
-    {
-        $collection = $this->_imageCollectionFactory->create();
-       
-        $iCollection = $collection->getCollection()->addFieldToFilter('layout','top content')->addFieldToFilter('pages','home page');
-        
-        $dd = $iCollection->getData();
-        
-        return $dd;
-
-    }
-
+    /**
+     * Get All Banner
+     * @return array
+     */
     public function getAllBanner()
     {
         $collection = $this->_imageCollectionFactory->create();
@@ -58,151 +46,109 @@ class Banners extends \Magento\Framework\View\Element\Template
         $dd = $iCollection->getData();
 
         return $dd;
-
     }
 
-     public function getHomeBottomcontentcollection()
-    {
-        $collection = $this->_imageCollectionFactory->create();
-       
-        $iCollection = $collection->getCollection()->addFieldToFilter('layout','bottom content')->addFieldToFilter('pages','home page');
-        
-        $dd = $iCollection->getData();
-        
-        return $dd;
-
-    }
-    
-    
-     public function getCategoryleftcollection()
-    {
-        $collection = $this->_imageCollectionFactory->create();
-       
-        $iCollection = $collection->getCollection()->addFieldToFilter('layout','left')->addFieldToFilter('pages','Category Page');
-        
-        
-        $dd = $iCollection->getData();
-        
-        return $dd;
-
-    }
-    public function getCategorytopcollection()
-    {
-        $collection = $this->_imageCollectionFactory->create();
-       
-        $iCollection = $collection->getCollection()->addFieldToFilter('layout','top content')->addFieldToFilter('pages','Category Page');
-        
-        $dd = $iCollection->getData();
-        
-        return $dd;
-
-    }
-     public function getCategorybottomcollection()
-    {
-        $collection = $this->_imageCollectionFactory->create();
-       
-        $iCollection = $collection->getCollection()->addFieldToFilter('layout','bottom content')->addFieldToFilter('pages','Category Page');
-        
-        $dd = $iCollection->getData();
-        
-        return $dd;
-
-    }
-     public function getProductleftcollection()
-    {
-        $collection = $this->_imageCollectionFactory->create();
-       
-        $iCollection = $collection->getCollection()->addFieldToFilter('layout','left')->addFieldToFilter('pages','Product Detail Page');
-        
-        
-        $dd = $iCollection->getData();
-        
-        return $dd;
-
-    }
-    public function getProducttopcollection()
-    {
-        $collection = $this->_imageCollectionFactory->create();
-       
-        $iCollection = $collection->getCollection()->addFieldToFilter('layout','top content')->addFieldToFilter('pages','Product Detail Page');
-        
-        $dd = $iCollection->getData();
-        
-        return $dd;
-
-    }
-     public function getProductbottomcollection()
-    {
-        $collection = $this->_imageCollectionFactory->create();
-       
-        $iCollection = $collection->getCollection()->addFieldToFilter('layout','bottom content')->addFieldToFilter('pages','Product Detail Page');
-        
-        $dd = $iCollection->getData();
-        
-        return $dd;
-
-    }
-    public function getBaseUrl(){
-              
-              return $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
-              
-         
-    }
-             
-    
-    
-    
-//    
- 
-//  protected $_itemsFactory;
-//     /**
-//    * @var \Tutorial\SimpleItems\Model\ItemsFactory
-//    */
-//   
-// 
-//   /**
-//    * @param Template\Context $context
-//    * @param ItemsFactory $itemsFactory
-//    * @param array $data
-//    */
-//   public function __construct(
-//      Template\Context $context,
-//      ItemsFactory $itemsFactory,
-//      array $data = []
-//   ) {
-//        $this->_itemsFactory = $itemsFactory;
-//        parent::__construct($context, $data);
-//   }
-// 
-   /**
-     * Set items collection
+    /**
+     * Get All Banner by type
+     * @param $type
+     * @return array
      */
-//    protected  function _construct()
-//    {
-//        parent::_construct();
-//        $collection = $this->_eventCollectionFactory->create()->getCollection()
-//            ->setOrder('id', 'DESC');
-//        $this->setCollection($collection);
-//    }
-// 
-//   /**
-//     * @return $this
-//     */
-//    protected function _prepareLayout()
-//    {
-//        parent::_prepareLayout();
-//        /** @var \Magento\Theme\Block\Html\Pager */
-//        $this->getLayout()->getCollection()->load();       
-//           
-//        return var_dump($this);
-//    }
-// 
-//   /**
-//     * @return string
-//     */
-//    public function getPagerHtml()
-//    {
-//        return $this->getChildHtml();
-//    }
+    public function getAllBannerByType($type)
+    {
+        $collection = $this->_imageCollectionFactory->create();
+        $iCollection = $collection->getCollection()
+            ->addFieldToFilter('image', array('notnull' => true))
+            ->addFieldToFilter('layout', $type);
+        $dd = $iCollection->getData();
+
+        return $dd;
+    }
+
+    public function getHomeLeftCollection()
+    {
+        $collection = $this->_imageCollectionFactory->create();
+        $iCollection = $collection->getCollection()->addFieldToFilter('layout', 'left')->addFieldToFilter('pages', 'home page');
+        $dd = $iCollection->getData();
+
+        return $dd;
+    }
+
+    public function getHomeContentCollection()
+    {
+        $collection = $this->_imageCollectionFactory->create();
+        $iCollection = $collection->getCollection()->addFieldToFilter('layout', 'top content')->addFieldToFilter('pages', 'home page');
+        $dd = $iCollection->getData();
+
+        return $dd;
+    }
+
+    public function getHomeBottomContentCollection()
+    {
+        $collection = $this->_imageCollectionFactory->create();
+        $iCollection = $collection->getCollection()->addFieldToFilter('layout', 'bottom content')->addFieldToFilter('pages', 'home page');
+        $dd = $iCollection->getData();
+
+        return $dd;
+    }
+
+
+    public function getCategoryLeftCollection()
+    {
+        $collection = $this->_imageCollectionFactory->create();
+        $iCollection = $collection->getCollection()->addFieldToFilter('layout', 'left')->addFieldToFilter('pages', 'Category Page');
+        $dd = $iCollection->getData();
+
+        return $dd;
+    }
+
+    public function getCategoryTopCollection()
+    {
+        $collection = $this->_imageCollectionFactory->create();
+        $iCollection = $collection->getCollection()->addFieldToFilter('layout', 'top content')->addFieldToFilter('pages', 'Category Page');
+        $dd = $iCollection->getData();
+        return $dd;
+    }
+
+    public function getCategoryBottomCollection()
+    {
+        $collection = $this->_imageCollectionFactory->create();
+        $iCollection = $collection->getCollection()->addFieldToFilter('layout', 'bottom content')->addFieldToFilter('pages', 'Category Page');
+        $dd = $iCollection->getData();
+
+        return $dd;
+    }
+
+    public function getProductLeftCollection()
+    {
+        $collection = $this->_imageCollectionFactory->create();
+        $iCollection = $collection->getCollection()->addFieldToFilter('layout', 'left')->addFieldToFilter('pages', 'Product Detail Page');
+        $dd = $iCollection->getData();
+
+        return $dd;
+    }
+
+    public function getProductTopCollection()
+    {
+        $collection = $this->_imageCollectionFactory->create();
+        $iCollection = $collection->getCollection()->addFieldToFilter('layout', 'top content')->addFieldToFilter('pages', 'Product Detail Page');
+        $dd = $iCollection->getData();
+
+        return $dd;
+    }
+
+    public function getProductBottomCollection()
+    {
+        $collection = $this->_imageCollectionFactory->create();
+        $iCollection = $collection->getCollection()->addFieldToFilter('layout', 'bottom content')->addFieldToFilter('pages', 'Product Detail Page');
+        $dd = $iCollection->getData();
+
+        return $dd;
+    }
+
+    public function getBaseUrl()
+    {
+        return $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+    }
+
 
 }
