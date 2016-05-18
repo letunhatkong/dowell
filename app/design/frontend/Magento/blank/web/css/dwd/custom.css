@@ -603,6 +603,71 @@ body {
     .page-header .header.panel{
         padding: 10px 15px;
     }
+
+     /*Cart and customer */
+    ul.header.links {
+        display: block !important;
+        position: absolute;
+        right: 0;
+        top: 100px;
+        width: 100%;
+        max-width: 450px;
+        padding: 10px;
+    }
+    .minicart-wrapper {
+        width: 100% !important;
+    }
+    .panel.header .links > li, .minicart-wrapper .showcart {
+        display: none;
+    }
+    #cartCustomerXs {
+        position: absolute;
+        right: 10px;
+        top: 28px;
+    }
+    #cartCustomerXs img {
+        cursor: pointer;
+        margin: 0 0 0 5px;
+        float: right;
+    }
+    #customerActionUl {
+        position: absolute;
+        right: 0;
+        top: 40px;
+        z-index: 1;
+        width: 180px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+        background: #ff5f2b;
+        display: none;
+    }
+    #customerActionUl li {
+        margin: 0;
+    }
+    #customerActionUl li:first-child {
+        border-bottom: 1px solid #fff;
+    }
+    #customerActionUl span {
+        width: 100%;
+        display: inline-block;
+        padding: 7px 0;
+    }
+    #customerActionUl a {
+        color: #fff;
+        text-decoration: none;
+    }
+    /* # Cart and customer */
+
+}
+
+@media only screen and (max-width: 380px) {
+    .header.content .logo > img {
+        width: 120px;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
 }
 /* # Header */
 

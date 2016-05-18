@@ -1,0 +1,108 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Theme\Block\Html\Header\Logo $block
+ */
+?>
+
+<?php
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance(); //instance of \Magento\Framework\App\ObjectManager
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$currentStore = $storeManager->getStore();
+$baseUrl = $currentStore->getBaseUrl();
+$mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+$linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
+
+$customerSession = $_objectManager->get('Magento\Customer\Model\Session');
+?>
+<?php $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();?>
+
+<span data-action="toggle-nav" class="action nav-toggle">
+    <span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span>
+</span>
+
+<?php if ($block->isHomePage()):?>
+    <strong class="logo">
+<?php else: ?>
+    <a class="logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
+<?php endif ?>
+        <img src="<?php /* @escapeNotVerified */ echo $block->getLogoSrc() ?>"
+             alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
+             <?php echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
+             <?php echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
+        />
+<?php if ($block->isHomePage()):?>
+    </strong>
+<?php else:?>
+    </a>
+<?php endif?>
+
+<div class="visible-xs" id="cartCustomerXs">
+    <span id="clickShowCartXs"><img src="<?= $mediaUrl ?>images/icon/cart.png" /></span>
+    <span id="clickCustomerXs"><img src="<?= $mediaUrl ?>images/icon/customer.png" /></span>
+    <?php $isLogin = ($customerSession->isLoggedIn()) ? true : false; ?>
+    <ul id="customerActionUl">
+        <li>
+            <a href="/customer/account"><span>MY ACCOUNT</span></a>
+        </li>
+        <li>
+            <a href="<?= ($isLogin) ? "/customer/account/logout/" : "/customer/account/login/" ?>">
+                <span><?= ($isLogin) ? "LOG OUT" : "SIGN IN" ?></span>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function ($) {
+        $(document).ready(function ($) {
+            $(window).load(function () {
+                $('#clickCustomerXs').click(function () {
+                    var cart2 = $('.minicart-wrapper .mage-dropdown-dialog');
+                    cart2.css("display", "none");
+                    var ul = $('#customerActionUl');
+                    var isVisible = ul.is(':visible');
+                    if (isVisible) {
+                        ul.css("display", "none");
+                    } else {
+                        ul.css("display", "block");
+                    }
+                });
+
+                $('#clickShowCartXs').click(function () {
+                    var ul = $('#customerActionUl');
+                    ul.css("display", "none");
+
+                    var cart = $('.minicart-wrapper .mage-dropdown-dialog');
+                    var check = ($('.minicart-wrapper').hasClass('active')) ? true : false;
+                    if (check) {
+                        cart.css("display", "none");
+                        $('.minicart-wrapper').removeClass('active');
+                        $('.action1.showcart').removeClass('active');
+                    } else {
+                        cart.css("display", "block");
+                        $('.minicart-wrapper').addClass('active');
+                        $('.action1.showcart').addClass('active');
+                    }
+
+                    $('#btn-minicart-close').click(function () {
+                        var curWidth = $(window).width();
+                        if (curWidth < 768) {
+                            cart.css("display", "none");
+                            $('.minicart-wrapper').removeClass('active');
+                            $('.action1.showcart').removeClass('active');
+                        }
+                    })
+                });
+            })
+        })
+    })
+</script>
