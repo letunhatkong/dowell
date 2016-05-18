@@ -12,6 +12,7 @@
         <css src="css/print.css" media="print" />
         <css src="css/dwd/bootstrap/bootstrap.min.css" media="all" />
         <css src="css/dwd/bootstrap/carousel.css" media="all" />
+        <!--<css src="css/dwd/custom.min.css" media="all" />-->
         <css src="css/dwd/custom.css" media="all" />
     </head>
 </page>

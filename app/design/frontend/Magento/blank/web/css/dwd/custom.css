@@ -796,7 +796,8 @@ body {
     margin: 20px 0 !important;
 }
 
-.page-layout-2columns-left .sidebar-main {
+.page-layout-2columns-left .sidebar-main,
+.page-layout-2columns-left .sidebar {
     float: left;
     width: 300px;
     padding: 0 20px 0 0;
