@@ -23,6 +23,9 @@ $_postCollection = $block->getPostCollection();
     <div class="message info empty"><div><?php echo __('We can\'t find posts matching the selection.') ?></div></div>
 <?php else: ?>
     <?php echo $block->getAdditionalHtml() ?>
+
+    <?php echo $block->getToolbarHtml() ?>
+
     <div class="post-list-wrapper">
         <?php $iterator = 1; ?>
         <ol class="post-list">

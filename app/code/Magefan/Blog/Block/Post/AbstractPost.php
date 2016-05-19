@@ -102,10 +102,12 @@ abstract class AbstractPost extends \Magento\Framework\View\Element\Template
         $pageBraker = '<!-- pagebreak -->';
         
         $isMb = function_exists('mb_strpos');
-        $p = $isMb ? strpos($content, $pageBraker) : mb_strpos($content, $pageBraker);
-
-        if ($p) {
-            $content = substr($content, 0, $p);
+        //$p = $isMb ? strpos($content, $pageBraker) : mb_strpos($content, $pageBraker);
+        $p = 100;
+        if (strlen($content) > $p) {
+            //$content = substr($content, 0, $p);
+            preg_match('/^.{1,180}\b/s', $content, $match);
+            $content = $match[0] ."...";
         }
 
         return $this->_filterProvider->getPageFilter()->filter($content);

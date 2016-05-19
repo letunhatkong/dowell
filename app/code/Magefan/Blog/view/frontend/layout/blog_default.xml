@@ -14,7 +14,7 @@
         <css src="Magefan_Blog::css/blog-custom.css" />
     </head>
     <body>
-    	<referenceContainer name="div.sidebar.main">
+    	<container name="left.blog" htmlTag="div" htmlId="leftBlogSection" htmlClass="sidebar-main ">
             <block class="Magefan\Blog\Block\Sidebar" name="blog.sidebar" template="sidebar.phtml">
                 <block class="Magefan\Blog\Block\Sidebar\Search" name="blog.sidebar.search" template="sidebar/search.phtml" />
                 <block class="Magefan\Blog\Block\Sidebar\Categories" name="blog.sidebar.category" template="sidebar/categories.phtml">
@@ -40,8 +40,8 @@
             </block>
             <referenceBlock name="catalog.compare.sidebar" remove="true"/>
             <referenceBlock name="wishlist_sidebar" remove="true"/>
-        </referenceContainer>
+        </container>
 
-        <move element="div.sidebar.main" before="-" destination="columns"/>
+        <move element="left.blog" before="-" destination="columns"/>
     </body>
 </page>
