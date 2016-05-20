@@ -142,9 +142,7 @@
     width: 100%;
     margin-bottom: 40px;
     position: relative;
-    float: right;
-    padding-left: 15px;
-    z-index: 4;
+    float: left;
 }
 
 .widget.blog-search .block-content {

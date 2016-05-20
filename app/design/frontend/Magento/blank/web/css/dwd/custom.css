@@ -72,7 +72,7 @@ body {
 
 /* GRID */
 #maincontent {
-    margin-top: 20px;
+    margin-top: 155px;
 }
 @media only screen and (max-width: 1239px) {
     .col-1200, #maincontent {
@@ -274,6 +274,13 @@ body {
 
 /* Header */
 .page-header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
     margin-bottom: 0;
 }
 .nav-sections {
@@ -313,7 +320,7 @@ ul.header.links {
 .header.content {
     position: relative;
     border-bottom: 1px solid #e1e1e1;
-    padding: 30px 20px 0;
+    padding: 12px 20px;
     width: 100%;
     max-width: 100%;
     z-index: 2;
@@ -328,10 +335,13 @@ ul.header.links {
 /* Search */
 .block-search {
     width: auto;
-    margin-top: 10px;
+    margin-top: 17px;
     z-index: 1;
 }
 
+.block-search .control {
+    padding: 0;
+}
 .block-search .nested {
     display: none;
 }
@@ -371,7 +381,7 @@ ul.header.links {
     text-transform: uppercase;
     float: left;
     font-weight: bold;
-    margin: 0 0 0 20px;
+    margin: 8px 0 0 20px;
     padding: 0;
 }
 
@@ -387,7 +397,7 @@ ul.header.links {
 
 #topMenu .level0 {
     display: inline-block;
-    padding: 0 13px 32px;
+    padding: 0 13px 15px;
     margin: 0;
 }
 
@@ -410,7 +420,7 @@ ul.header.links {
 #topMenu .level0 > .submenu {
     display: none;
     position: absolute;
-    top: 110px;
+    top: 85px;
     left: 0;
     width: 100%;
     max-width: 100%;
@@ -440,6 +450,7 @@ ul.header.links {
 
 .header.content .logo {
     z-index: 1;
+    margin: 0;
 }
 
 #search::-webkit-input-placeholder {
