@@ -46,7 +46,7 @@ $data = $vidObj->getSliderCollection();
                     if ($item['image']) $img = $mediaUrl . $item['image'];
                     $videoLink = trim($item['url']);
                     if(isset($videoLink) && !is_null($videoLink)) {
-                        if (strpos($videoLink, 'youtube') > 0) {
+                        if (strpos($videoLink, 'youtube') > 0 || strpos($videoLink, 'youtu.be' ) >0) {
                             preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $videoLink, $matches);
                             $videoLink = 'https://www.youtube.com/embed/' . $matches[0];
                             if (is_null($item['image'])) {
