@@ -52,7 +52,6 @@ atlassian*
 !/lib/web/mage/gallery
 
 /app/*.*
-/app/code/Magento
 /app/etc
 /app/i18n
 /app/design/adminhtml
