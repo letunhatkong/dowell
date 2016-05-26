@@ -25,17 +25,7 @@
 
 <div class="row" id="contact-wrapper">
     <div class="col-xs-12 col-sm-4 col-md-6" id="cont_left_info">
-        <p class="cont_head">DOWELL DENTAL PRODUCTS</p>
-        <p>Address: <br>9287 Ninth Street<br>Rancho Cucamonga, CA 91730</p>
-        <p>Email: <br>info@dowelldentalproducts.com</p>
-        <p>Phone Number: <br>+1 877 373-8904</p>
-        <div class="clearfix pad20"></div>
-
-        <p class="cont_head">INQUIRY</p>
-        <p>General Information: <br>info@dowelldentalproducts.com</p>
-        <p>Customer Service: <br>chris@dowelldentalproducts.com</p>
-        <p>Internet Sales: <br>chris@dowelldentalproducts.com</p>
-        <p>Vendors & Business Inquiries: <br>terry@dowelldentalproducts.com</p>
+        <?= $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('contact-info')->toHtml();?>
         <div class="clearfix pad20 visible-xs"></div>
 
     </div>

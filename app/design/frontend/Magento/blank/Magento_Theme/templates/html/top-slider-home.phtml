@@ -40,7 +40,7 @@ $collection = $banners->getAllBannerByType($banners::TYPE_HOME_BANNER);
         <ol class="carousel-indicators">
             <?php $i =0 ?>
             <?php foreach($collection as $bn) { ?>
-                <li data-target="#bannerHS" data-slide-to="<?= $i ?>" class="<?= ($i == 1) ? 'active':'' ?>"></li>
+                <li data-target="#bannerHS" data-slide-to="<?= $i ?>" class="<?= ($i == 0) ? 'active':'' ?>"></li>
                 <?php $i++; ?>
             <?php } ?>
         </ol>
