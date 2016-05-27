@@ -65,7 +65,9 @@ $customerSession = $_objectManager->get('Magento\Customer\Model\Session');
     require(['jquery', 'jquery/ui'], function ($) {
         $(document).ready(function ($) {
             $(window).load(function () {
-                $('#clickCustomerXs').click(function () {
+
+                $('#clickCustomerXs').click(function (e) {
+                    e.stopPropagation();
                     var cart2 = $('.minicart-wrapper .mage-dropdown-dialog');
                     cart2.css("display", "none");
                     var ul = $('#customerActionUl');
@@ -77,7 +79,8 @@ $customerSession = $_objectManager->get('Magento\Customer\Model\Session');
                     }
                 });
 
-                $('#clickShowCartXs').click(function () {
+                $('#clickShowCartXs').click(function (e) {
+                    e.stopPropagation();
                     var ul = $('#customerActionUl');
                     ul.css("display", "none");
 
@@ -101,6 +104,20 @@ $customerSession = $_objectManager->get('Magento\Customer\Model\Session');
                             $('.action1.showcart').removeClass('active');
                         }
                     })
+                });
+
+                $('html').click(function () {
+                    var ul = $('#customerActionUl');
+                    var isVisible = ul.is(':visible');
+                    if (isVisible) ul.css("display", "none");
+
+                    var cart = $('.minicart-wrapper .mage-dropdown-dialog');
+                    var check = ($('.minicart-wrapper').hasClass('active')) ? true : false;
+                    if (check) {
+                        cart.css("display", "none");
+                        $('.minicart-wrapper').removeClass('active');
+                        $('.action1.showcart').removeClass('active');
+                    }
                 });
             })
         })
