@@ -14,7 +14,8 @@
  */
 ?>
 
-<?php $items = $this->getGroupedChilds(); ?>
+<?php $items = $this->getGroupedChilds();
+?>
 
 <?php if (count($items)) { ?>
 
@@ -23,7 +24,7 @@
         <strong><?php echo __('Categories') ?></strong>
     </div>
 
-	<ul class="accordion"  id="accordion-2">
+	<ul class="blogMenu"  id="">
 	<?php
 		$level = 0;
 		$first = true;
@@ -45,7 +46,7 @@
 			}
 
 			?>
-				<li>
+				<li class="item">
 					<a href="<?php echo $item->getCategoryUrl() ?>">
 						<?php echo $block->escapeHtml($item->getTitle()) ?>
 					</a>
@@ -55,5 +56,13 @@
 		}
 	?>
 	</ul>
+
+	<?php
+	foreach($items as $item) {
+		echo $item->getLevel(). ' '.$item->getTitle() . ' id - '.$item->getId();
+		echo ' - '.$item->getParentId();
+		echo '<br>';
+	}
+	?>
 </div>
 <?php } ?>

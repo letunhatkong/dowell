@@ -15,10 +15,9 @@ use Magefan\Blog\Model\Post;
 class Save extends \Magefan\Blog\Controller\Adminhtml\Post
 {
     /**
-     * Before model save
-     * @param  \Magefan\Blog\Model\Post $model
-     * @param  \Magento\Framework\App\Request\Http $request
-     * @return void
+     * @param $model
+     * @param $request
+     * @throws FrameworkException
      */
     protected function _beforeSave($model, $request)
     {

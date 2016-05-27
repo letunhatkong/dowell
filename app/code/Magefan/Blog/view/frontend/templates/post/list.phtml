@@ -19,11 +19,12 @@ use Magento\Framework\App\Action\Action;
 <?php
 $_postCollection = $block->getPostCollection();
 ?>
+
+<p class="headingTrainVideo">BLOG</p>
 <?php if (!$_postCollection->count()): ?>
     <div class="message info empty"><div><?php echo __('We can\'t find posts matching the selection.') ?></div></div>
 <?php else: ?>
-    <?php echo $block->getAdditionalHtml() ?>
-
+    <!--// echo $block->getAdditionalHtml() -->
     <?php echo $block->getToolbarHtml() ?>
 
     <div class="post-list-wrapper">

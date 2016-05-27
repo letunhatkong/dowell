@@ -26,10 +26,15 @@ class Categories extends \Magento\Framework\View\Element\Template
      * @var \Magefan\Blog\Model\ResourceModel\Category\Collection
      */
     protected $_categoryCollection;
+
     /**
-     * Construct
-     *
-     * @param \Magento\Framework\View\Element\Context $context
+     * @var \Magefan\Blog\Model\Category
+     */
+    protected $_category;
+
+    /**
+     * Categories constructor.
+     * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \Magefan\Blog\Model\ResourceModel\Category\Collection $categoryCollection
      * @param array $data
      */
