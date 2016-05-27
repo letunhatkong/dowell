@@ -1,25 +1,47 @@
 <div id="google_translate_element"></div>
 <script type="text/javascript">
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'zh-CN,es,ko,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'zh-CN,es,ko,en',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
     }
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <style>
     #google_translate_element {
         float: left;
+        text-transform: uppercase;
     }
+
+    .goog-te-gadget-simple .goog-te-menu-value > span:nth-child(3),
+    .goog-te-gadget-simple .goog-te-menu-value > span:nth-child(5),
     #google_translate_element img.goog-te-gadget-icon {
         display: none;
     }
+
+    .goog-te-gadget-simple .goog-te-menu-value {
+        margin: 0;
+    }
+
     .goog-te-gadget-simple {
         border: 1px solid #9b9b9b;
     }
+
     .goog-te-menu-frame {
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;
     }
+
+    .goog-te-gadget-simple {
+        background: transparent;
+        border: none;
+        line-height: 30px;
+    }
+
     @media only screen and (max-width: 767px) {
         #google_translate_element {
             float: none;

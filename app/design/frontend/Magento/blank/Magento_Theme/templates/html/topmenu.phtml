@@ -62,10 +62,10 @@
             // Resize
             function detectResize(){
                 var width = $(this).width();
-                if (width <= 1235 && (first || !isMobile)) {
+                if (width < 1200 && (first || !isMobile)) {
                     initDropMenu();
                     isMobile = true;
-                } else if (width > 1235 && (first || isMobile)) {
+                } else if (width >= 1200 && (first || isMobile)) {
                     resetDropMenu();
                     isMobile = false;
                 }

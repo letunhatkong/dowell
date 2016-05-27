@@ -51,6 +51,13 @@
             </block>
         </referenceContainer>
 
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">130</argument>
+                <argument name="logo_img_height" xsi:type="number">60</argument>
+            </arguments>
+        </referenceBlock>
+
         <!-- Banner home -->
         <block class="Magento\Framework\View\Element\Template" name="top.slider.home" template="Magento_Theme::html/top-slider-home.phtml"/>
         <!-- Call Banner Block: {{block class="Magento\Framework\View\Element\Template" name="home_static" template="Magento_Theme::html/home.phtml"}} -->
