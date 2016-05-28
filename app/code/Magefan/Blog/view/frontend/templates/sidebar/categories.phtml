@@ -20,11 +20,11 @@ $size = count($items);
 
 <?php if ($size) { ?>
     <div class="widget block block-categories" data-bind="scope: 'categories'">
-        <div class="block-title">
-            <strong><?php echo __('Categories') ?></strong>
+        <div class="titHeadingBlog">
+            <strong><?= __('Categories') ?></strong>
         </div>
 
-        <div class="leftMenuDiv">
+        <div class="leftBlogWrapper">
             <ul class="blogMenu" id="blogMenuUl">
                 <?php
                     $level = 0;
@@ -51,8 +51,8 @@ $size = count($items);
                 ?>
                 <li class="item <?= $hasSub.' li-lv-' . $newLevel ?>">
                     <?= ($hasSub !== '') ? '<span class="dropBlogMenu">+</span>' : '' ?>
-                    <a href="<?php echo $item->getCategoryUrl() ?>">
-                        <?php echo $block->escapeHtml($item->getTitle()) ?>
+                    <a href="<?= $item->getCategoryUrl() ?>">
+                        <?= $block->escapeHtml($item->getTitle()) ?>
                     </a>
                     <?php
                         $level = $newLevel;

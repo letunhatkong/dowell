@@ -5,6 +5,16 @@
 }
 
 /* Left section on blog */
+.leftBlogWrapper {
+    border: 1px solid #c2c2c2;
+    padding: 10px;
+}
+
+.titHeadingBlog {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
 #leftBlogSection .block-title > strong {
     font-weight: bold;
     text-transform: uppercase;
@@ -202,7 +212,7 @@
 
 .post-list {
     margin: 0 -10px;
-    padding: 10px 0;
+    padding: 0;
     list-style: none;
     overflow: hidden;
 }
@@ -330,6 +340,11 @@
 }
 
 @media only screen and (max-width: 767px) {
+    .leftBlogWrapper {
+        border: none;
+        padding: 0;
+    }
+
     .blogMenu {
         background: #e1e1e1;
     }
