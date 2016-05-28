@@ -15,54 +15,67 @@
 ?>
 
 <?php $items = $this->getGroupedChilds();
+$size = count($items);
 ?>
 
-<?php if (count($items)) { ?>
+<?php if ($size) { ?>
+    <div class="widget block block-categories" data-bind="scope: 'categories'">
+        <div class="block-title">
+            <strong><?php echo __('Categories') ?></strong>
+        </div>
 
-<div class="widget block block-categories" data-bind="scope: 'categories'">
-    <div class="block-title">
-        <strong><?php echo __('Categories') ?></strong>
+        <div class="leftMenuDiv">
+            <ul class="blogMenu" id="blogMenuUl">
+                <?php
+                    $level = 0;
+                    $first = true;
+                    $_i = 0;
+                    foreach ($items as $item) {
+                        $newLevel = $item->getLevel();
+                        $hasSub = '';
+                        if ($_i + 1 < $size) $hasSub = ($item->getId() == $items[$_i + 1]->getParentId()) ? 'hasSub' : '';
+
+                        if ($level == $newLevel && !$first) {
+                            echo '</li>';
+                        }
+
+                        if ($level < $newLevel) {
+                            echo '<ul class="subMenu ul-lv-' . $newLevel . '">';
+                        }
+
+                        if ($level > $newLevel) {
+                            for ($i = $level; $i > $newLevel; $i--) {
+                                echo '</ul></li>';
+                            }
+                        }
+                ?>
+                <li class="item <?= $hasSub.' li-lv-' . $newLevel ?>">
+                    <?= ($hasSub !== '') ? '<span class="dropBlogMenu">+</span>' : '' ?>
+                    <a href="<?php echo $item->getCategoryUrl() ?>">
+                        <?php echo $block->escapeHtml($item->getTitle()) ?>
+                    </a>
+                    <?php
+                        $level = $newLevel;
+                        $first = false;
+                        $_i++;
+                    }
+                    ?>
+            </ul>
+        </div>
     </div>
 
-	<ul class="blogMenu"  id="">
-	<?php
-		$level = 0;
-		$first = true;
-		foreach($items as $item) {
-			$newLevel = $item->getLevel();
-
-			if ($level == $newLevel && !$first) {
-				echo '</li>';
-			}
-
-			if ($level < $newLevel) {
-				echo '<ul>';
-			}
-
-			if ($level > $newLevel) {
-				for ($i = $level; $i > $newLevel; $i--){
-					echo '</ul></li>';
-				}
-			}
-
-			?>
-				<li class="item">
-					<a href="<?php echo $item->getCategoryUrl() ?>">
-						<?php echo $block->escapeHtml($item->getTitle()) ?>
-					</a>
-			<?php
-			$level = $newLevel;
-			$first = false;
-		}
-	?>
-	</ul>
-
-	<?php
-	foreach($items as $item) {
-		echo $item->getLevel(). ' '.$item->getTitle() . ' id - '.$item->getId();
-		echo ' - '.$item->getParentId();
-		echo '<br>';
-	}
-	?>
-</div>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            jQuery('.dropBlogMenu').click(function(){
+                var selectCt = jQuery(this).parent().find('ul.subMenu').first();
+                if (selectCt.is(':visible')) {
+                    jQuery(this).text("+");
+                    selectCt.slideUp('normal');
+                } else {
+                    jQuery(this).text("-");
+                    selectCt.slideDown('normal');
+                }
+            });
+        })
+    </script>
 <?php } ?>
