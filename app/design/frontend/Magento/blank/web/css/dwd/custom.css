@@ -167,14 +167,8 @@ body {
     padding: 0 10px;
 }
 
-#ft_head_right .ft_fb {
+#ft_head_right .ft-ico {
     margin-left: 10px;
-}
-
-#ft_head_right .ft_fb > img {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
 }
 
 #ft_head_right .ft_hidden {
@@ -186,7 +180,7 @@ body {
     display: none;
 }
 
-@media only screen and (max-width: 1079px) {
+@media only screen and (max-width: 1100px) {
     .ft_hidden {
         display: none
     }
@@ -218,9 +212,13 @@ body {
         line-height: 25px;
     }
 
-    #ft_head_right .ft_fb {
-        margin-left: 0;
-        margin-top: 6px;
+    #ft_head_right .ft-ico {
+        margin: 0 10px 0 0;
+        clear: none;
+    }
+
+    #ft_head_right .ft_lin {
+        clear: both;
     }
 
     .ft_online_txt {
