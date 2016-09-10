@@ -107,7 +107,8 @@ class Main extends Generic implements TabInterface
                 'label' => __('Image Type'),
                 'options' => array(
                     'homeBanner' => 'Home Banner',
-                    'subBanner' => 'Sub Banner'
+                    'subBanner' => 'Sub Banner',
+                    'promoteBanner' => 'Promotion Banner'
                 )
             ]
         );

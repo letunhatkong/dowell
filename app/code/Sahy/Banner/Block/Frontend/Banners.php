@@ -6,6 +6,7 @@ class Banners extends \Magento\Framework\View\Element\Template
 
     const TYPE_HOME_BANNER = 'homeBanner';
     const TYPE_SUB_BANNER = 'subBanner';
+    const TYPE_PROMOTE_BANNER = 'promoteBanner';
 
     protected $_imageCollection = null;
 

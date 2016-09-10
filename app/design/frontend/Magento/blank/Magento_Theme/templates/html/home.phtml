@@ -7,28 +7,40 @@ $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_
 $linkUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
 ?>
 
-<!-- Sub Banner  -->
+    <!-- Sub Banner  -->
 <?php $banners = $_objectManager->get('Sahy\Banner\Block\Frontend\Banners');
 $_sub = $banners->getAllBannerByType($banners::TYPE_SUB_BANNER);
+$promoteBanners = $banners->getAllBannerByType($banners::TYPE_PROMOTE_BANNER);
 ?>
 
-<div class="row threeCategory">
-    <?php $i = 1; ?>
-    <?php foreach($_sub as $item) { ?>
-        <?php if ($i <= 3) { ?>
-            <div class="col-xs-12 col-sm-4">
-                <a href="<?= $item['link'] ?>">
-                    <img class="img-full" src="<?= $mediaUrl . $item['image'] ?>"/>
+    <div class="row threeCategory">
+        <?php if (count($promoteBanners) > 0 && isset($promoteBanners[0])) { ?>
+            <div class="col-xs-12 col-sm-12">
+                <a href="<?= $promoteBanners[0]['link'] ?>">
+                    <img class="img-full" src="<?= $mediaUrl . $promoteBanners[0]['image'] ?>"/>
                 </a>
             </div>
+            <div class="clearfix pad15 hidden-xs"></div>
         <?php } ?>
-        <?php $i++; ?>
-    <?php } ?>
-</div>
-<div class="clearfix pad30"></div>
-<!-- # Sub Banner  -->
+
+        <?php $i = 1; ?>
+        <?php foreach ($_sub as $item) { ?>
+            <?php if ($i <= 3) { ?>
+                <div class="col-xs-12 col-sm-4">
+                    <a href="<?= $item['link'] ?>">
+                        <img class="img-full" src="<?= $mediaUrl . $item['image'] ?>"/>
+                    </a>
+                </div>
+            <?php } ?>
+
+            <?php $i++; ?>
+        <?php } ?>
+    </div>
+    <div class="clearfix pad30"></div>
+    <!-- # Sub Banner  -->
 
 <?php // Get Latest Products
+/*
 $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $productCollection = $_objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
 $latest = $productCollection->create()
@@ -83,12 +95,12 @@ $latest = $productCollection->create()
     </a>
 </div>
 <div class="clearfix pad100"></div>
-<?php } ?>
+<?php } */ ?>
 
 
-<!-- Promotional Products -->
+    <!-- Promotional Products -->
 <?php // Get Promotional Products
-$categoryFactory = $_objectManager->create('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
+/*$categoryFactory = $_objectManager->create('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
 $promotionCategory = $categoryFactory->create()
     ->addAttributeToFilter('url_key','promotional')
     ->addAttributeToSelect('*')
@@ -146,4 +158,73 @@ $promo = $promotionCollection->create()
     </a>
 </div>
 
+<?php } */ ?>
+
+    <!-- Home page category Products -->
+<?php // Get Promotional Products
+$categoryFactory = $_objectManager->create('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
+$promotionCategory = $categoryFactory->create()
+    ->addAttributeToFilter('url_key', 'promotional-items')
+    ->addAttributeToSelect('*')
+    ->getFirstItem();
+
+$promotionCollection = $_objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
+$promo = $promotionCollection->create()
+    ->addAttributeToSelect('*')
+    ->addCategoryFilter($promotionCategory)
+    ->addAttributeToFilter('status', '1')
+    ->setOrder('created_at', 'DESC')
+    ->load();
+//  ->setPageSize(20) if you want limit size.
+?>
+
+<?php if ($promo->getSize() > 0) { ?>
+    <p class="head-homePage">PROMOTIONAL PRODUCTS</p>
+    <div id="proProductHS" class="carousel slide" data-ride="carousel" data-interval="false">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner padHS " role="listbox">
+            <?php $i = 1; ?>
+            <?php foreach ($promo as $item) { ?>
+                <?php if ($i % 4 == 1) { ?>
+                    <div class="item <?= ($i == 1) ? ' active' : '' ?>">
+                    <div class="row">
+                <?php } ?>
+
+                <div class="col-xs-6 col-sm-3">
+                    <div class="HS-item-wrap">
+                        <a href="<?= $item->getProductUrl() ?>">
+                            <div class="img-resp img100">
+                                <img src="<?= $mediaUrl . 'catalog/product' . $item->getThumbnail() ?>"/>
+                            </div>
+                            <p><?= $item->getName() ?></p>
+                        </a>
+                    </div>
+                </div>
+                <?php if ($i % 4 == 0 || $i == $promo->getSize()) { ?>
+                    </div>
+                    </div>
+                <?php } ?>
+                <?php $i++; ?>
+            <?php } ?>
+        </div>
+        <!-- Controls -->
+        <a href="#proProductHS" role="button" data-slide="prev">
+            <div class="prevButtonWrap" aria-hidden="true">
+                <img src="<?= $mediaUrl ?>images/home/left.png"/>
+            </div>
+        </a>
+        <a href="#proProductHS" role="button" data-slide="next">
+            <div class="nextButtonWrap" aria-hidden="true">
+                <img src="<?= $mediaUrl ?>images/home/right.png"/>
+            </div>
+        </a>
+    </div>
+
 <?php } ?>
+
+
+<style type="text/css">
+    .pad15 {
+        padding-bottom: 15px;
+    }
+</style>

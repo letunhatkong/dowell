@@ -13,7 +13,7 @@ $collection = $banners->getAllBannerByType($banners::TYPE_HOME_BANNER);
 <?php if (isset($collection) && count($collection) > 0) { ?>
     <?php $size = count($collection); ?>
 
-    <div id="bannerHS" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div id="bannerHS" class="carousel slide" data-ride="carousel" data-interval="5000">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <?php $i = 1; ?>
